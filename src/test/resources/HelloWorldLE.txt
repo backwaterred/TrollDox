@@ -1,0 +1,17 @@
+// Hi TM: The goal of this project is to convert the text you see below into a pretty diagram.
+// If this test works you should see a box in the diagram for each of the lines below except for those
+// that start with with two slashes -> '//'
+// That's why you won't see the line explaining the test :-)
+
+LOGEVENT "Hello TM!"
+
+LOGEVENT "One"
+LOGEVENT "Two"
+LOGEVENT "3!"
+
+
+// Another thing the program should do, is convert the garbled masses of redudant information that look like this:
+// Application:Alpac_FTNIR.CanOpen:CANopen_Transducers.DI:_0100_Air_Pressure_Normally_Open.Value
+// into more read-able things like this:
+// CanOpen.DI:Air Pressure Normally Open
+LOGEVENT "This shouldn't be super long ->" Application:Alpac_FTNIR.CanOpen:CANopen_Transducers.DI:_0100_Air_Pressure_Normally_Open.Value
