@@ -9,15 +9,18 @@ import TrollLang.TrollSpeak;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class TrollParser {
     private static final String exceptionBase = "TrollParser::";
 
     private ParserInput input;
     private GraphNode lastNode;
+    private HashMap<Integer, GraphNode> visited;
 
     public TrollParser(ParserInput input) {
         this.input = input;
+        this.visited = new HashMap<>();
     }
 
     public boolean hasNextElement() {
@@ -39,10 +42,13 @@ public class TrollParser {
                     currentLine + "(" + input.getLineNumber() + ")");
         }
 
+        // Store current node in visited
+        visited.put(input.getLineNumber(), newNode);
+        // Connect lastNode to current
         if (lastNode != null) {
             lastNode.connectsTo(newNode);
         }
-
+        // Update lastNode
         this.lastNode = newNode;
         return newNode;
     }

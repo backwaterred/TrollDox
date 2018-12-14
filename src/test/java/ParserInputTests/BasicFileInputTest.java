@@ -75,7 +75,7 @@ public class BasicFileInputTest {
         int numValidLinesRead = 0;
         while (commentfulInput.hasNextLine()) {
             try {
-                System.out.println(commentfulInput.getNextLine());;
+                commentfulInput.getNextLine();;
                 numValidLinesRead++;
             } catch (Exception e) {
                 e.printStackTrace();

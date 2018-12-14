@@ -25,10 +25,11 @@ public class Page implements DocumentElement {
         HashSet<String> visited = new HashSet<>();
 
         for (GraphNode source: nodes) {
-            visited.add(source.getId());
             for (GraphNode target: source.getConnectedNodes()) {
-                edges.add(new GraphEdge(source, target));
+                if (!visited.contains(source))
+                    edges.add(new GraphEdge(source, target));
             }
+            visited.add(source.getId());
         }
     }
 

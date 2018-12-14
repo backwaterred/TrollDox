@@ -10,6 +10,7 @@ import org.junit.jupiter.api.*;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BasicLogEventTest extends AbstractTrollElementTestClass {
@@ -114,6 +115,15 @@ public class BasicLogEventTest extends AbstractTrollElementTestClass {
                 validParamsPretty[2];
 
         assertEquals(exp, element.getText());
+    }
+
+    @Test
+    void testMismatchedQuotesThrow() {
+        final String badmsg = "\"Here's an ok message\" " + validParams[3] + "\" Here's a not-ok message " + validParams[1];
+
+        ((MockInput) input).addLine(TrollSpeak.LOGEVENT + badmsg).finalizeInput();
+
+        assertThrows(AngryTrollException.class, () -> parser.getNextElement());
     }
 }
 
