@@ -3,58 +3,31 @@ package TrollLang.TrollParser;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
+import java.util.HashMap;
 
 public class FileInput implements ParserInput {
 
-    private LineNumberReader lineReader = null;
-//    private String nextLine;
+    private HashMap<Integer, String> lineMap;
 
     public FileInput(String filePath) throws IOException {
-        lineReader = new LineNumberReader(new FileReader(filePath));
-//        do {
-//            // Advance member nextLine until lineReader reaches EOF (returns null) or a valid line is reached
-//            nextLine = lineReader.readLine();
-//        } while(nextLine != null && !TrollParser.validInputLine(nextLine));
+        lineMap = new HashMap<>();
+        LineNumberReader lineReader = new LineNumberReader(new FileReader(filePath));
+        for (String l=lineReader.readLine(); l !=null; l=lineReader.readLine()) {
+            lineMap.put(lineReader.getLineNumber(), l);
+        }
     }
-
-//    @Override
-//    public boolean hasNextLine() {
-//        return nextLine != null;
-//    }
-//
-//    @Override
-//    public String getNextLine() throws IOException {
-//        if (!this.hasNextLine())
-//            throw new IOException("FileInput::getNextLine - No more lines to read. Line number: " + this.getLineNumber());
-//
-//        String rtnLine = nextLine;
-//        do {
-//            // Advance member nextLine until lineReader reaches EOF (returns null) or a valid line is reached
-//            nextLine = lineReader.readLine();
-//        } while(nextLine != null && !TrollParser.validInputLine(nextLine));
-//
-//        // Return original value of nextLine
-//        return rtnLine;
-//    }
 
     @Override
     public String getLine(int lineNum) throws IOException {
-        if (lineReader.getLineNumber() != lineNum) {
-            lineReader.setLineNumber(lineNum);
+        if (lineNum > lineMap.size()) {
+            throw new IOException(
+                    "FileInput::GetLine - Given line number past EOF - " + lineNum + " max: " + lineMap.size());
         }
-        return lineReader.readLine();
-    }
-
-    @Override
-    public int getLineNumber() {
-        return lineReader.getLineNumber();
-    }
-
-    @Override
-    public void close() throws IOException {
-        if (lineReader != null) {
-            lineReader.close();
-            lineReader = null;
+        String rtn = lineMap.get(lineNum);
+        if (rtn != null) {
+            return rtn;
+        } else {
+            return "";
         }
     }
 }

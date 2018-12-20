@@ -49,7 +49,7 @@ public class TrollParser {
     private int getFirstLineNumber() {
         String firstLine = "";
 
-        int i = 0;
+        int i = 1;
         try {
             for (firstLine = input.getLine(i); !TrollParser.validInputLine(firstLine); firstLine = input.getLine(++i));
         } catch (IOException e) {
@@ -65,13 +65,14 @@ public class TrollParser {
         try {
             currLine = input.getLine(lineNum);
         } catch (IOException e) {
-            throw new AngryTrollException(exceptionBase + "parseOne - Invalid line: " + lineNum);
+            throw new AngryTrollException(exceptionBase + "parseOne - Caught exception while trying to get line: " + lineNum +
+                    " -- msg:(" + e.getMessage() + ")");
         }
 
         if (currLine.startsWith(TrollSpeak.LOGEVENT.toString())) {
             GraphNode newNode = new GraphNode(
-                    input.getLineNumber(),
-                    new TextBox(currLine.substring(TrollSpeak.LOGEVENT.toString().length() -1) // Remove command text
+                    lineNum,
+                    new TextBox(currLine.substring(TrollSpeak.LOGEVENT.toString().length() -1) // Remove TrollSpeak command text
             ));
             parentNode.addConnectedNode(newNode);
 

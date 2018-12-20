@@ -1,72 +1,32 @@
 package TrollLang.TrollParser;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.StringReader;
+import java.util.HashMap;
+import java.util.LinkedList;
 
 public class MockInput implements ParserInput {
 
-    private String[] lines;
-    private StringBuilder builder;
-    private boolean inputAllowed;
-    private int currentLineNum;
-    private int totalLines;
+    private HashMap<Integer, String> lines;
+    int currLine;
 
     public MockInput() {
-        builder = new StringBuilder();
-        inputAllowed = true;
-        totalLines = 0;
+        currLine = 1;
+        lines = new HashMap<>();
     }
 
     @Override
     public String getLine(int lineNum) throws IOException {
-        if (inputAllowed) {
-            throw new IOException("Must call finalizeInput on MockReader before getting content.");
+        String rtn = lines.get(lineNum);
+        if (rtn !=null) {
+            return rtn;
+        } else {
+            throw new IOException("MockInput::getLine - Invalid Line Number: " + lineNum);
         }
-        return lines[lineNum];
     }
 
     public MockInput addLine(String line) {
-        if (inputAllowed) {
-            builder.append(line + "\n");
-            totalLines++;
-        }
+        lines.put(currLine++, line);
         return this;
-    }
-
-    public MockInput finalizeInput() {
-        // Accept no more input
-        inputAllowed = false;
-
-        lines = builder.toString().split("\n");
-
-        return this;
-    }
-
-//    @Override
-//    public String getNextLine() throws IOException {
-//        if (!inputAllowed) {
-//            currentLineNum++;
-//            return buffReader.readLine();
-//        }
-//        else {
-//            throw new IOException();
-//        }
-//    }
-//
-//    @Override
-//    public boolean hasNextLine() {
-//        return !inputAllowed && currentLineNum <= totalLines;
-//    }
-
-    @Override
-    public int getLineNumber() {
-        return currentLineNum;
-    }
-
-    @Override
-    public void close() throws IOException {
-        lines = null;
     }
 }
 
