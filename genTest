@@ -3,7 +3,7 @@
         if [ ! -z "$1" ]
         then
                 #echo Making file called $1Test.java with contents:
-                sed "s/<TEMPLATE_NAME>/$1Test/" ./src/test/java/.testtemplate > ./src/test/java/$1Test.java
+                sed "s/<TEMPLATE_NAME>/$1Test/" ./src/test/java/TestTemplate > ./src/test/java/$1Test.java
         else
                 echo $0 "- No test name provided"
         fi

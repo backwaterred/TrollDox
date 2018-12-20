@@ -5,19 +5,19 @@ import Util.Util;
 
 import java.io.FileNotFoundException;
 
-public class TextBox extends AbstractGraphNode {
+public class TextBox extends AbstractGMLNode {
 
     private static final double WIDTH_SLOPE =  7.52398;
     private static final double WIDTH_PADDING = 13.46257;
 
-    public TextBox(String msg) throws GraphElementException {
+    public TextBox(String msg) throws GMLException {
         super();
         this.msg = msg;
         try {
             this.GML_open = Util.readFileToStringBuilder("./src/main/resources/SimpleTextNode_open.txt").toString();
             this.GML_close = Util.readFileToStringBuilder("./src/main/resources/SimpleTextNode_close.txt").toString();
         } catch (FileNotFoundException e) {
-            throw new GraphElementException();
+            throw new GMLException();
         }
 
         // Set node info in GML

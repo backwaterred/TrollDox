@@ -1,72 +1,91 @@
 package TrollLang.TrollParser;
 
-import GML.GraphNode;
-import GML.GraphElementException;
+import GML.GMLException;
 import GML.TextBox;
+import Graph.GraphNode;
 import TrollLang.AngryTrollException;
 import TrollLang.TrollParam;
 import TrollLang.TrollSpeak;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 public class TrollParser {
     private static final String exceptionBase = "TrollParser::";
 
     private ParserInput input;
-    private GraphNode lastNode;
-    private HashMap<Integer, GraphNode> visited;
+    private LinkedList<TodoEntry> todo;
 
-    public TrollParser(ParserInput input) {
+    private class TodoEntry {
+        private int lineNum;
+        private GraphNode parentNode;
+
+        public TodoEntry(int lineNum, GraphNode parentNode) {
+            this.lineNum = lineNum;
+            this.parentNode = parentNode;
+        }
+    }
+
+    private HashSet<Integer> visitedLines;
+
+    public TrollParser(ParserInput input, GraphNode rootNode) throws AngryTrollException, GMLException {
         this.input = input;
-        this.visited = new HashMap<>();
+        this.todo = new LinkedList<>();
+
+        parseAll(rootNode);
     }
 
-    public boolean hasNextElement() {
-        return input.hasNextLine();
+    private void parseAll(GraphNode rootNode) throws GMLException, AngryTrollException {
+        TodoEntry currItem;
+
+        todo.push(new TodoEntry(getFirstLineNumber(), rootNode));
+        while(!todo.isEmpty()) {
+            currItem = todo.pop();
+            parseOne(currItem.lineNum, currItem.parentNode);
+        }
+
     }
 
-    public GraphNode getNextElement() throws AngryTrollException, GraphElementException {
-        String currentLine = this.getNextValidLine();
-        GraphNode newNode;
+    private int getFirstLineNumber() {
+        String firstLine = "";
 
+        int i = 0;
+        try {
+            for (firstLine = input.getLine(i); !TrollParser.validInputLine(firstLine); firstLine = input.getLine(++i));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        if (currentLine.startsWith(TrollSpeak.LOGEVENT.toString())) {
-            String args = currentLine.substring(TrollSpeak.LOGEVENT.toString().length());
+        return i;
+    }
 
-            newNode =  new TextBox(TrollSpeak.LOGEVENT.getPrefix() + parseLogEventArgs(args));
+    private GraphNode parseOne(int lineNum, GraphNode parentNode) throws AngryTrollException, GMLException {
+        String currLine = "";
 
+        try {
+            currLine = input.getLine(lineNum);
+        } catch (IOException e) {
+            throw new AngryTrollException(exceptionBase + "parseOne - Invalid line: " + lineNum);
+        }
+
+        if (currLine.startsWith(TrollSpeak.LOGEVENT.toString())) {
+            GraphNode newNode = new GraphNode(
+                    input.getLineNumber(),
+                    new TextBox(currLine.substring(TrollSpeak.LOGEVENT.toString().length() -1) // Remove command text
+            ));
+            parentNode.addConnectedNode(newNode);
+
+            todo.push(new TodoEntry(++lineNum, newNode));
+
+            return newNode;
         } else {
-            throw new AngryTrollException(exceptionBase + "getNextElement - Function not supported at line: " +
-                    currentLine + "(" + input.getLineNumber() + ")");
+            throw new AngryTrollException(exceptionBase +
+                    "parseOne - Invalid function at line: " + lineNum + " text: " + currLine);
         }
-
-        // Store current node in visited
-        visited.put(input.getLineNumber(), newNode);
-        // Connect lastNode to current
-        if (lastNode != null) {
-            lastNode.connectsTo(newNode);
-        }
-        // Update lastNode
-        this.lastNode = newNode;
-        return newNode;
     }
 
     protected static boolean validInputLine(String line) {
         return !line.equals("") && !line.startsWith("//");
-    }
-
-    private String getNextValidLine() throws AngryTrollException {
-        String line;
-
-        try {
-            line = input.getNextLine();
-        } catch (IOException e) {
-            throw new AngryTrollException(e.getMessage());
-        }
-
-        return line;
     }
 
     /**
@@ -112,5 +131,7 @@ public class TrollParser {
                 .count();
         return quoteCount % 2 == 0;
     }
+
+
 
 }

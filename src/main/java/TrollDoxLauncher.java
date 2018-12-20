@@ -1,4 +1,6 @@
 import Doc.Doc;
+import GML.TextBox;
+import Graph.GraphNode;
 import TrollLang.TrollParser.FileInput;
 import TrollLang.TrollParser.TrollParser;
 
@@ -13,8 +15,8 @@ public class TrollDoxLauncher {
         // Todo: Prototype code below; change this.
         BufferedOutputStream outStream = null;
         try {
-            Doc doc = new Doc(new TrollParser(
-                    new FileInput("./src/test/resources/OneHundredLogEvents.txt")));
+            Doc doc = new Doc(
+                    new FileInput("./src/test/resources/OneHundredLogEvents.txt"));
             outStream = new BufferedOutputStream(new FileOutputStream(new File("./out/newout.graphml")));
             outStream.write(doc.render().getBytes());
             if (outStream != null) {

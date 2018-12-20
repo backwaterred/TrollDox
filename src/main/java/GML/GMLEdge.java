@@ -5,7 +5,7 @@ import Util.Util;
 
 import java.io.FileNotFoundException;
 
-public class GraphEdge {
+public class GMLEdge {
 
     private String label;
     private String gml;
@@ -13,26 +13,26 @@ public class GraphEdge {
 
 
 
-    public GraphEdge(GraphNode from, GraphNode to) throws GraphElementException {
+    public GMLEdge(GMLNode from, GMLNode to) throws GMLException {
         label = "";
         this.id = "e" + GraphInfo.instance().getAndIncrementEdgeNum();
         this.loadBoilerplateText();
         this.initGML(GraphInfo.instance().getAndIncrementEdgeNum(), from.getId(), to.getId());
     }
 
-    public GraphEdge(GraphNode from, GraphNode to, String label) throws GraphElementException {
+    public GMLEdge(GMLNode from, GMLNode to, String label) throws GMLException {
         this.label = label;
         this.id = "e" + GraphInfo.instance().getAndIncrementEdgeNum();
         this.loadBoilerplateText();
         this.initGML(GraphInfo.instance().getAndIncrementEdgeNum(), from.getId(), to.getId());
     }
 
-    private void loadBoilerplateText() throws GraphElementException {
+    private void loadBoilerplateText() throws GMLException {
         try {
             this.gml = Util.readFileToStringBuilder("./src/main/resources/edge_gml.txt").toString();
 
         } catch (FileNotFoundException e) {
-            throw new GraphElementException("GraphEdge::Failed to get GraphEdge boilerplate gml");
+            throw new GMLException("GMLEdge::Failed to get GMLEdge boilerplate gml");
         }
     }
 

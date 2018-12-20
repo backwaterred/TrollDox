@@ -1,35 +1,35 @@
 package Graph;
 
-import GML.GraphNode;
+import GML.GMLNode;
 
 public class Edge {
-    private Vertex source;
-    private Vertex target;
-    private int id;
-    private GraphNode gmlView;
-
-
-
-    public Edge(int id, Vertex source, Vertex target, GraphNode view) {
-        this.id = id;
-        this.gmlView = view;
-        this.source = source;
-        this.target = target;
-    }
-
-    public Vertex getSource() {
-        return source;
-    }
-
-    public Vertex getTarget() {
-        return target;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public GraphNode getGmlView() {
-        return gmlView;
-    }
+//    private GraphNode source;
+//    private GraphNode target;
+//    private int id;
+//    private GMLNode gmlView;
+//
+//
+//
+//    public Edge(int id, GraphNode source, GraphNode target, GMLNode view) {
+//        this.id = id;
+//        this.gmlView = view;
+//        this.source = source;
+//        this.target = target;
+//    }
+//
+//    public GraphNode getSource() {
+//        return source;
+//    }
+//
+//    public GraphNode getTarget() {
+//        return target;
+//    }
+//
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public GMLNode getGmlView() {
+//        return gmlView;
+//    }
 }

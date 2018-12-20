@@ -6,18 +6,24 @@ import java.io.StringReader;
 
 public class MockInput implements ParserInput {
 
-    private BufferedReader buffReader;
-
+    private String[] lines;
     private StringBuilder builder;
     private boolean inputAllowed;
     private int currentLineNum;
     private int totalLines;
 
     public MockInput() {
-        buffReader = null;
         builder = new StringBuilder();
         inputAllowed = true;
         totalLines = 0;
+    }
+
+    @Override
+    public String getLine(int lineNum) throws IOException {
+        if (inputAllowed) {
+            throw new IOException("Must call finalizeInput on MockReader before getting content.");
+        }
+        return lines[lineNum];
     }
 
     public MockInput addLine(String line) {
@@ -32,29 +38,26 @@ public class MockInput implements ParserInput {
         // Accept no more input
         inputAllowed = false;
 
-        // Create buffer
-        buffReader = new BufferedReader(
-                new StringReader(builder.toString()));
-        currentLineNum = 1;
+        lines = builder.toString().split("\n");
 
         return this;
     }
 
-    @Override
-    public String getNextLine() throws IOException {
-        if (!inputAllowed) {
-            currentLineNum++;
-            return buffReader.readLine();
-        }
-        else {
-            throw new IOException();
-        }
-    }
-
-    @Override
-    public boolean hasNextLine() {
-        return !inputAllowed && currentLineNum <= totalLines;
-    }
+//    @Override
+//    public String getNextLine() throws IOException {
+//        if (!inputAllowed) {
+//            currentLineNum++;
+//            return buffReader.readLine();
+//        }
+//        else {
+//            throw new IOException();
+//        }
+//    }
+//
+//    @Override
+//    public boolean hasNextLine() {
+//        return !inputAllowed && currentLineNum <= totalLines;
+//    }
 
     @Override
     public int getLineNumber() {
@@ -63,10 +66,7 @@ public class MockInput implements ParserInput {
 
     @Override
     public void close() throws IOException {
-        if (buffReader != null) {
-            buffReader.close();
-            buffReader = null;
-        }
+        lines = null;
     }
 }
 

@@ -1,6 +1,6 @@
 package TrollElementTests;
 
-import GML.GraphNode;
+import GML.GMLNode;
 import TrollLang.TrollParam;
 import TrollLang.TrollParser.ParserInput;
 import TrollLang.TrollParser.TrollParser;
@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public abstract class AbstractTrollElementTestClass {
 
-    GraphNode element;
+    GMLNode element;
     TrollParser parser;
     ParserInput input;
 
