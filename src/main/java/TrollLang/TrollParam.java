@@ -10,6 +10,24 @@ public class TrollParam {
                 possibleParam.split("\\.").length == 4;
     }
 
+    // Takes mixed input. Finds the TrollParams and maps them to 'informative' params using the TrollParam toString method
+    public static String makeParamsInformative(String paramful) {
+        // Map each troll param to it's pretty string equivalent
+        return Arrays.stream(paramful.split(" "))
+                .map(word -> (TrollParam.isValidParam(word)) ? (new TrollParam(word)).toString() : word)
+                .reduce((acc, ele) -> acc + " " + ele)
+                .get();
+    }
+
+    // Takes mixed input. Finds the TrollParams and maps them to 'pretty' params using the TrollParam getPrettyText method
+    public static String makeParamsPretty(String paramful) {
+        // Map each troll param to it's pretty string equivalent
+        return Arrays.stream(paramful.split(" "))
+                .map(word -> (TrollParam.isValidParam(word)) ? (new TrollParam(word)).getPrettyText() : word)
+                .reduce((acc, ele) -> acc + " " + ele)
+                .get();
+    }
+
     private String fullText;
     private ConnectionType cxnType;
     private IOType ioType;

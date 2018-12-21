@@ -11,7 +11,7 @@ public class TextBox extends AbstractGMLNode {
     private static final double WIDTH_PADDING = 13.46257;
 
     public TextBox(String msg) throws GMLException {
-        super();
+        super("./src/main/resources/SimpleTextNode_open.txt", "./src/main/resources/SimpleTextNode_close.txt");
         this.msg = msg;
         try {
             this.GML_open = Util.readFileToStringBuilder("./src/main/resources/SimpleTextNode_open.txt").toString();
@@ -39,7 +39,8 @@ public class TextBox extends AbstractGMLNode {
         return 40.0;
     }
 
-    private String generateGeometryString(String msg) {
+    @Override
+    protected String generateGeometryString(String msg) {
         StringBuilder geoStr = new StringBuilder();
 
         return geoStr.append("<y:Geometry height=\"")

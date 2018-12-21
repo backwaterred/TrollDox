@@ -54,8 +54,8 @@ public class Decisions_ParserTest {
         assertTrue(currNode.getId() == 2);
         cxns = currNode.getOutgoingConnections();
         assertTrue(cxns.size() == 2);
-        // todo: finish
-        fail();
+        // todo: finish test
+        fail("todo");
 
     }
 }

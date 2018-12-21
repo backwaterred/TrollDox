@@ -1,5 +1,5 @@
 // This is a file containing decisions!
-IF Application:Mood_Graph.Console_Parameter:Console_Parameters.AI:_1234_Are_You_Feeling_Happy? 1 GOTO Happy_Happy
+IF Application:Mood_Graph.Console_Parameter:Console_Parameters.AI:_1234_Are_You_Feeling_Happy.Value 1 GOTO Happy_Happy
 // Else
 LOGEVENT "You are feeling sad. Too bad :-("
 GOTO End

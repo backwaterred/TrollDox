@@ -16,7 +16,7 @@ public class TrollDoxLauncher {
         BufferedOutputStream outStream = null;
         try {
             Doc doc = new Doc(
-                    new FileInput("./src/test/resources/OneHundredLogEvents.txt"));
+                    new FileInput("./src/test/resources/DecisionsDecisions.txt"));
             outStream = new BufferedOutputStream(new FileOutputStream(new File("./out/newout.graphml")));
             outStream.write(doc.render().getBytes());
             if (outStream != null) {

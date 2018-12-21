@@ -4,6 +4,7 @@ import GML.GMLException;
 import GML.TextBox;
 import Graph.GraphNode;
 import TrollLang.TrollParser.FileInput;
+import TrollLang.TrollParser.ParserInput;
 import TrollLang.TrollParser.TrollParser;
 import org.junit.jupiter.api.*;
 
@@ -14,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class LinearControlFlow_ParserTest {
 
     TrollParser parser;
+    ParserInput source;
     GraphNode rootNode;
 
     @BeforeAll
@@ -41,7 +43,8 @@ public class LinearControlFlow_ParserTest {
     void testLinearFlowFile(String filePath) {
 
         try {
-            parser = new TrollParser(new FileInput(filePath), rootNode);
+            source = new FileInput(filePath);
+            parser = new TrollParser(source, rootNode);
         } catch (Exception e) {
             e.printStackTrace();
             fail();
@@ -51,10 +54,10 @@ public class LinearControlFlow_ParserTest {
         cxns = rootNode.getOutgoingConnections();
 
         for (int i=1; i<=100; i++) {
-            assertTrue(cxns.size() == 1);
+            assertEquals(1, cxns.size());
 
             GraphNode currNode = cxns.pop();
-            assertTrue(currNode.getId() == i);
+            assertEquals(i, currNode.getId());
 
             cxns = currNode.getOutgoingConnections();
         }

@@ -1,7 +1,9 @@
 package GML;
 
 import Graph.GraphInfo;
+import Util.Util;
 
+import java.io.FileNotFoundException;
 import java.util.LinkedList;
 
 public abstract class AbstractGMLNode implements GMLNode {
@@ -13,10 +15,29 @@ public abstract class AbstractGMLNode implements GMLNode {
 
     protected LinkedList<GMLNode> connectedNodes;
 
-    protected AbstractGMLNode() {
+    protected AbstractGMLNode(String filepath_open, String filepath_close) throws GMLException {
         this.id = GraphInfo.instance().getAndIncrementNodeNum();
         connectedNodes = new LinkedList<>();
+
+//        try {
+//            this.GML_open = Util.readFileToStringBuilder(filepath_open).toString();
+//            this.GML_close = Util.readFileToStringBuilder(filepath_close).toString();
+//        } catch (FileNotFoundException e) {
+//            throw new GMLException();
+//        }
+//
+//        // Set node info in GML
+//        this.GML_open = this.GML_open.replaceAll("<node id=\"n\\d\">",
+//                "<node id=\"" + this.getId() + "\">");
+//
+//        // Set position in GML
+//        this.GML_open = this.GML_open.replace("<y:Geometry height=\"40.0\" width=\"108.376953125\" x=\"477.8115234375\" y=\"148.0\"/>",
+//                generateGeometryString(msg));
+
+
     }
+
+    protected abstract String generateGeometryString(String msg);
 
     @Override
     public String getText() {

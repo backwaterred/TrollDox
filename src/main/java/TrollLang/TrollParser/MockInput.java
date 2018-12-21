@@ -24,6 +24,16 @@ public class MockInput implements ParserInput {
         }
     }
 
+    @Override
+    public int getNextValidLineNumber(int lineNum) throws IOException {
+        return 0;
+    }
+
+    @Override
+    public int getLineNumberStartingWith(String label) throws IOException {
+        return 0;
+    }
+
     public MockInput addLine(String line) {
         lines.put(currLine++, line);
         return this;

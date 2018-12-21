@@ -18,6 +18,27 @@ public class FileInput implements ParserInput {
     }
 
     @Override
+    public int getNextValidLineNumber(int lineNum) throws IOException {
+        if (TrollParser.validInputLine(lineMap.get(lineNum))) {
+            return lineNum;
+        } else if (lineNum < lineMap.size()) {
+            return getNextValidLineNumber(++lineNum);
+        } else {
+            throw new IOException("FileInput::getNextValidLineNumber - No more valid lines");
+        }
+    }
+
+    @Override
+    public int getLineNumberStartingWith(String label) throws IOException {
+        for (int i=1; i<lineMap.size(); i++) {
+            if (lineMap.get(i).startsWith(label)) {
+                return i;
+            }
+        }
+        throw new IOException("FileInput::getLineNumberStartingWith - File does not contain " + label);
+    }
+
+    @Override
     public String getLine(int lineNum) throws IOException {
         if (lineNum > lineMap.size()) {
             throw new IOException(
