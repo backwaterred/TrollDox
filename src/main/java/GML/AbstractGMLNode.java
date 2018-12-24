@@ -5,43 +5,92 @@ import Util.Util;
 
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
+import java.util.Objects;
 
 public abstract class AbstractGMLNode implements GMLNode {
 
     protected String GML_open;
-    protected int id;
     protected String msg;
+    protected int id;
+    protected double xPos;
+    protected double yPos;
+    protected double width;
+    protected double height;
     protected String GML_close;
 
     protected LinkedList<GMLNode> connectedNodes;
+    protected abstract double calcWidth();
+    protected abstract double calcHeight();
 
-    protected AbstractGMLNode(String filepath_open, String filepath_close) throws GMLException {
-        this.id = GraphInfo.instance().getAndIncrementNodeNum();
+
+    protected AbstractGMLNode(int id, String msg, String filepath_open, String filepath_close) throws GMLException {
+        this.id = id;
+        this.msg = msg;
+        this.width = calcWidth();
+        this.height = calcHeight();
         connectedNodes = new LinkedList<>();
+        setGMLText(filepath_open, filepath_close);
+    }
 
-//        try {
-//            this.GML_open = Util.readFileToStringBuilder(filepath_open).toString();
-//            this.GML_close = Util.readFileToStringBuilder(filepath_close).toString();
-//        } catch (FileNotFoundException e) {
-//            throw new GMLException();
-//        }
-//
-//        // Set node info in GML
-//        this.GML_open = this.GML_open.replaceAll("<node id=\"n\\d\">",
-//                "<node id=\"" + this.getId() + "\">");
-//
-//        // Set position in GML
-//        this.GML_open = this.GML_open.replace("<y:Geometry height=\"40.0\" width=\"108.376953125\" x=\"477.8115234375\" y=\"148.0\"/>",
-//                generateGeometryString(msg));
+    private void setGMLText(String open, String close) throws GMLException {
+        try {
+            this.GML_open = Util.readFileToStringBuilder(open).toString();
+            this.GML_close = Util.readFileToStringBuilder(close).toString();
+        } catch (FileNotFoundException e) {
+            throw new GMLException();
+        }
 
 
     }
 
-    protected abstract String generateGeometryString(String msg);
+    public void setX(double xPos) {
+        this.xPos = xPos;
+    }
+
+    public void setY(double yPos) {
+        this.yPos = yPos;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    protected String generateGeometryString(double h, double w, double x, double y) {
+        StringBuilder geoStr = new StringBuilder();
+
+        return geoStr.append("<y:Geometry height=\"")
+                .append(h)
+                .append("\" width=\"")
+                .append(w)
+                .append("\" x=\"")
+                .append(x)
+                .append("\" y=\"")
+                .append(y)
+                .append("\"/>")
+                .toString();
+    }
 
     @Override
-    public String getText() {
-        return msg;
+    public String getId() {
+        return "n" + this.id;
+    }
+
+    @Override
+    public GMLNode addConnection(GMLNode node) {
+        this.connectedNodes.add(node);
+        return this;
     }
 
     @Override
@@ -51,11 +100,39 @@ public abstract class AbstractGMLNode implements GMLNode {
 
     @Override
     public String render() {
-        return GML_open.concat(msg).concat(GML_close);
+        // Set node info in GML
+        this.GML_open = this.GML_open.replaceAll("<node id=\"n\\d\">",
+                "<node id=\"" + this.getId() + "\">");
+
+        // Set position in GML
+        this.GML_open = this.GML_open.replaceAll(
+                "<y:Geometry height=\"\\d*\\.\\d*\" width=\"\\d*\\.\\d*\" x=\"\\d*\\.\\d*\" y=\"\\d*\\.\\d*\"/>",
+                generateGeometryString(calcHeight(), calcWidth(),
+                        GraphInfo.instance().getX(), GraphInfo.instance().getAndIncrementY()));
+
+
+        return (new StringBuilder())
+                .append(GML_open)
+                .append(this.msg)
+                .append(GML_close)
+                .toString();
     }
 
     @Override
     public LinkedList<GMLNode> getConnectedNodes() {
         return new LinkedList<GMLNode>(connectedNodes);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AbstractGMLNode that = (AbstractGMLNode) o;
+        return getId() == that.getId();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }

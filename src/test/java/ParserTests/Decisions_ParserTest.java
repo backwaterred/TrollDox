@@ -1,20 +1,21 @@
 package ParserTests;
 
 import GML.GMLException;
+import GML.GMLNode;
 import GML.TextBox;
-import Graph.GraphNode;
 import TrollLang.TrollParser.FileInput;
 import TrollLang.TrollParser.TrollParser;
 import org.junit.jupiter.api.*;
 
 import java.util.LinkedList;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class Decisions_ParserTest {
 
-    GraphNode startNode;
+    GMLNode startNode;
     TrollParser parser;
 
     @BeforeAll
@@ -22,7 +23,7 @@ public class Decisions_ParserTest {
     @BeforeEach
     void before() {
         try {
-            startNode = new GraphNode(0, new TextBox("START"));
+            startNode = new TextBox(0, "START");
         } catch (GMLException e) {
             e.printStackTrace();
             fail();
@@ -42,18 +43,18 @@ public class Decisions_ParserTest {
     void simpleDecisions() {
         try {
             // "./src/test/resources/DecisionsDecisions.txt"
-            parser = new TrollParser(new FileInput("./src/test/resources/DecisionsDecisions.txt"), startNode);
+//            parser = new TrollParser(new FileInput("./src/test/resources/DecisionsDecisions.txt"), startNode);
         } catch (Exception e) {
             e.printStackTrace();
             fail(e.getMessage());
         }
 
-        LinkedList<GraphNode> cxns = startNode.getOutgoingConnections();
-        assertTrue(cxns.size() == 1);
-        GraphNode currNode = cxns.pop();
-        assertTrue(currNode.getId() == 2);
-        cxns = currNode.getOutgoingConnections();
-        assertTrue(cxns.size() == 2);
+        LinkedList<GMLNode> cxns = startNode.getConnectedNodes();
+        assertEquals(cxns.size(), 1);
+        GMLNode currNode = cxns.pop();
+        assertEquals(currNode.getId(), "n" + 2);
+        cxns = currNode.getConnectedNodes();
+        assertEquals(cxns.size(), 2);
         // todo: finish test
         fail("todo");
 

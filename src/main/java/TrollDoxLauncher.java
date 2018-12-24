@@ -1,8 +1,5 @@
 import Doc.Doc;
-import GML.TextBox;
-import Graph.GraphNode;
 import TrollLang.TrollParser.FileInput;
-import TrollLang.TrollParser.TrollParser;
 
 import java.io.BufferedOutputStream;
 import java.io.File;

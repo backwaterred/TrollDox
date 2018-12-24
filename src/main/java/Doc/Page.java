@@ -22,12 +22,13 @@ public class Page implements DocumentElement {
     }
 
     private void createEdges() throws GMLException {
+        int id = 1;
         HashSet<String> visited = new HashSet<>();
 
         for (GMLNode source: nodes) {
             for (GMLNode target: source.getConnectedNodes()) {
-                if (!visited.contains(source))
-                    edges.add(new GMLEdge(source, target));
+                if (!visited.contains(source.getId()))
+                    edges.add(new GMLEdge(id++, source, target));
             }
             visited.add(source.getId());
         }

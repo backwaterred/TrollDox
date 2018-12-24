@@ -1,8 +1,7 @@
 package TrollLang.TrollParser;
 
-import GML.GMLException;
-import GML.TextBox;
-import Graph.GraphNode;
+import Doc.Doc;
+import GML.*;
 import TrollLang.AngryTrollException;
 import TrollLang.TrollParam;
 import TrollLang.TrollSpeak;
@@ -14,34 +13,44 @@ public class TrollParser {
     private static final String exceptionBase = "TrollParser::";
 
     private ParserInput input;
+    private Doc doc;
     private LinkedList<TodoEntry> todo;
+    private HashSet<Integer> visited;
+
+    protected static boolean validInputLine(String line) {
+        return !line.equals("") && !line.startsWith("//");
+    }
 
     private class TodoEntry {
         private int lineNum;
-        private GraphNode parentNode;
+        private GMLNode parentNode;
 
-        public TodoEntry(int lineNum, GraphNode parentNode) {
+        public TodoEntry(int lineNum, GMLNode parentNode) {
             this.lineNum = lineNum;
             this.parentNode = parentNode;
         }
     }
 
-    private HashSet<Integer> visitedLines;
-
-    public TrollParser(ParserInput input, GraphNode rootNode) throws AngryTrollException, GMLException, IOException {
+    public TrollParser(ParserInput input, Doc doc) throws AngryTrollException, GMLException, IOException {
         this.input = input;
+        this.doc = doc;
         this.todo = new LinkedList<>();
+        this.visited = new HashSet<>();
 
-        parseAll(rootNode);
+
+        parseAllLines();
     }
 
-    private void parseAll(GraphNode rootNode) throws GMLException, AngryTrollException, IOException {
+    private void parseAllLines() throws GMLException, AngryTrollException, IOException {
         TodoEntry currItem;
 
-        todo.push(new TodoEntry(getFirstLineNumber(), rootNode));
+        GMLNode root = new LabelBox(0, "START");
+        doc.addDocRoot(root);
+        todo.push(new TodoEntry(getFirstLineNumber(), root));
+
         while(!todo.isEmpty()) {
             currItem = todo.pop();
-            parseOne(currItem.lineNum, currItem.parentNode);
+            parseOneLine(currItem.lineNum, currItem.parentNode);
         }
 
     }
@@ -59,58 +68,75 @@ public class TrollParser {
         return i;
     }
 
-    private GraphNode parseOne(int lineNum, GraphNode parentNode) throws AngryTrollException, GMLException, IOException {
-        String currLine = "";
-
-        try {
-            currLine = input.getLine(lineNum);
-        } catch (IOException e) {
-            throw new AngryTrollException(exceptionBase + "parseOne - Caught exception while trying to get line: " + lineNum +
-                    " -- msg:(" + e.getMessage() + ")");
+    private void parseOneLine(int lineNum, GMLNode parentNode) throws AngryTrollException, GMLException, IOException {
+        // Don't re-process lines
+        if (visited.contains(lineNum)) {
+//            System.out.println("Skipping Line (" + lineNum + ") - already processed");
+            return;
         }
+        visited.add(lineNum);
 
-        // LOGEVENT
-        if (currLine.startsWith(TrollSpeak.LOGEVENT.toString())) {
-            GraphNode newNode = new GraphNode(
-                    lineNum,
-                    new TextBox(TrollSpeak.LOGEVENT.getPrefix() +
-                            getLogEventMsg(currLine)));
-            if (parentNode != null) parentNode.addConnectedNode(newNode);
+        String currLine = input.getLine(lineNum);
+
+
+        if (currLine.startsWith(TrollSpeak.LOGEVENT.getCommandText())) {
+            // LOGEVENT
+            GMLNode newNode = new TextBox(lineNum,
+                    TrollSpeak.LOGEVENT.getMsgPrefix() + getLogEventMsg(currLine));
+
+            this.connectToParent(parentNode, newNode);
+
             addTodoItem(++lineNum, newNode);
-            return newNode;
-        // IF - ELSE
-        } else if (currLine.startsWith(TrollSpeak.IF.toString())) {
-            GraphNode newNode = new GraphNode(
+
+        } else if (currLine.startsWith(TrollSpeak.IF.getCommandText())) {
+            // IF - ELSE
+            GMLNode newNode = new DecisionDiamond(
                     lineNum,
-                    new TextBox(getIfQuestion(currLine)) // Remove TrollSpeak command text
-            );
+                    getIfQuestion(currLine));
+
+            this.connectToParent(parentNode, newNode);
+
             String gotoLabel = currLine.split("GOTO")[1];
-            if (parentNode != null) parentNode.addConnectedNode(newNode);
             addTodoItem(++lineNum, newNode);
             addTodoItem(input.getLineNumberStartingWith("#" + gotoLabel.trim()), newNode);
-            return newNode;
-        // GOTO
-        } else if (currLine.startsWith(TrollSpeak.GOTO.toString())) {
+
+        } else if (currLine.startsWith(TrollSpeak.GOTO.getCommandText())) {
+            // GOTO
             String gotoLabel = currLine.split("GOTO")[1];
-            GraphNode newNode = new GraphNode(
+
+            GMLNode newNode = new TextBox(
                     lineNum,
-                    new TextBox(TrollSpeak.GOTO.getPrefix() + gotoLabel)
-            );
-            if (parentNode != null) parentNode.addConnectedNode(newNode);
+                    TrollSpeak.GOTO.getMsgPrefix() + gotoLabel);
+
+            if (parentNode != null) parentNode.addConnection(newNode);
+
             addTodoItem(input.getLineNumberStartingWith("#" + gotoLabel.trim()), null);
-            return newNode;
-        // Unknown function
-        } else {
+
+        } else if (currLine.startsWith(TrollSpeak.LABEL.getCommandText())) {
+            // Label
+            GMLNode newNode = new LabelBox(lineNum,
+                    currLine.substring(TrollSpeak.LABEL.getCommandText().length()));
+
+            this.connectToParent(parentNode, newNode);
+
+            addTodoItem(++lineNum, newNode);
+
+        } else  {
+            // CMD not recognized
             throw new AngryTrollException(exceptionBase +
-                    "parseOne - Invalid function at line: " + lineNum + " text: " + currLine);
+                    "parseOneLine - Invalid function at line: " + lineNum + " text: " + currLine);
         }
     }
 
-    protected static boolean validInputLine(String line) {
-        return !line.equals("") && !line.startsWith("//") && !line.startsWith("#");
+    private void connectToParent(GMLNode parent, GMLNode child) {
+        if (parent != null) {
+            parent.addConnection(child);
+        } else {
+            doc.addDocRoot(child);
+        }
     }
 
-    private boolean addTodoItem(int lineNum, GraphNode parentNode) {
+    private boolean addTodoItem(int lineNum, GMLNode parentNode) {
         String line;
         try {
             line = input.getLine(lineNum);

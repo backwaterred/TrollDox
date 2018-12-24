@@ -13,18 +13,18 @@ public class GMLEdge {
 
 
 
-    public GMLEdge(GMLNode from, GMLNode to) throws GMLException {
+    public GMLEdge(int id, GMLNode from, GMLNode to) throws GMLException {
         label = "";
-        this.id = "e" + GraphInfo.instance().getAndIncrementEdgeNum();
+        this.id = "e" + id;
         this.loadBoilerplateText();
-        this.initGML(GraphInfo.instance().getAndIncrementEdgeNum(), from.getId(), to.getId());
+        this.initGML(id, from.getId(), to.getId());
     }
 
-    public GMLEdge(GMLNode from, GMLNode to, String label) throws GMLException {
+    public GMLEdge(int id, GMLNode from, GMLNode to, String label) throws GMLException {
         this.label = label;
-        this.id = "e" + GraphInfo.instance().getAndIncrementEdgeNum();
+        this.id = "e" + id;
         this.loadBoilerplateText();
-        this.initGML(GraphInfo.instance().getAndIncrementEdgeNum(), from.getId(), to.getId());
+        this.initGML(id, from.getId(), to.getId());
     }
 
     private void loadBoilerplateText() throws GMLException {

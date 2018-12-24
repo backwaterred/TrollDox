@@ -1,8 +1,9 @@
 package ParserTests;
 
+import Doc.Doc;
 import GML.GMLException;
+import GML.GMLNode;
 import GML.TextBox;
-import Graph.GraphNode;
 import TrollLang.TrollParser.FileInput;
 import TrollLang.TrollParser.ParserInput;
 import TrollLang.TrollParser.TrollParser;
@@ -16,14 +17,14 @@ public class LinearControlFlow_ParserTest {
 
     TrollParser parser;
     ParserInput source;
-    GraphNode rootNode;
+    GMLNode rootNode;
 
     @BeforeAll
     static void beforeAll() {}
     @BeforeEach
     void beforeEach() {
         try {
-            rootNode = new GraphNode(0, new TextBox("START"));
+            rootNode = new TextBox(0, "START");
         } catch (GMLException e) {
             e.printStackTrace();
             fail();
@@ -44,22 +45,22 @@ public class LinearControlFlow_ParserTest {
 
         try {
             source = new FileInput(filePath);
-            parser = new TrollParser(source, rootNode);
+//            parser = new TrollParser(source, !!!);
         } catch (Exception e) {
             e.printStackTrace();
             fail();
         }
 
-        LinkedList<GraphNode> cxns;
-        cxns = rootNode.getOutgoingConnections();
+        LinkedList<GMLNode> cxns;
+        cxns = rootNode.getConnectedNodes();
 
         for (int i=1; i<=100; i++) {
             assertEquals(1, cxns.size());
 
-            GraphNode currNode = cxns.pop();
+            GMLNode currNode = cxns.pop();
             assertEquals(i, currNode.getId());
 
-            cxns = currNode.getOutgoingConnections();
+            cxns = currNode.getConnectedNodes();
         }
     }
 

@@ -2,21 +2,23 @@ package GML;
 
 public class DecisionDiamond extends AbstractGMLNode {
 
-    private String questionText;
+    private static final double WIDTH_SLOPE =  7.52398;
+    private static final double WIDTH_PADDING = 13.46257;
 
-    public DecisionDiamond(String questionText) throws GMLException {
-        super("./src/main/resources/DecisionNode_open.txt",
+    public DecisionDiamond(int id, String questionText) throws GMLException {
+        super(id,
+                questionText,
+                "./src/main/resources/DecisionNode_open.txt",
                 "./src/main/resources/DecisionNode_close.txt");
-        this.questionText = questionText;
     }
 
     @Override
-    public String getId() {
-        return null;
+    protected double calcWidth() {
+        return WIDTH_SLOPE * this.msg.length() + WIDTH_PADDING;
     }
 
     @Override
-    protected String generateGeometryString(String msg) {
-        return null;
+    protected double calcHeight() {
+        return 0.5* calcWidth();
     }
 }
