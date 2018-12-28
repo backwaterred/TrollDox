@@ -1,6 +1,5 @@
 package GML;
 
-import Graph.GraphInfo;
 import Util.Util;
 
 import java.io.FileNotFoundException;

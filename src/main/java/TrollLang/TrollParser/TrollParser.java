@@ -44,7 +44,7 @@ public class TrollParser {
     private void parseAllLines() throws GMLException, AngryTrollException, IOException {
         TodoEntry currItem;
 
-        GMLNode root = new LabelBox(0, "START");
+        GMLNode root = new TextBox(0, "START");
         doc.addDocRoot(root);
         todo.push(new TodoEntry(getFirstLineNumber(), root));
 
@@ -114,7 +114,7 @@ public class TrollParser {
 
         } else if (currLine.startsWith(TrollSpeak.LABEL.getCommandText())) {
             // Label
-            GMLNode newNode = new LabelBox(lineNum,
+            GMLNode newNode = new TextBox(lineNum,
                     currLine.substring(TrollSpeak.LABEL.getCommandText().length()));
 
             this.connectToParent(parentNode, newNode);
@@ -129,8 +129,10 @@ public class TrollParser {
     }
 
     private void connectToParent(GMLNode parent, GMLNode child) {
+//        private void connectToParent(GMLNode parent, GMLNode child, String label) {
         if (parent != null) {
             parent.addConnection(child);
+//            doc.addEdge(child, parent, label);
         } else {
             doc.addDocRoot(child);
         }
