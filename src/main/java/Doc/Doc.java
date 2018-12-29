@@ -3,7 +3,6 @@ package Doc;
 import GML.GMLEdge;
 import GML.GMLException;
 import GML.GMLNode;
-import Graph.GraphInfo;
 import TrollLang.AngryTrollException;
 import TrollLang.TrollParser.ParserInput;
 import TrollLang.TrollParser.TrollParser;
@@ -53,7 +52,7 @@ public class Doc implements DocumentElement {
 
     public boolean addNode(GMLNode node) {
         // Todo: check page has (printable) space!
-        return currentPage.addNode(node);
+        return currentPage.addNodeToCurrentCol(node);
     }
 
     public boolean addEdge(GMLEdge edge) {
