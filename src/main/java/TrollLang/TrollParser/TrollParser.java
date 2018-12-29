@@ -45,7 +45,6 @@ public class TrollParser {
         TodoEntry currItem;
 
         GMLNode root = new TextBox(0, "START");
-        doc.addDocRoot(root);
         todo.push(new TodoEntry(getFirstLineNumber(), root));
 
         while(!todo.isEmpty()) {
@@ -71,7 +70,6 @@ public class TrollParser {
     private void parseOneLine(int lineNum, GMLNode parentNode) throws AngryTrollException, GMLException, IOException {
         // Don't re-process lines
         if (visited.contains(lineNum)) {
-//            System.out.println("Skipping Line (" + lineNum + ") - already processed");
             return;
         }
         visited.add(lineNum);
@@ -108,7 +106,7 @@ public class TrollParser {
                     lineNum,
                     TrollSpeak.GOTO.getMsgPrefix() + gotoLabel);
 
-            if (parentNode != null) parentNode.addConnection(newNode);
+            this.connectToParent(parentNode, newNode);
 
             addTodoItem(input.getLineNumberStartingWith("#" + gotoLabel.trim()), null);
 
@@ -128,11 +126,20 @@ public class TrollParser {
         }
     }
 
-    private void connectToParent(GMLNode parent, GMLNode child) {
-//        private void connectToParent(GMLNode parent, GMLNode child, String label) {
+    // if parent == null, fn is nullipotent
+    private void connectToParent(GMLNode parent, GMLNode child) throws GMLException {
         if (parent != null) {
             parent.addConnection(child);
-//            doc.addEdge(child, parent, label);
+            
+        } else {
+            doc.addDocRoot(child);
+        }
+    }
+
+    // if parent == null, fn is nullipotent
+    private void connectToParent(GMLNode parent, GMLNode child, String label) throws GMLException {
+        if (parent != null) {
+            parent.addConnection(child);
         } else {
             doc.addDocRoot(child);
         }

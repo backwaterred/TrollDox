@@ -1,8 +1,8 @@
 package Doc;
 
+import GML.GMLEdge;
 import GML.GMLException;
 import GML.GMLNode;
-import GML.TextBox;
 import TrollLang.AngryTrollException;
 import TrollLang.TrollParser.ParserInput;
 import TrollLang.TrollParser.TrollParser;
@@ -30,39 +30,16 @@ public class Doc implements DocumentElement {
 
         // init parser (second)
         TrollParser parser = new TrollParser(input, this);
-
-        // add parser-created nodes to document
-        for (GMLNode r : roots) {
-            this.addConnectedNodes(r);
-        }
     }
 
-    private boolean addNewElement(GMLNode e) {
+    public boolean addNode(GMLNode node) {
         // Todo: check page has (printable) space!
-        return currentPage.addElement(e);
+        return currentPage.addNode(node);
     }
 
-    /**
-     * Add new Document Root. Each root will be used to render a graph.
-     * @param root A root to start rendering from.
-     * @return The updated document.
-     * */
-    public Doc addDocRoot(GMLNode root) {
-        roots.add(root);
-        return this;
-    }
-
-    private void addConnectedNodes(GMLNode root) {
-        LinkedList<GMLNode> queue = new LinkedList<>(); queue.push(root);
-        GMLNode currNode;
-        while (!queue.isEmpty()) {
-            currNode = queue.pop();
-            this.addNewElement(currNode);
-
-            for (GMLNode n : currNode.getConnectedNodes()) {
-                queue.push(n);
-            }
-        }
+    public boolean addEdge(GMLEdge edge) {
+        // todo: check nodes are on current page
+        return currentPage.addEdge(edge);
     }
 
     private void getBoilerPlateCode() throws GMLException {

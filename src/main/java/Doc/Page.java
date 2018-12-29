@@ -17,33 +17,16 @@ public class Page implements DocumentElement {
         edges = new LinkedList<>();
     }
 
-    public boolean addElement(GMLNode element) {
-        return nodes.add(element);
+    public boolean addNode(GMLNode node) {
+        return nodes.add(node);
     }
-
-    private void createEdges() throws GMLException {
-        int id = 1;
-        HashSet<String> visited = new HashSet<>();
-
-        for (GMLNode source: nodes) {
-            for (GMLNode target: source.getConnectedNodes()) {
-                if (!visited.contains(source.getId()))
-                    edges.add(new GMLEdge(id++, source, target));
-            }
-            visited.add(source.getId());
-        }
+    public boolean addEdge(GMLEdge edge) {
+        return edges.add(edge);
     }
 
     @Override
     public String render() {
         StringBuilder rtn = new StringBuilder();
-
-        // todo: don't fail silently!
-        try {
-            createEdges();
-        } catch (GMLException e) {
-            e.printStackTrace();
-        }
 
         for (GMLNode node : nodes) {
             rtn.append(node.render());

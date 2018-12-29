@@ -1,0 +1,4 @@
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+</edge>
