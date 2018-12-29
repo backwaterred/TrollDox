@@ -17,6 +17,9 @@ public class TrollParser {
     private LinkedList<TodoEntry> todo;
     private HashSet<Integer> visited;
 
+    public static final int END_NODE_ID = 9999;
+    public static final int START_NODE_ID = 0;
+
     protected static boolean validInputLine(String line) {
         return !line.equals("") && !line.startsWith("//");
     }
@@ -24,10 +27,18 @@ public class TrollParser {
     private class TodoEntry {
         private int lineNum;
         private GMLNode parentNode;
+        public String labelText;
 
         public TodoEntry(int lineNum, GMLNode parentNode) {
             this.lineNum = lineNum;
             this.parentNode = parentNode;
+            this.labelText = "";
+        }
+
+        public TodoEntry(int lineNum, GMLNode parentNode, String labelText) {
+            this.lineNum = lineNum;
+            this.parentNode = parentNode;
+            this.labelText = labelText;
         }
     }
 
@@ -44,15 +55,32 @@ public class TrollParser {
     private void parseAllLines() throws GMLException, AngryTrollException, IOException {
         TodoEntry currItem;
 
-        GMLNode root = new TextBox(0, "START");
+        GMLNode root = new TextBox(START_NODE_ID, "START");
+        doc.addDocRoot(root);
         todo.push(new TodoEntry(getFirstLineNumber(), root));
 
         while(!todo.isEmpty()) {
             currItem = todo.pop();
-            parseOneLine(currItem.lineNum, currItem.parentNode);
+            parseOneLine(currItem);
+        }
+        this.addEndNode();
+    }
+
+    // Assumes default path is added to node first
+    private void addEndNode() throws GMLException {
+        int lastRootIndex = doc.getRoots().size() -1;
+        GMLNode node = doc.getRoots().get(lastRootIndex);
+
+        while (node.getConnectedNodes().size() > 0) {
+            node = node.getConnectedNodes().get(0);
         }
 
+        GMLNode end = new TextBox(END_NODE_ID, "END");
+        node.addConnection(end);
+        doc.addNode(end);
+        this.connectToParent(node, end, "");
     }
+
 
     private int getFirstLineNumber() {
         String firstLine = "";
@@ -67,7 +95,11 @@ public class TrollParser {
         return i;
     }
 
-    private void parseOneLine(int lineNum, GMLNode parentNode) throws AngryTrollException, GMLException, IOException {
+    private void parseOneLine(TodoEntry currEntry) throws AngryTrollException, GMLException, IOException {
+        int lineNum = currEntry.lineNum;
+        GMLNode parentNode = currEntry.parentNode;
+        String labelText = currEntry.labelText;
+
         // Don't re-process lines
         if (visited.contains(lineNum)) {
             return;
@@ -82,8 +114,7 @@ public class TrollParser {
             GMLNode newNode = new TextBox(lineNum,
                     TrollSpeak.LOGEVENT.getMsgPrefix() + getLogEventMsg(currLine));
 
-            this.connectToParent(parentNode, newNode);
-
+            this.connectToParent(parentNode, newNode, labelText);
             addTodoItem(++lineNum, newNode);
 
         } else if (currLine.startsWith(TrollSpeak.IF.getCommandText())) {
@@ -92,11 +123,11 @@ public class TrollParser {
                     lineNum,
                     getIfQuestion(currLine));
 
-            this.connectToParent(parentNode, newNode);
+            this.connectToParent(parentNode, newNode, labelText);
 
             String gotoLabel = currLine.split("GOTO")[1];
-            addTodoItem(++lineNum, newNode);
-            addTodoItem(input.getLineNumberStartingWith("#" + gotoLabel.trim()), newNode);
+            addTodoItem(++lineNum, newNode, "No");
+            addTodoItem(input.getLineNumberStartingWith("#" + gotoLabel.trim()), newNode, "Yes");
 
         } else if (currLine.startsWith(TrollSpeak.GOTO.getCommandText())) {
             // GOTO
@@ -106,7 +137,7 @@ public class TrollParser {
                     lineNum,
                     TrollSpeak.GOTO.getMsgPrefix() + gotoLabel);
 
-            this.connectToParent(parentNode, newNode);
+            this.connectToParent(parentNode, newNode, labelText);
 
             addTodoItem(input.getLineNumberStartingWith("#" + gotoLabel.trim()), null);
 
@@ -115,7 +146,7 @@ public class TrollParser {
             GMLNode newNode = new TextBox(lineNum,
                     currLine.substring(TrollSpeak.LABEL.getCommandText().length()));
 
-            this.connectToParent(parentNode, newNode);
+            this.connectToParent(parentNode, newNode, labelText);
 
             addTodoItem(++lineNum, newNode);
 
@@ -127,19 +158,10 @@ public class TrollParser {
     }
 
     // if parent == null, fn is nullipotent
-    private void connectToParent(GMLNode parent, GMLNode child) throws GMLException {
-        if (parent != null) {
-            parent.addConnection(child);
-            doc.addEdge(new GMLEdge(parent, child));
-        } else {
-            doc.addDocRoot(child);
-        }
-    }
-
-    // if parent == null, fn is nullipotent
     private void connectToParent(GMLNode parent, GMLNode child, String label) throws GMLException {
         if (parent != null) {
             parent.addConnection(child);
+            doc.addNode(child);
             doc.addEdge(new GMLEdge(parent, child, label));
         } else {
             doc.addDocRoot(child);
@@ -147,14 +169,26 @@ public class TrollParser {
     }
 
     private boolean addTodoItem(int lineNum, GMLNode parentNode) {
+        return addTodoItem(lineNum, parentNode, null);
+    }
+
+    private boolean addTodoItem(int lineNum, GMLNode parentNode, String labelText) {
         String line;
         try {
             line = input.getLine(lineNum);
             if (TrollParser.validInputLine(line)) {
-                todo.push(new TodoEntry(lineNum, parentNode));
+                if (labelText != null) {
+                    todo.push(new TodoEntry(lineNum, parentNode, labelText));
+                } else {
+                    todo.push(new TodoEntry(lineNum, parentNode));
+                }
                 return true;
             } else {
-                return addTodoItem(++lineNum, parentNode);
+                if (labelText != null) {
+                    return addTodoItem(++lineNum, parentNode, labelText);
+                } else {
+                    return addTodoItem(++lineNum, parentNode);
+                }
             }
         } catch (IOException e) {
             return false;

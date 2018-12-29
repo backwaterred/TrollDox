@@ -43,26 +43,32 @@ public abstract class AbstractGMLNode implements GMLNode {
 
     }
 
+    @Override
     public void setX(double xPos) {
         this.xPos = xPos;
     }
 
+    @Override
     public void setY(double yPos) {
         this.yPos = yPos;
     }
 
+    @Override
     public void setWidth(double width) {
         this.width = width;
     }
 
+    @Override
     public void setHeight(double height) {
         this.height = height;
     }
 
+    @Override
     public double getWidth() {
         return width;
     }
 
+    @Override
     public double getHeight() {
         return height;
     }

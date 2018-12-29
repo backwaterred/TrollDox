@@ -9,19 +9,29 @@ import java.util.LinkedList;
 
 public class Page implements DocumentElement {
 
+    private double topY;
+    private double leftX;
     private LinkedList<GMLNode> nodes;
     private LinkedList<GMLEdge> edges;
 
-    public Page() {
+    public Page(double topY, double leftX) {
+        this.topY = topY;
+        this.leftX = leftX;
+
         nodes = new LinkedList<>();
         edges = new LinkedList<>();
     }
 
     public boolean addNode(GMLNode node) {
+        // todo set x, y pos
         return nodes.add(node);
     }
     public boolean addEdge(GMLEdge edge) {
         return edges.add(edge);
+    }
+
+    public LinkedList<GMLNode> getNodes() {
+        return nodes;
     }
 
     @Override

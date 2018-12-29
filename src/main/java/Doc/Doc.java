@@ -3,6 +3,7 @@ package Doc;
 import GML.GMLEdge;
 import GML.GMLException;
 import GML.GMLNode;
+import Graph.GraphInfo;
 import TrollLang.AngryTrollException;
 import TrollLang.TrollParser.ParserInput;
 import TrollLang.TrollParser.TrollParser;
@@ -24,7 +25,7 @@ public class Doc implements DocumentElement {
         // init document (first)
         pages = new LinkedList<>();
         roots = new LinkedList<>();
-        currentPage = new Page();
+        currentPage = new Page(0.0, 0.0);
         pages.add(currentPage);
         getBoilerPlateCode();
 
@@ -36,6 +37,19 @@ public class Doc implements DocumentElement {
             addNode(root);
         }
     }
+
+    public LinkedList<GMLNode> getRoots() {
+        return roots;
+    }
+
+    public Page getPage(int pageNum) {
+        return pages.get(pageNum -1);
+    }
+
+    public int getTotalPages() {
+        return pages.size();
+    }
+
 
     public boolean addNode(GMLNode node) {
         // Todo: check page has (printable) space!

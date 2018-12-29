@@ -30,4 +30,11 @@ public interface GMLNode {
      * @return A linked list of all connected nodes
      * */
     LinkedList<GMLNode> getConnectedNodes();
+
+    void setX(double xPos);
+    void setY(double yPos);
+    void setWidth(double width);
+    void setHeight(double height);
+    double getWidth();
+    double getHeight();
 }
