@@ -30,6 +30,11 @@ public class Doc implements DocumentElement {
 
         // init parser (second)
         TrollParser parser = new TrollParser(input, this);
+
+        // add roots
+        for (GMLNode root : roots) {
+            addNode(root);
+        }
     }
 
     public boolean addNode(GMLNode node) {
@@ -40,6 +45,11 @@ public class Doc implements DocumentElement {
     public boolean addEdge(GMLEdge edge) {
         // todo: check nodes are on current page
         return currentPage.addEdge(edge);
+    }
+
+    public Doc addDocRoot(GMLNode root) {
+        roots.add(root);
+        return this;
     }
 
     private void getBoilerPlateCode() throws GMLException {

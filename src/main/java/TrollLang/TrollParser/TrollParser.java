@@ -130,7 +130,7 @@ public class TrollParser {
     private void connectToParent(GMLNode parent, GMLNode child) throws GMLException {
         if (parent != null) {
             parent.addConnection(child);
-            
+            doc.addEdge(new GMLEdge(parent, child));
         } else {
             doc.addDocRoot(child);
         }
@@ -140,6 +140,7 @@ public class TrollParser {
     private void connectToParent(GMLNode parent, GMLNode child, String label) throws GMLException {
         if (parent != null) {
             parent.addConnection(child);
+            doc.addEdge(new GMLEdge(parent, child, label));
         } else {
             doc.addDocRoot(child);
         }
