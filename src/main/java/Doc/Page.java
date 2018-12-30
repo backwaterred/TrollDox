@@ -32,13 +32,29 @@ public class Page implements DocumentElement {
         edges = new LinkedList<>();
     }
 
+    public double getCurrentX() {
+        return colXpos[currCol];
+    }
+
+    public double getSuperX() {
+        if (currCol < MAX_COLS) {
+            return colXpos[currCol + 1 % MAX_COLS];
+        } else {
+            return -1;
+        }
+    }
+
     public boolean addNodeToCurrentCol(GMLNode node) {
-        // todo set x, y pos
-        return nodes[currCol].add(node);
+        return this.addNodeHelper(node, currCol);
     }
 
     public boolean addNodeToSuperCol(GMLNode node) {
-        return nodes[currCol+1].add(node);
+        return this.addNodeHelper(node, currCol+1);
+    }
+
+    private boolean addNodeHelper(GMLNode node, int col) {
+        node.setX(colXpos[col]);
+        return nodes[col].add(node);
     }
 
     public boolean addEdge(GMLEdge edge) {

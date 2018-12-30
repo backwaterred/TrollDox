@@ -44,6 +44,16 @@ public abstract class AbstractGMLNode implements GMLNode {
     }
 
     @Override
+    public double getX() {
+        return xPos;
+    }
+
+    @Override
+    public double getY() {
+        return yPos;
+    }
+
+    @Override
     public void setX(double xPos) {
         this.xPos = xPos;
     }
@@ -114,7 +124,7 @@ public abstract class AbstractGMLNode implements GMLNode {
         this.GML_open = this.GML_open.replaceAll(
                 "<y:Geometry height=\"\\d*\\.\\d*\" width=\"\\d*\\.\\d*\" x=\"\\d*\\.\\d*\" y=\"\\d*\\.\\d*\"/>",
                 generateGeometryString(calcHeight(), calcWidth(),
-                        GraphInfo.instance().getX(), GraphInfo.instance().getAndIncrementY()));
+                        xPos, GraphInfo.instance().getAndIncrementY()));
 
 
         return (new StringBuilder())

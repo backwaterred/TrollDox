@@ -28,14 +28,17 @@ public class TrollParser {
         private int lineNum;
         private GMLNode parentNode;
         public String labelText;
+        public boolean isSuper;
 
-        public TodoEntry(int lineNum, GMLNode parentNode) {
+        public TodoEntry(int lineNum, GMLNode parentNode, boolean isSuper) {
+            this.isSuper = isSuper;
             this.lineNum = lineNum;
             this.parentNode = parentNode;
             this.labelText = "";
         }
 
-        public TodoEntry(int lineNum, GMLNode parentNode, String labelText) {
+        public TodoEntry(int lineNum, GMLNode parentNode, boolean isSuper, String labelText) {
+            this.isSuper = isSuper;
             this.lineNum = lineNum;
             this.parentNode = parentNode;
             this.labelText = labelText;
@@ -57,7 +60,7 @@ public class TrollParser {
 
         GMLNode root = new TextBox(START_NODE_ID, "START");
         doc.addDocRoot(root);
-        todo.push(new TodoEntry(getFirstLineNumber(), root));
+        todo.push(new TodoEntry(getFirstLineNumber(), root, false));
 
         while(!todo.isEmpty()) {
             currItem = todo.pop();
@@ -78,7 +81,7 @@ public class TrollParser {
         GMLNode end = new TextBox(END_NODE_ID, "END");
         node.addConnection(end);
         doc.addNode(end);
-        this.connectToParent(node, end, "");
+        this.connectToParent(node, end, false,"");
     }
 
 
@@ -99,6 +102,7 @@ public class TrollParser {
         int lineNum = currEntry.lineNum;
         GMLNode parentNode = currEntry.parentNode;
         String labelText = currEntry.labelText;
+        boolean isCurrEntrySuper = currEntry.isSuper;
 
         // Don't re-process lines
         if (visited.contains(lineNum)) {
@@ -114,8 +118,8 @@ public class TrollParser {
             GMLNode newNode = new TextBox(lineNum,
                     TrollSpeak.LOGEVENT.getMsgPrefix() + getLogEventMsg(currLine));
 
-            this.connectToParent(parentNode, newNode, labelText);
-            addTodoItem(++lineNum, newNode);
+            this.connectToParent(parentNode, newNode, isCurrEntrySuper, labelText);
+            addTodoItem(++lineNum, newNode, isCurrEntrySuper);
 
         } else if (currLine.startsWith(TrollSpeak.IF.getCommandText())) {
             // IF - ELSE
@@ -123,11 +127,11 @@ public class TrollParser {
                     lineNum,
                     getIfQuestion(currLine));
 
-            this.connectToParent(parentNode, newNode, labelText);
+            this.connectToParent(parentNode, newNode, isCurrEntrySuper, labelText);
 
             String gotoLabel = currLine.split("GOTO")[1];
-            addTodoItem(++lineNum, newNode, "No");
-            addTodoItem(input.getLineNumberStartingWith("#" + gotoLabel.trim()), newNode, "Yes");
+            addTodoItem(++lineNum, newNode, isCurrEntrySuper,"No");
+            addTodoItem(input.getLineNumberStartingWith("#" + gotoLabel.trim()), newNode, true,"Yes");
 
         } else if (currLine.startsWith(TrollSpeak.GOTO.getCommandText())) {
             // GOTO
@@ -137,18 +141,18 @@ public class TrollParser {
                     lineNum,
                     TrollSpeak.GOTO.getMsgPrefix() + gotoLabel);
 
-            this.connectToParent(parentNode, newNode, labelText);
+            this.connectToParent(parentNode, newNode, isCurrEntrySuper, labelText);
 
-            addTodoItem(input.getLineNumberStartingWith("#" + gotoLabel.trim()), null);
+            addTodoItem(input.getLineNumberStartingWith("#" + gotoLabel.trim()), null, isCurrEntrySuper);
 
         } else if (currLine.startsWith(TrollSpeak.LABEL.getCommandText())) {
             // Label
             GMLNode newNode = new TextBox(lineNum,
                     currLine.substring(TrollSpeak.LABEL.getCommandText().length()));
 
-            this.connectToParent(parentNode, newNode, labelText);
+            this.connectToParent(parentNode, newNode, isCurrEntrySuper, labelText);
 
-            addTodoItem(++lineNum, newNode);
+            addTodoItem(++lineNum, newNode, false);
 
         } else  {
             // CMD not recognized
@@ -158,36 +162,40 @@ public class TrollParser {
     }
 
     // if parent == null, fn is nullipotent
-    private void connectToParent(GMLNode parent, GMLNode child, String label) throws GMLException {
+    private void connectToParent(GMLNode parent, GMLNode child, boolean isSuper, String label) throws GMLException {
         if (parent != null) {
             parent.addConnection(child);
-            doc.addNode(child);
             doc.addEdge(new GMLEdge(parent, child, label));
+            if (isSuper) {
+                doc.addSuperNode(child);
+            } else {
+                doc.addNode(child);
+            }
         } else {
             doc.addDocRoot(child);
         }
     }
 
-    private boolean addTodoItem(int lineNum, GMLNode parentNode) {
-        return addTodoItem(lineNum, parentNode, null);
+    private boolean addTodoItem(int lineNum, GMLNode parentNode, boolean isSuper) {
+        return addTodoItem(lineNum, parentNode, isSuper, null);
     }
 
-    private boolean addTodoItem(int lineNum, GMLNode parentNode, String labelText) {
+    private boolean addTodoItem(int lineNum, GMLNode parentNode, boolean isSuper, String labelText) {
         String line;
         try {
             line = input.getLine(lineNum);
             if (TrollParser.validInputLine(line)) {
                 if (labelText != null) {
-                    todo.push(new TodoEntry(lineNum, parentNode, labelText));
+                    todo.push(new TodoEntry(lineNum, parentNode, isSuper, labelText));
                 } else {
-                    todo.push(new TodoEntry(lineNum, parentNode));
+                    todo.push(new TodoEntry(lineNum, parentNode, isSuper));
                 }
                 return true;
             } else {
                 if (labelText != null) {
-                    return addTodoItem(++lineNum, parentNode, labelText);
+                    return addTodoItem(++lineNum, parentNode, isSuper, labelText);
                 } else {
-                    return addTodoItem(++lineNum, parentNode);
+                    return addTodoItem(++lineNum, parentNode, isSuper);
                 }
             }
         } catch (IOException e) {

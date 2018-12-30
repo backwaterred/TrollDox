@@ -31,6 +31,8 @@ public interface GMLNode {
      * */
     LinkedList<GMLNode> getConnectedNodes();
 
+    double getX();
+    double getY();
     void setX(double xPos);
     void setY(double yPos);
     void setWidth(double width);

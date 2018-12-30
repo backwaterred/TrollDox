@@ -55,6 +55,11 @@ public class Doc implements DocumentElement {
         return currentPage.addNodeToCurrentCol(node);
     }
 
+    public boolean addSuperNode(GMLNode node) {
+        // Todo: check page has (printable) space!
+        return currentPage.addNodeToSuperCol(node);
+    }
+
     public boolean addEdge(GMLEdge edge) {
         // todo: check nodes are on current page
         return currentPage.addEdge(edge);

@@ -58,27 +58,27 @@
     <session id="-873444784">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="16" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="6" />
           <entry key="project.open.time.12" value="4" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.open.time.9" value="3" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="graphml" value="19" />
-          <entry key="java" value="180" />
-          <entry key="txt" value="41" />
+          <entry key="graphml" value="20" />
+          <entry key="java" value="188" />
+          <entry key="txt" value="42" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="180" />
-          <entry key="PLAIN_TEXT" value="60" />
+          <entry key="JAVA" value="188" />
+          <entry key="PLAIN_TEXT" value="62" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
@@ -86,14 +86,14 @@
         <counts>
           <entry key="dummy" value="39" />
           <entry key="graphml" value="5" />
-          <entry key="java" value="15940" />
+          <entry key="java" value="16934" />
           <entry key="txt" value="435" />
           <entry key="xml" value="49" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="15940" />
+          <entry key="JAVA" value="16934" />
           <entry key="PLAIN_TEXT" value="479" />
           <entry key="XML" value="49" />
         </counts>
@@ -105,8 +105,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="128" column="47" selection-start-line="128" selection-start-column="47" selection-end-line="128" selection-end-column="47" />
+            <state relative-caret-position="90">
+              <caret line="154" column="51" lean-forward="true" selection-start-line="154" selection-start-column="51" selection-end-line="154" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,20 +117,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Doc/Page.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="39" column="52" lean-forward="true" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+            <state relative-caret-position="109">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
               <folding>
-                <element signature="e#1033#1034#0" expanded="true" />
+                <element signature="e#857#858#0" expanded="true" />
+                <element signature="e#886#887#0" expanded="true" />
+                <element signature="e#1123#1124#0" expanded="true" />
+                <element signature="e#1173#1174#0" expanded="true" />
+                <element signature="e#1227#1228#0" expanded="true" />
+                <element signature="e#1279#1280#0" expanded="true" />
+                <element signature="e#1270#1271#0" expanded="true" />
+                <element signature="e#1308#1309#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java">
+        <entry file="file://$PROJECT_DIR$/out/newout.graphml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="15" column="78" selection-start-line="15" selection-start-column="78" selection-end-line="15" selection-end-column="78" />
+            <state relative-caret-position="253">
+              <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -138,12 +145,37 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Doc/Doc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="26" column="41" lean-forward="true" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+            <state relative-caret-position="-48">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1095#1096#0" expanded="true" />
-                <element signature="e#1123#1124#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GML/AbstractGMLNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1292#1293#0" expanded="true" />
+                <element signature="e#1319#1320#0" expanded="true" />
+                <element signature="e#1439#1440#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/DocumentTests/PageTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -176,6 +208,7 @@
       <find>n0</find>
       <find>this.connectToParent(parentNode, newNode);</find>
       <find>Y/N</find>
+      <find>n7</find>
     </findStrings>
     <replaceStrings>
       <replace>lineReader</replace>
@@ -233,13 +266,13 @@
         <option value="$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt" />
         <option value="$PROJECT_DIR$/src/test/java/ParserTests/LinearControlFlow_ParserTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ParserTests/ParserTests.java" />
-        <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Doc/Doc.java" />
         <option value="$PROJECT_DIR$/src/main/java/GML/GMLNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/GML/AbstractGMLNode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Doc/Doc.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Doc/Page.java" />
         <option value="$PROJECT_DIR$/src/test/java/DocumentTests/PageTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Doc/Page.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" />
       </list>
     </option>
   </component>
@@ -255,6 +288,118 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Doc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="GML" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="TrollLang" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="TrollLang" type="462c0819:PsiDirectoryNode" />
+              <item name="TrollParser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="DocumentTests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ParserInputTests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ParserTests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -401,125 +546,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Doc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="GML" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="TrollLang" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="TrollLang" type="462c0819:PsiDirectoryNode" />
-              <item name="TrollParser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="DocumentTests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ParserInputTests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ParserTests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546122535505" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546133227849" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/out/newout.xml" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -564,35 +597,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Decisions_ParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TrollDox" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ParserTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ParserTests" />
-      <option name="MAIN_CLASS_NAME" value="ParserTests.Decisions_ParserTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileInputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TrollDox" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ParserInputTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ParserInputTests" />
-      <option name="MAIN_CLASS_NAME" value="ParserInputTests.FileInputTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PageTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="TrollDox" />
       <extension name="coverage">
         <pattern>
@@ -606,7 +611,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParserTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParserTests" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="TrollDox" />
       <extension name="coverage">
         <pattern>
@@ -616,44 +621,16 @@
       </extension>
       <option name="PACKAGE_NAME" value="ParserTests" />
       <option name="MAIN_CLASS_NAME" value="ParserTests.ParserTests" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ParserTests.test100LEs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TrollDox" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ParserTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ParserTests" />
-      <option name="MAIN_CLASS_NAME" value="ParserTests.ParserTests" />
-      <option name="METHOD_NAME" value="test100LEs" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.All in TrollDox2" />
-      <item itemvalue="Application.TrollDoxLauncher" />
-      <item itemvalue="JUnit.ParserTests" />
-      <item itemvalue="JUnit.ParserTests.test100LEs" />
-      <item itemvalue="JUnit.Decisions_ParserTest" />
       <item itemvalue="JUnit.PageTest" />
-      <item itemvalue="JUnit.FileInputTest" />
+      <item itemvalue="Application.TrollDoxLauncher" />
+      <item itemvalue="JUnit.All in TrollDox2" />
+      <item itemvalue="JUnit.ParserTests" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.FileInputTest" />
-        <item itemvalue="JUnit.ParserTests" />
-        <item itemvalue="JUnit.PageTest" />
-        <item itemvalue="JUnit.Decisions_ParserTest" />
-        <item itemvalue="JUnit.ParserTests.test100LEs" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -669,35 +646,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ParserTests - 2018.12.29 at 12h 22m 52s.xml">
-      <configuration name="ParserTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ParserTests - 2018.12.29 at 12h 22m 55s.xml">
-      <configuration name="ParserTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ParserTests - 2018.12.29 at 12h 24m 41s.xml">
-      <configuration name="ParserTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ParserTests - 2018.12.29 at 12h 25m 14s.xml">
-      <configuration name="ParserTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ParserTests - 2018.12.29 at 12h 31m 11s.xml">
-      <configuration name="ParserTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PageTest - 2018.12.29 at 13h 41m 13s.xml">
+    <history-entry file="PageTest - 2018.12.29 at 17h 07m 38s.xml">
       <configuration name="PageTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PageTest - 2018.12.29 at 14h 24m 44s.xml">
+    <history-entry file="PageTest - 2018.12.29 at 17h 10m 34s.xml">
       <configuration name="PageTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ParserTests - 2018.12.29 at 14h 25m 02s.xml">
-      <configuration name="ParserTests" configurationId="JUnit" />
+    <history-entry file="PageTest - 2018.12.29 at 17h 12m 43s.xml">
+      <configuration name="PageTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ParserTests - 2018.12.29 at 14h 25m 14s.xml">
-      <configuration name="ParserTests" configurationId="JUnit" />
+    <history-entry file="PageTest - 2018.12.29 at 17h 12m 59s.xml">
+      <configuration name="PageTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FileInputTest - 2018.12.29 at 14h 25m 27s.xml">
-      <configuration name="FileInputTest" configurationId="JUnit" />
+    <history-entry file="PageTest - 2018.12.29 at 17h 13m 54s.xml">
+      <configuration name="PageTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PageTest - 2018.12.29 at 17h 14m 02s.xml">
+      <configuration name="PageTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PageTest - 2018.12.29 at 17h 19m 19s.xml">
+      <configuration name="PageTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PageTest - 2018.12.29 at 17h 20m 37s.xml">
+      <configuration name="PageTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PageTest - 2018.12.29 at 17h 20m 47s.xml">
+      <configuration name="PageTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PageTest - 2018.12.29 at 17h 21m 16s.xml">
+      <configuration name="PageTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -732,7 +709,7 @@
       <window_info anchor="right" id="Maven Projects" order="7" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.27727273" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.27727273" />
       <window_info id="Structure" order="1" sideWeight="0.5007874" side_tool="true" weight="0.25681818" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -741,7 +718,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32755905" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.48818898" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.48818898" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -767,6 +744,18 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Doc/Page.java</url>
+          <line>51</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -988,29 +977,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GML/TextBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/OneHundredLogEvents_withCommentsAndEmptyLines.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/newout.graphml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="225" column="461" selection-start-line="225" selection-start-column="458" selection-end-line="225" selection-end-column="461" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GML/GMLEdge.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1018,20 +986,6 @@
           <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GML/AbstractGMLNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1576#1577#0" expanded="true" />
-            <element signature="e#1604#1605#0" expanded="true" />
-            <element signature="e#1637#1638#0" expanded="true" />
-            <element signature="e#1666#1667#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1054,35 +1008,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GML/GMLNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Doc/Doc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="26" column="41" lean-forward="true" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1095#1096#0" expanded="true" />
-            <element signature="e#1123#1124#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/DocumentTests/PageTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/HelloWorldLE.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1100,13 +1025,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Doc/Page.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GML/TextBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="39" column="52" lean-forward="true" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-          <folding>
-            <element signature="e#1033#1034#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GML/GMLNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1117,10 +1053,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/out/newout.graphml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Doc/Doc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-48">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DocumentTests/PageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GML/AbstractGMLNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1292#1293#0" expanded="true" />
+            <element signature="e#1319#1320#0" expanded="true" />
+            <element signature="e#1439#1440#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Doc/Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#886#887#0" expanded="true" />
+            <element signature="e#1123#1124#0" expanded="true" />
+            <element signature="e#1173#1174#0" expanded="true" />
+            <element signature="e#1227#1228#0" expanded="true" />
+            <element signature="e#1279#1280#0" expanded="true" />
+            <element signature="e#1270#1271#0" expanded="true" />
+            <element signature="e#1308#1309#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="128" column="47" selection-start-line="128" selection-start-column="47" selection-end-line="128" selection-end-column="47" />
+        <state relative-caret-position="90">
+          <caret line="154" column="51" lean-forward="true" selection-start-line="154" selection-start-column="51" selection-end-line="154" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
