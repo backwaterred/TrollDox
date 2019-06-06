@@ -1,5 +1,0 @@
-</graph>
-  <data key="d7">
-    <y:Resources/>
-  </data>
-</graphml>

@@ -1,7 +1,6 @@
 package TrollLang.TrollParser;
 
 import Doc.Doc;
-import GML.*;
 import TrollLang.AngryTrollException;
 import TrollLang.TrollParam;
 import TrollLang.TrollSpeak;

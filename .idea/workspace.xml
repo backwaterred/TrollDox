@@ -2,26 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35555637-3109-42bf-93f7-7b4239bec49c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/org_junit_jupiter_junit_jupiter_api_5_3_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/org_junit_jupiter_junit_jupiter_api_5_3_21.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/org_junit_platform_junit_platform_launcher_1_3_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/org_junit_platform_junit_platform_launcher_1_3_21.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TrollDox.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/genTest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/newout.graphml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/newout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Doc/Doc.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Graph/AbstractGraphNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Graph/TextBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Graph/iGraphNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Doc/Doc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Doc/Doc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Doc/DocumentElement.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Doc/Page.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GML/AbstractGMLNode.java" beforeDir="false" />
@@ -32,17 +17,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/GML/LabelBox.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GML/TextBox.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Graph/GraphInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/AngryTrollException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/ConnectionType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/IOType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParam.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/MockInput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/ParserInput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollSpeak.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Util/Util.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/DecisionNode_close.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/DecisionNode_open.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/LabelBox_close.txt" beforeDir="false" />
@@ -55,76 +30,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/empty_graph_close.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/empty_graph_open.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/unnamed13.graphml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DocumentTests/PageTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ParamTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ParserInputTests/FileInputTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ParserInputTests/MockInputTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ParserTests/Decisions_ParserTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ParserTests/ParserTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestTemplate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/HelloWorldLE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/OneHundredLogEvents.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/OneHundredLogEvents_withCommentsAndEmptyLines.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/graphs/2Nodes_wEdge.graphml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/graphs/HelloWorldLE*3.graphml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/graphs/HelloWorldLE.graphml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/graphs/test_graph_LE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/graphs/test_graph_LE2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/graphs/test_graph_empty.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/graphs/width_check.graphml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DecisionNode_close.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DecisionNode_open.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Doc/Doc.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Doc/DocumentElement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Doc/Page.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GML/AbstractGMLNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GML/DecisionDiamond.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GML/GMLEdge.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GML/GMLException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GML/GMLNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GML/LabelBox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GML/TextBox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Graph/GraphInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LabelBox_close.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LabelBox_open.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SimpleTextNode_close.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SimpleTextNode_open.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TrollDoxLauncher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/AngryTrollException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/ConnectionType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/IOType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollParam.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/FileInput.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/MockInput.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/ParserInput.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser$TodoEntry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollSpeak.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Util/Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edgeLabel_gml.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edge_close.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edge_open.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/empty_graph_close.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/empty_graph_open.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unnamed13.graphml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/DecisionsDecisions.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/DocumentTests/PageTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/HelloWorldLE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/OneHundredLogEvents.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/OneHundredLogEvents_withCommentsAndEmptyLines.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ParamTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ParserInputTests/FileInputTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ParserInputTests/MockInputTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ParserTests/Decisions_ParserTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ParserTests/ParserTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/graphs/2Nodes_wEdge.graphml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/graphs/HelloWorldLE*3.graphml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/graphs/HelloWorldLE.graphml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/graphs/test_graph_LE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/graphs/test_graph_LE2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/graphs/test_graph_empty.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/graphs/width_check.graphml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -135,56 +40,70 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Doc/Doc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="289">
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#458#459#0" expanded="true" />
+                <element signature="e#486#487#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/GML/AbstractGMLNode.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="170">
+              <caret line="15" column="74" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Graph/TextBox.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1292#1293#0" expanded="true" />
-                <element signature="e#1319#1320#0" expanded="true" />
-                <element signature="e#1439#1440#0" expanded="true" />
+                <element signature="e#194#195#0" expanded="true" />
+                <element signature="e#221#222#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Doc/DocumentElement.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Graph/AbstractGraphNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            <state relative-caret-position="340">
+              <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+              <folding>
+                <element signature="e#137#138#0" expanded="true" />
+                <element signature="e#178#179#0" expanded="true" />
+                <element signature="e#226#227#0" expanded="true" />
+                <element signature="e#261#262#0" expanded="true" />
+                <element signature="e#335#336#0" expanded="true" />
+                <element signature="e#396#397#0" expanded="true" />
+                <element signature="e#416#417#0" expanded="true" />
+                <element signature="e#471#472#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Doc/Page.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="56" selection-start-line="56" selection-end-line="56" />
-              <folding>
-                <element signature="e#1123#1124#0" expanded="true" />
-                <element signature="e#1179#1180#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -217,6 +136,7 @@
       <find>this.connectToParent(parentNode, newNode);</find>
       <find>Y/N</find>
       <find>n7</find>
+      <find>LE0(\d)(\d)</find>
     </findStrings>
     <replaceStrings>
       <replace>lineReader</replace>
@@ -225,6 +145,7 @@
       <replace>GMElementException</replace>
       <replace>TrollSpeak.LOGEVENT.getPrefix()</replace>
       <replace>this.connectToParent(parentNode, newNode, labelText);</replace>
+      <replace>LE1$1$2</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -233,12 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/GML/AbstractGMElement.java" />
-        <option value="$PROJECT_DIR$/src/main/java/GML/AbstractGraphNode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/GML/GraphEdge.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ControlFlowTests/NoBranches.java" />
-        <option value="$PROJECT_DIR$/src/main/java/GML/GraphNode.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ControlFlowTests/NoBranchesTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/Graph/Edge.java" />
         <option value="$PROJECT_DIR$/src/main/java/Graph/Vertex.java" />
         <option value="$PROJECT_DIR$/src/test/java/TrollElementTests/BasicLogEventTest.java" />
@@ -276,14 +191,20 @@
         <option value="$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt" />
         <option value="$PROJECT_DIR$/src/test/java/ParserTests/LinearControlFlow_ParserTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ParserTests/ParserTests.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Doc/Doc.java" />
         <option value="$PROJECT_DIR$/src/main/java/GML/GMLNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/GML/AbstractGMLNode.java" />
         <option value="$PROJECT_DIR$/src/test/java/DocumentTests/PageTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Doc/Page.java" />
-        <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java" />
         <option value="$PROJECT_DIR$/src/test/java/ParserInputTests/FileInputTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GraphNode/AbstractGraphNode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Graph/iGraphNode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Doc/Doc.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Graph/TextBox.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.txt" />
+        <option value="$PROJECT_DIR$/src/main/resources/samples/test.dot" />
+        <option value="$PROJECT_DIR$/src/main/java/Graph/AbstractGraphNode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" />
       </list>
     </option>
   </component>
@@ -295,12 +216,14 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="572" />
-    <option name="y" value="-1208" />
-    <option name="width" value="1936" />
-    <option name="height" value="1176" />
+    <option name="x" value="594" />
+    <option name="y" value="-1200" />
+    <option name="width" value="1212" />
+    <option name="height" value="1166" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <flattenPackages ProjectPane="false" />
@@ -368,6 +291,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="TrollLang" type="462c0819:PsiDirectoryNode" />
+              <item name="TrollParser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -376,6 +308,23 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="samples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
             </path>
           </expand>
           <select />
@@ -537,6 +486,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546133227849" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.3.2" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -665,9 +615,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="592" y="-1208" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.2835821" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.17643923" />
       <window_info id="Structure" order="1" sideWeight="0.5007874" side_tool="true" weight="0.25681818" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -675,7 +624,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32755905" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32694152" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.48801535" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -696,7 +645,7 @@
       <window_info anchor="right" id="Maven" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.27727273" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.17643923" />
       <window_info id="Structure" order="1" sideWeight="0.5007874" side_tool="true" weight="0.25681818" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -704,16 +653,16 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32755905" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.48818898" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32694152" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.48801535" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32913387" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32913387" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32885906" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -722,7 +671,11 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven" order="8" />
     </layout-to-restore>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.dot" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -764,24 +717,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/resources/graphs/2Nodes_wEdge.graphml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="48" column="11" lean-forward="true" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Graph/Edge.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/ControlFlowTests/NoBranchTests.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/ParamTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" column="122" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestTemplate.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/TrollElementTests/BasicLogEventTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/ParserInput.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -972,16 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="154" column="51" selection-start-line="154" selection-start-column="51" selection-end-line="154" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/OneHundredLogEvents.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1700">
@@ -1017,13 +942,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="74" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/newout.graphml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -1045,33 +963,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Doc/Doc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GML/AbstractGMLNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        <state relative-caret-position="493">
+          <caret line="126" column="30" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1292#1293#0" expanded="true" />
             <element signature="e#1319#1320#0" expanded="true" />
             <element signature="e#1439#1440#0" expanded="true" />
+            <element signature="e#1471#1472#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Doc/DocumentElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1083,6 +985,95 @@
             <element signature="e#1123#1124#0" expanded="true" />
             <element signature="e#1179#1180#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/IOType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Doc/DocumentElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Graph/iGraphNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Doc/Doc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#458#459#0" expanded="true" />
+            <element signature="e#486#487#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="74" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/samples/test.dot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Graph/TextBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+          <folding>
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#221#222#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Graph/AbstractGraphNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          <folding>
+            <element signature="e#137#138#0" expanded="true" />
+            <element signature="e#178#179#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#261#262#0" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#396#397#0" expanded="true" />
+            <element signature="e#416#417#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
