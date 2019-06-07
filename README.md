@@ -1,5 +1,5 @@
 # TrollDox
-TrollDox parses a proprietary scripting language without a name (that I call Troll) to create flowcharts that can be viewed with yEd Graph Editor.
+TrollDox parses a proprietary scripting language without a name (that I call Troll) to create flowcharts that can be viewed with yEd FlowGraph Editor.
 
 ### Examples
 1. The statement : `LOGEVENT "Hello World!"` is rendered as:

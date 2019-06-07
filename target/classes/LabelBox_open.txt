@@ -1,9 +1,0 @@
-     <node id="n0">
-       <data key="d5"/>
-       <data key="d6">
-         <y:GenericNode configuration="com.yworks.flowchart.start1">
-           <y:Geometry height="40.0" width="108.376953125" x="477.8115234375" y="148.0"/>
-           <y:Fill color="#e8eef7" color2="#b7c9e3" transparent="false"/>
-           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="98.376953125" x="5.0" xml:space="preserve" y="4.03125">
-

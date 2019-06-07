@@ -51,4 +51,9 @@ public class FileInput implements ParserInput {
             return "";
         }
     }
+
+    @Override
+    public boolean hasLine(int lineNum) {
+        return lineNum < lineMap.size();
+    }
 }

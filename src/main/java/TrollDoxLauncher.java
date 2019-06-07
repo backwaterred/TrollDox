@@ -1,24 +1,31 @@
-import Doc.Doc;
+import FlowGraph.FlowGraph;
+import TrollLang.AngryTrollException;
 import TrollLang.TrollParser.FileInput;
+import TrollLang.TrollParser.TrollParser;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class TrollDoxLauncher {
 
     public static void main(String[] args) {
         System.out.println("Starting New TrollDox Instance");
-        // Todo: Prototype code below; change this.
-        BufferedOutputStream outStream = null;
+        String inFilePath = "in/in.txt";
+        String outFilePath = "out/out.dot";
+
         try {
-            Doc doc = new Doc(
-                    new FileInput("./src/test/resources/OneHundredLogEvents.txt"));
-            outStream = new BufferedOutputStream(new FileOutputStream(new File("./out/newout.graphml")));
-            outStream.write(doc.render().getBytes());
-            if (outStream != null) {
-                outStream.close();
-            }
+            TrollParser tp = new TrollParser (new FileInput(inFilePath), "Test Graph", "Config: Year - Month - Day");
+            FlowGraph graph = tp.parse();
+            FileOutputStream fileOut = new FileOutputStream(outFilePath);
+            fileOut.write(graph.render().getBytes());
+
+        } catch (AngryTrollException e) {
+            System.out.println("Error parsing " + inFilePath);
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            System.out.println("Error opening " + outFilePath);
+            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }

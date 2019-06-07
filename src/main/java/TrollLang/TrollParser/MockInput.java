@@ -25,6 +25,11 @@ public class MockInput implements ParserInput {
     }
 
     @Override
+    public boolean hasLine(int lineNum) {
+        return false;
+    }
+
+    @Override
     public int getNextValidLineNumber(int lineNum) throws IOException {
         return 0;
     }

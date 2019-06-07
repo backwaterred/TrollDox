@@ -35,7 +35,7 @@ public class TrollParam {
     private String prettyText;
 
     // Example Input:
-    // Application:Monsteras_Recaust.ModBUS:Modbus_RTU_slave.DO:_0540_Backflushing_Flag_FSS_B.Value
+    // Application:Comp_Name.ModBUS:Modbus_RTU_slave.DO:_0540_Process_Flag_B.Value
     public TrollParam(String paramText) {
         this.fullText = paramText;
         String[] param_split = paramText.split(":");
@@ -82,8 +82,8 @@ public class TrollParam {
     }
 
     // Example Input:
-    // _0540_Backflushing_Flag_FSS_B.Value
-    // _hidden_Reference_Requested_Flag
+    // _0540_Process_Flag_B.Value
+    // _hidden_Process_Flag
     private void setPrettyText(String uglyText) {
         uglyText = uglyText.substring(0, uglyText.lastIndexOf('.'));
         String[] ug_split = uglyText.split("_");
