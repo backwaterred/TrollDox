@@ -1,17 +1,19 @@
 package FlowGraph;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 
 public class FlowGraph {
 
     HashMap<Integer, iFlowGraphElement> nodes;
-    LinkedList<String> edges;
+    HashSet<iFlowGraphElement> edges;
     LinkedList<String> atts;
 
     public FlowGraph(String title, String date) {
         nodes = new HashMap<>();
-        edges = new LinkedList<>();
+//        edges = new LinkedList<>();
+        edges = new HashSet<>();
         atts = new LinkedList<>();
         this.addAttribute("page", "\"8,11\"");
         this.addAttribute("ratio", "auto");
@@ -53,7 +55,7 @@ public class FlowGraph {
         nodes.values().forEach(nd -> rtn.append(nd.render()).append("\n"));
 
         rtn.append("\n// Edges\n");
-        edges.forEach(s -> rtn.append(s).append("\n"));
+        edges.forEach(e -> rtn.append(e.render()).append("\n"));
 
         rtn.append("}\n");
 
@@ -63,14 +65,14 @@ public class FlowGraph {
     /**
      * Adds an node to the graph
      **/
-    public void addNode(iFlowGraphElement element) {
-        nodes.put(element.getId(), element);
+    public void addNode(iFlowGraphElement nd) {
+        nodes.put(nd.getId(), nd);
     }
 
     /**
      * Adds an edge to the graph
     **/
-    public void addEdge(int fromId, int toId) {
-        edges.add(fromId + " -> " + toId);
+    public void addEdge(iFlowGraphElement e) {
+        edges.add(e);
     }
 }

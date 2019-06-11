@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public abstract class AbstractFlowGraphElement implements iFlowGraphElement {
 
     int id;
-    private LinkedList<String> atts;
+    protected LinkedList<String> atts;
 
     public AbstractFlowGraphElement(int id) {
         this.id = id;
@@ -21,9 +21,12 @@ public abstract class AbstractFlowGraphElement implements iFlowGraphElement {
     @Override
     public String render() {
         StringBuilder rtn = new StringBuilder();
-        rtn.append(id).append("[");
-        atts.forEach(s -> rtn.append(s));
-        rtn.append("]");
+        rtn.append(id);
+        if (!atts.isEmpty()) {
+            rtn.append("[");
+            atts.forEach(s -> rtn.append(s));
+            rtn.append("]");
+        }
         return rtn.toString();
     }
 

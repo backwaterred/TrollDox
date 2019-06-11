@@ -2,10 +2,10 @@
 LOGEVENT "Once upon a time, there was a tale to test decisions"
 
 IF Application:Proj_Name.ModBUS:Modbus_RTU_slave.DO:_01234_Is_Afraid_Of_The_Big_Bad_Wolf.Value 0 GOTO #BigBadWolfHouse
-LOGEVENT "The Big Bad Wolf is scary"
+LOGEVENT "The Big Bad Wolf isn't scary"
 
 #BigBadWolfHouse
 LOGEVENT "Ahhhhhhhhhhhhhhhhhhhhh!"
 
-LOGEVENT "--Fin--"
+#TheEnd
 

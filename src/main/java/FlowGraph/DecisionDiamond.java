@@ -1,10 +1,10 @@
 package FlowGraph;
 
-public class TextOval extends AbstractFlowGraphNode {
+public class DecisionDiamond extends AbstractFlowGraphElement {
 
-    public TextOval(int id, String text) {
+    public DecisionDiamond(int id, String text) {
         super(id);
-        this.addAttribute("shape", "oval");
+        this.addAttribute("shape", "diamond");
         this.addAttribute("label", text);
     }
 }

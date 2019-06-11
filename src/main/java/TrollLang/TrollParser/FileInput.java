@@ -18,11 +18,11 @@ public class FileInput implements ParserInput {
     }
 
     @Override
-    public int getNextValidLineNumber(int lineNum) throws IOException {
-        if (TrollParser.validInputLine(lineMap.get(lineNum))) {
-            return lineNum;
-        } else if (lineNum < lineMap.size()) {
-            return getNextValidLineNumber(++lineNum);
+    public int getNextValidLineNumber(int lineNumber) throws IOException {
+        if (TrollParser.validInputLine(lineMap.get(lineNumber))) {
+            return lineNumber;
+        } else if (lineNumber < lineMap.size()) {
+            return getNextValidLineNumber(++lineNumber);
         } else {
             throw new IOException("FileInput::getNextValidLineNumber - No more valid lines");
         }

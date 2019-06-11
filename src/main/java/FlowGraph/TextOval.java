@@ -1,6 +1,6 @@
 package FlowGraph;
 
-public class TextOval extends AbstractFlowGraphNode {
+public class TextOval extends AbstractFlowGraphElement {
 
     public TextOval(int id, String text) {
         super(id);

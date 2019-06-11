@@ -2,7 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35555637-3109-42bf-93f7-7b4239bec49c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/samples/test.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/FlowGraph/AbstractFlowGraphElement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/FlowGraph/DecisionDiamond.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/FlowGraph/FlowGraphEdge.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/FlowGraph/GotoDart.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/samples/test.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in/BasicDecisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/in/BasicDecisions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in/in.txt" beforeDir="false" afterPath="$PROJECT_DIR$/in/in.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/out.dot" beforeDir="false" afterPath="$PROJECT_DIR$/out/out.dot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/out.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/out.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/DecisionDiamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/DecisionDiamond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraphEdge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraphEdge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/GotoDart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/GotoDart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/TextBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/TextBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/TextOval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/TextOval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FlowGraph/AbstractFlowGraphNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FlowGraph/FlowGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FlowGraph/FlowGraph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FlowGraph/TextBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FlowGraph/TextBox.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FlowGraph/TextOval.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FlowGraph/TextOval.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser$TodoEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser$TodoEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,10 +45,27 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
+            <state relative-caret-position="3400">
+              <caret line="200" column="17" selection-start-line="200" selection-start-column="17" selection-end-line="200" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#629#630#0" expanded="true" />
+                <element signature="e#694#695#0" expanded="true" />
+                <element signature="e#6293#6294#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1812#1813#0" expanded="true" />
+                <element signature="e#1859#1860#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,6 +100,8 @@
       <find>Y/N</find>
       <find>n7</find>
       <find>LE0(\d)(\d)</find>
+      <find>2do</find>
+      <find>edges</find>
     </findStrings>
     <replaceStrings>
       <replace>lineReader</replace>
@@ -67,6 +111,7 @@
       <replace>TrollSpeak.LOGEVENT.getPrefix()</replace>
       <replace>this.connectToParent(parentNode, newNode, labelText);</replace>
       <replace>LE1$1$2</replace>
+      <replace>TD</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -75,9 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/resources/OneHundredLogEvents.txt" />
-        <option value="$PROJECT_DIR$/src/main/resources/decision.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/DecisionNode_open.txt" />
         <option value="$PROJECT_DIR$/src/main/resources/DecisionNode_close.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Graph/GraphNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/Graph/GraphInfo.java" />
@@ -114,16 +156,19 @@
         <option value="$PROJECT_DIR$/src/main/java/Graph/TextBox.java" />
         <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParam.java" />
         <option value="$PROJECT_DIR$/src/test/java/ParserTests/ParserTests.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraphEdge.java" />
         <option value="$PROJECT_DIR$/src/main/java/FlowGraph/TextBox.java" />
         <option value="$PROJECT_DIR$/src/main/java/FlowGraph/TextOval.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/FlowGraph/iFlowGraphElement.java" />
-        <option value="$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java" />
         <option value="$PROJECT_DIR$/out/out.dot" />
-        <option value="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java" />
         <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/ParserInput.java" />
         <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/MockInput.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FlowGraph/GotoDart.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FlowGraph/DecisionDiamond.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphNode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraphEdge.java" />
         <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java" />
         <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" />
       </list>
@@ -137,9 +182,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="594" />
-    <option name="y" value="-1200" />
-    <option name="width" value="1212" />
+    <option name="x" value="592" />
+    <option name="y" value="-1208" />
+    <option name="width" value="972" />
     <option name="height" value="1166" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -152,110 +197,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
+      <pane id="PackagesPane">
         <subPane>
           <expand>
             <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="in" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="FlowGraph" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="TrollLang" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="TrollLang" type="462c0819:PsiDirectoryNode" />
-              <item name="TrollParser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="samples" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+              <item name="TrollDox" type="58d84e3e:PackageViewProjectNode" />
+              <item name="TrollDox2" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
@@ -396,12 +343,110 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
+      <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="TrollDox" type="58d84e3e:PackageViewProjectNode" />
-              <item name="TrollDox2" type="616d4139:PackageViewModuleNode" />
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="in" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="FlowGraph" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="TrollLang" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="TrollLang" type="462c0819:PsiDirectoryNode" />
+              <item name="TrollParser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="samples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
             </path>
           </expand>
           <select />
@@ -428,6 +473,9 @@
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="TrollLang" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="FlowGraph" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/out" />
@@ -548,7 +596,7 @@
     <frame x="592" y="-1208" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.17963752" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.18283582" />
       <window_info id="Structure" order="1" sideWeight="0.5007874" side_tool="true" weight="0.25681818" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -557,7 +605,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32694152" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.21284756" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21284756" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -649,22 +697,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollSpeak.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#341#342#0" expanded="true" />
-            <element signature="e#383#384#0" expanded="true" />
-            <element signature="e#473#474#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/DecisionNode_close.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/CodeLabel_close.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/DecisionNode_open.txt" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/CodeLabel_open.txt" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/unnamed13.graphml" />
     <entry file="file://$PROJECT_DIR$/out/newout.xml" />
@@ -754,16 +786,8 @@
     <entry file="file://$PROJECT_DIR$/out/newout.graphml" />
     <entry file="file://$PROJECT_DIR$/out/testy.dot" />
     <entry file="file://$PROJECT_DIR$/src/test/java/ParserTests/ParserTests.java" />
-    <entry file="file://$PROJECT_DIR$/in/in.txt">
+    <entry file="file://$PROJECT_DIR$/in/100LEs.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraphEdge.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/TextOval.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -776,30 +800,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/iFlowGraphElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="115" selection-start-line="17" selection-start-column="115" selection-end-line="17" selection-end-column="115" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -827,17 +827,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/GotoDart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+        <state relative-caret-position="102">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/DecisionDiamond.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollSpeak.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/iFlowGraphElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding>
+            <element signature="e#826#827#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="81" selection-start-line="37" selection-start-column="81" selection-end-line="37" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraphEdge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+          <folding>
+            <element signature="e#1264#1265#0" expanded="true" />
+            <element signature="e#1300#1301#0" expanded="true" />
+            <element signature="e#2056#2057#0" expanded="true" />
+            <element signature="e#2097#2098#0" expanded="true" />
+            <element signature="e#2194#2195#0" expanded="true" />
+            <element signature="e#2222#2223#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/in/in.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="839">
-          <caret line="56" column="24" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
+        <state relative-caret-position="476">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1812#1813#0" expanded="true" />
@@ -848,10 +921,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
+        <state relative-caret-position="3400">
+          <caret line="200" column="17" selection-start-line="200" selection-start-column="17" selection-end-line="200" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#629#630#0" expanded="true" />
+            <element signature="e#694#695#0" expanded="true" />
+            <element signature="e#6293#6294#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -936,7 +1012,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.34367815" />
+                <option value="0.40344828" />
               </list>
             </option>
           </splitter-proportions>
