@@ -56,9 +56,9 @@ public class TrollParser {
     public FlowGraph parse() throws AngryTrollException {
         graph.addNode(new TextOval(START_NODE_ID, "START"));
 
-        int startingLine =1;
+        int startingLine;
         try {
-            startingLine = input.getNextValidLineNumber(1);
+            startingLine = input.getNextValidLineNumber(0); // Next valid will be > 0
         } catch (IOException e) {
             e.printStackTrace();
             throw new AngryTrollException("TrollParser::parse could not find any valid line to parse");
@@ -185,7 +185,7 @@ public class TrollParser {
      */
     private void addNextLineTodo(TodoEntry currentEntry, String labelText) {
         try {
-            todo.push(new TodoEntry(input.getNextValidLineNumber(1 + currentEntry.lineNum), currentEntry.lineNum, labelText));
+            todo.push(new TodoEntry(input.getNextValidLineNumber(currentEntry.lineNum), currentEntry.lineNum, labelText));
         } catch (IOException e) {
             currentLineIsLastLine(currentEntry);
         }

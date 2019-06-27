@@ -17,15 +17,24 @@ public class FileInput implements ParserInput {
         }
     }
 
-    @Override
-    public int getNextValidLineNumber(int lineNumber) throws IOException {
+    /**
+     * A helper function to get next valid line. Returns current line if valid, else makes a recursive call with the next (sequentially) line number.
+     * @param lineNumber the lowest valid line number to return
+     */
+    private int getNextValidLineNumber_helper(int lineNumber) throws IOException{
         if (TrollParser.validInputLine(lineMap.get(lineNumber))) {
             return lineNumber;
-        } else if (lineNumber < lineMap.size()) {
+        } else if (lineNumber < lineMap.size() - 1) {
             return getNextValidLineNumber(++lineNumber);
         } else {
             throw new IOException("FileInput::getNextValidLineNumber - No more valid lines");
         }
+    }
+
+    @Override
+    public int getNextValidLineNumber(int startNumber) throws IOException {
+
+        return getNextValidLineNumber_helper(startNumber+1);
     }
 
     @Override

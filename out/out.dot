@@ -5,30 +5,13 @@ graph[page="8,11" ratio=auto fontsize=12 ]
 
 // Nodes
 0[shape="oval"label="START"]
-2[shape="box"label="LogEvent:
-Once upon a time, there was a tale to test decisions"]
-3[shape="box"label="Wait for 2seconds"]
-4[shape="box"label="Wait for Delay for the sake of delay"]
-6[shape="diamond"label="Is Afraid Of The Big Bad Wolf == 0?"]
-7[shape="box"label="LogEvent:
-The Big Bad Wolf isn't scary"]
-9[shape="oval"label="BigBadWolfHouse"]
-10[shape="box"label="LogEvent:
-Ahhhhhhhhhhhhhhhhhhhhh!"]
-12[shape="oval"label="TheEnd"]
+1[shape="box"label="LogEvent:
+Line: 1"]
 99999[shape="box"label="Test Graph"style="filled"fillcolor="grey"]
 99998[shape="box"label="Config: Year - Month - Day"style="filled"fillcolor="grey"]
 9999[shape="oval"label="END"]
 
 // Edges
-2 -> 3
-9 -> 10
-6 -> 9[xlabel="Yes"]
-0 -> 2
-10 -> 12
-3 -> 4
-7 -> 9
-4 -> 6
-6 -> 7[xlabel="No"]
-12 -> 9999
+1 -> 1
+0 -> 1
 }
