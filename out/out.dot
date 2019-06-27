@@ -7,24 +7,28 @@ graph[page="8,11" ratio=auto fontsize=12 ]
 0[shape="oval"label="START"]
 2[shape="box"label="LogEvent:
 Once upon a time, there was a tale to test decisions"]
-4[shape="diamond"label="Is Afraid Of The Big Bad Wolf == 0?"]
-5[shape="box"label="LogEvent:
+3[shape="box"label="Wait for 2seconds"]
+4[shape="box"label="Wait for Delay for the sake of delay"]
+6[shape="diamond"label="Is Afraid Of The Big Bad Wolf == 0?"]
+7[shape="box"label="LogEvent:
 The Big Bad Wolf isn't scary"]
-7[shape="oval"label="BigBadWolfHouse"]
-8[shape="box"label="LogEvent:
+9[shape="oval"label="BigBadWolfHouse"]
+10[shape="box"label="LogEvent:
 Ahhhhhhhhhhhhhhhhhhhhh!"]
-10[shape="oval"label="TheEnd"]
+12[shape="oval"label="TheEnd"]
 99999[shape="box"label="Test Graph"style="filled"fillcolor="grey"]
 99998[shape="box"label="Config: Year - Month - Day"style="filled"fillcolor="grey"]
 9999[shape="oval"label="END"]
 
 // Edges
-8 -> 10
-2 -> 4
-7 -> 8
-4 -> 5[xlabel="No"]
-5 -> 7
-10 -> 9999
-2 -> 7[xlabel="Yes"]
+2 -> 3
+9 -> 10
+6 -> 9[xlabel="Yes"]
 0 -> 2
+10 -> 12
+3 -> 4
+7 -> 9
+4 -> 6
+6 -> 7[xlabel="No"]
+12 -> 9999
 }

@@ -5,7 +5,6 @@ import TrollLang.AngryTrollException;
 import TrollLang.TrollParam;
 import TrollLang.TrollSpeak;
 
-import javax.security.auth.login.AccountNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -47,7 +46,7 @@ public class TrollParser {
 
     }
 
-    public TrollParser(ParserInput input, String graphTitle, String graphDate) throws AngryTrollException, IOException {
+    public TrollParser(ParserInput input, String graphTitle, String graphDate) {
         this.input = input;
         this.todo = new LinkedList<>();
         this.visited = new HashSet<>();
@@ -81,7 +80,7 @@ public class TrollParser {
      * @param currentEntry The TD list item to process
      */
     private void processTodoEntry(TodoEntry currentEntry) {
-        // Check visited. Return if previously visited, else proceed
+        // Check visited. Add edge if previously visited, else mark visited and proceed.
         if (visited.contains(currentEntry.lineNum)) {
             addEdgeFromParent(currentEntry);
             return;
@@ -152,11 +151,25 @@ public class TrollParser {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        } else if (line.startsWith(TrollSpeak.WAIT.getCommandText())) {
+            if (currentNode == null)
+                try {
+                    if (currentNode == null)
+                        graph.addNode(new TextBox(currentEntry.lineNum, getWaitMsg(line)));
+                    addEdgeFromParent(currentEntry);
+                    addNextLineTodo(currentEntry);
+                } catch (AngryTrollException e) {
+                    e.printStackTrace();
+                    System.out.println("Couldn't parse WAIT statement at line " + currentEntry.lineNum + ":\n\t" + line);
+                }
+
         } else {
             // todo: Decide on default behaviour when nothing matches. For now do nothing.
+            System.out.println("TrollParser::ProcessTodoEntry unrecognised statement at line: " + currentEntry.lineNum + "\n\t" + line);
            return;
        }
     }
+
 
     /**
      * Adds the next line to the TD list if present in the file. Sets the given item as parent.
@@ -198,7 +211,7 @@ public class TrollParser {
      */
     private void addGotoTodo(TodoEntry currentEntry, String line, String labelText) throws IOException {
         String label = line.split(" ")[1]; // Given GOTO #label want #label
-        todo.push(new TodoEntry(input.getLineNumberStartingWith(label),currentEntry.parentId, labelText));
+        todo.push(new TodoEntry(input.getLineNumberStartingWith(label),currentEntry.lineNum, labelText));
     }
 
     /**
@@ -283,4 +296,17 @@ public class TrollParser {
         return TrollParam.makeParamsPretty(parts[1]) + " == " + parts[2] + "?";
     }
 
+    /**
+     * Parses the wait message from WAIT param|number.
+     * If parameter then makes pretty.
+     * @param line The line in the form WAIT param|number
+     * @return A nice string
+     */
+    private String getWaitMsg(String line) throws AngryTrollException {
+        String[] parts = line.split(" ");
+        if (parts.length != 2) throw new AngryTrollException("Malformed WAIT String sent to getWaitMsg " + line);
+
+        String msg = TrollParam.isValidParam(parts[1])? TrollParam.makeParamsPretty(parts[1]) : parts[1] + "seconds" ;
+        return "Wait for " + msg;
+    }
 }

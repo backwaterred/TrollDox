@@ -8,17 +8,17 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ParamTest {
 
     final String[] validParams = {
-            "Application:Alpac_FTNIR.ModBUS:Modbus_RTU_slave_dig.DO:_0500_B_WL_Sample_In_Progress.Value",
-            "Application:Alpac_FTNIR.CanOpen:CANopen_Transducers.DI:_0100_Air_Pressure_Normally_Open.Value",
-            "Application:Alpac_FTNIR.Console_Parameter:Console_Parameters.AI:_1470_Minimum_FSS2_Demin_Water_Pressure.Value",
-            "Application:Alpac_FTNIR.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value"
+            "Application:Cust_System.ModBUS:Modbus_RTU_slave_dig.DO:_0500_B_WL_Sample_In_Progress.Value",
+            "Application:Cust_System.CanOpen:CANopen_Transducers.DI:_0100_Air_Pressure_Normally_Open.Value",
+            "Application:Cust_System.Console_Parameter:Console_Parameters.AI:_1470_Minimum_FSS2_Demin_Water_Pressure.Value",
+            "Application:Cust_System.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value"
     };
 
     final String[] invalidParams = {
             "// This is a comment",
             "\"MoDo Cooling Water Pressure is low in BC Phase 1\"",
             "#Close_All_Valves",
-            "SET Application:Alpac_FTNIR.CanOpen:CANopen_Transducers.DO:_0320_SV3B_Demin_Water.Value 0"
+            "SET Application:Cust_System.CanOpen:CANopen_Transducers.DO:_0320_Some_Water.Value 0"
     };
 
     TrollParam param;
@@ -51,11 +51,11 @@ public class ParamTest {
         }
     }
 
-    // "Application:Alpac_FTNIR.ModBUS:Modbus_RTU_slave_dig.DO:_0500_B_WL_Sample_In_Progress.Value"
+    // "Application:Cust_System.ModBUS:Modbus_RTU_slave_dig.DO:_0500_B_WL_Sample_In_Progress.Value"
     @Test
     public void testModBusParam() {
         param = new TrollParam(validParams[0]);
-        assertEquals("Application:Alpac_FTNIR.ModBUS:Modbus_RTU_slave_dig.DO:_0500_B_WL_Sample_In_Progress.Value",
+        assertEquals("Application:Cust_System.ModBUS:Modbus_RTU_slave_dig.DO:_0500_B_WL_Sample_In_Progress.Value",
                 param.getFullText());
         assertEquals(ConnectionType.MODBUS, param.getCxnType());
         assertEquals(IOType.DO, param.getIoType());
@@ -65,11 +65,11 @@ public class ParamTest {
                 param.toString());
     }
 
-    // "Application:Alpac_FTNIR.CanOpen:CANopen_Transducers.DI:_0100_Air_Pressure_Normally_Open.Value"
+    // "Application:Cust_System.CanOpen:CANopen_Transducers.DI:_0100_Air_Pressure_Normally_Open.Value"
     @Test
     public void testCanOpenParam() {
         param = new TrollParam(validParams[1]);
-        assertEquals("Application:Alpac_FTNIR.CanOpen:CANopen_Transducers.DI:_0100_Air_Pressure_Normally_Open.Value",
+        assertEquals("Application:Cust_System.CanOpen:CANopen_Transducers.DI:_0100_Air_Pressure_Normally_Open.Value",
                 param.getFullText());
         assertEquals(ConnectionType.CANOPEN, param.getCxnType());
         assertEquals(IOType.DI, param.getIoType());
@@ -79,11 +79,11 @@ public class ParamTest {
                 param.toString());
     }
 
-    // "Application:Alpac_FTNIR.Console_Parameter:Console_Parameters.AI:_1470_Minimum_FSS2_Demin_Water_Pressure.Value"
+    // "Application:Cust_System.Console_Parameter:Console_Parameters.AI:_1470_Minimum_FSS2_Demin_Water_Pressure.Value"
     @Test
     public void testConsoleParam() {
         param = new TrollParam(validParams[2]);
-        assertEquals("Application:Alpac_FTNIR.Console_Parameter:Console_Parameters.AI:_1470_Minimum_FSS2_Demin_Water_Pressure.Value",
+        assertEquals("Application:Cust_System.Console_Parameter:Console_Parameters.AI:_1470_Minimum_FSS2_Demin_Water_Pressure.Value",
                 param.getFullText());
         assertEquals(ConnectionType.CONSOLE_PARAM, param.getCxnType());
         assertEquals(IOType.AI, param.getIoType());
@@ -93,11 +93,11 @@ public class ParamTest {
                 param.toString());
     }
 
-    // "Application:Alpac_FTNIR.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value"
+    // "Application:Cust_System.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value"
     @Test
     public void testHiddenParam() {
         param = new TrollParam(validParams[3]);
-        assertEquals("Application:Alpac_FTNIR.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value",
+        assertEquals("Application:Cust_System.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value",
                 param.getFullText());
         assertEquals(ConnectionType.CONSOLE_PARAM, param.getCxnType());
         assertEquals(IOType.AO, param.getIoType());

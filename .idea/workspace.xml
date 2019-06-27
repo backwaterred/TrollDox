@@ -2,30 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35555637-3109-42bf-93f7-7b4239bec49c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/samples/test.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/FlowGraph/AbstractFlowGraphElement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/FlowGraph/DecisionDiamond.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/FlowGraph/FlowGraphEdge.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/FlowGraph/GotoDart.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/samples/test.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/in/BasicDecisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/in/BasicDecisions.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/in/in.txt" beforeDir="false" afterPath="$PROJECT_DIR$/in/in.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/out.dot" beforeDir="false" afterPath="$PROJECT_DIR$/out/out.dot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/out.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/out.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/DecisionDiamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/DecisionDiamond.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraphEdge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraphEdge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/GotoDart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/GotoDart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/TextBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/TextBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/TextOval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/TextOval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/out.dot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/out.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FlowGraph/AbstractFlowGraphNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FlowGraph/FlowGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FlowGraph/FlowGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FlowGraph/TextBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FlowGraph/TextBox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FlowGraph/TextOval.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FlowGraph/TextOval.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser$TodoEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser$TodoEntry.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser.class" afterDir="false" />
     </list>
@@ -41,31 +22,26 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3400">
-              <caret line="200" column="17" selection-start-line="200" selection-start-column="17" selection-end-line="200" selection-end-column="17" />
+            <state relative-caret-position="362">
+              <caret line="167" column="62" selection-start-line="167" selection-start-column="62" selection-end-line="167" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#629#630#0" expanded="true" />
-                <element signature="e#694#695#0" expanded="true" />
-                <element signature="e#6293#6294#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ParserInputTests/FileInputTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+            <state relative-caret-position="136">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1812#1813#0" expanded="true" />
-                <element signature="e#1859#1860#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,6 +78,7 @@
       <find>LE0(\d)(\d)</find>
       <find>2do</find>
       <find>edges</find>
+      <find>todo.add</find>
     </findStrings>
     <replaceStrings>
       <replace>lineReader</replace>
@@ -112,6 +89,7 @@
       <replace>this.connectToParent(parentNode, newNode, labelText);</replace>
       <replace>LE1$1$2</replace>
       <replace>TD</replace>
+      <replace>todo.push</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -120,7 +98,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/DecisionNode_close.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Graph/GraphNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/Graph/GraphInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/GML/DecisionDiamond.java" />
@@ -170,6 +147,7 @@
         <option value="$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java" />
         <option value="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraphEdge.java" />
         <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java" />
+        <option value="$PROJECT_DIR$/in/in.txt" />
         <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" />
       </list>
     </option>
@@ -197,17 +175,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="TrollDox" type="58d84e3e:PackageViewProjectNode" />
-              <item name="TrollDox2" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Production'; set:Production; class com.intellij.psi.search.scope.ProjectProductionScope">
           <expand>
@@ -441,12 +408,31 @@
             </path>
             <path>
               <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ParserInputTests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
             <path>
               <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
               <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TrollDox" type="58d84e3e:PackageViewProjectNode" />
+              <item name="TrollDox2" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
@@ -463,7 +449,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546133227849" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.3.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/in" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.40344828" />
@@ -494,7 +480,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TrollDoxLauncher">
+  <component name="RunManager" selected="JUnit.ParamTest">
     <configuration name="TrollDoxLauncher" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TrollDoxLauncher" />
       <module name="TrollDox" />
@@ -510,6 +496,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FileInputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TrollDox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ParserInputTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ParserInputTests" />
+      <option name="MAIN_CLASS_NAME" value="ParserInputTests.FileInputTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PageTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="TrollDox" />
       <extension name="coverage">
@@ -520,6 +521,15 @@
       </extension>
       <option name="PACKAGE_NAME" value="DocumentTests" />
       <option name="MAIN_CLASS_NAME" value="DocumentTests.PageTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TrollDox" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ParamTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -545,7 +555,15 @@
       <item itemvalue="JUnit.All in TrollDox2" />
       <item itemvalue="JUnit.PageTest" />
       <item itemvalue="JUnit.ParserTests" />
+      <item itemvalue="JUnit.FileInputTest" />
+      <item itemvalue="JUnit.ParamTest" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ParamTest" />
+        <item itemvalue="JUnit.FileInputTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -596,7 +614,7 @@
     <frame x="592" y="-1208" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.18283582" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.18710022" />
       <window_info id="Structure" order="1" sideWeight="0.5007874" side_tool="true" weight="0.25681818" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -744,13 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ParserInputTests/FileInputTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GML/AbstractGMLNode.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Doc/Page.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/IOType.java">
@@ -841,13 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollSpeak.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/iFlowGraphElement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -875,13 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="81" selection-start-line="37" selection-start-column="81" selection-end-line="37" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraphEdge.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -904,8 +901,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/in/in.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollSpeak.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -913,21 +914,40 @@
           <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1812#1813#0" expanded="true" />
-            <element signature="e#1859#1860#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/in/in.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="86" selection-start-line="3" selection-start-column="86" selection-end-line="3" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3400">
-          <caret line="200" column="17" selection-start-line="200" selection-start-column="17" selection-end-line="200" selection-end-column="17" />
+        <state relative-caret-position="362">
+          <caret line="167" column="62" selection-start-line="167" selection-start-column="62" selection-end-line="167" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#629#630#0" expanded="true" />
-            <element signature="e#694#695#0" expanded="true" />
-            <element signature="e#6293#6294#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ParserInputTests/FileInputTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
