@@ -51,11 +51,11 @@ import static org.junit.jupiter.api.Assertions.*;
         @Test
         void SimpleDecision() throws IOException, AngryTrollException {
             //
-            input = new FileInput("./src/test/resources/SimpleDecision.txt");
-            parser = new TrollParser(input, "SimpleDecision", "0000-00-00");
+            input = new FileInput("./src/test/resources/DecisionsDecisions.txt");
+            parser = new TrollParser(input, "DecisionsDecisions", "0000-00-00");
             graph = parser.parse();
 
-            assertEquals(graph.getNodeCount(), 3 + 4);
+            assertEquals(graph.getNodeCount(), 5 + 4);
 
             // todo: check edges
         }

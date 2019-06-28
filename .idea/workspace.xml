@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35555637-3109-42bf-93f7-7b4239bec49c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ParserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/SimpleDecision.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/in/in.txt" beforeDir="false" afterPath="$PROJECT_DIR$/in/in.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/out.dot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/out.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ParserInputTests/FileInputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ParserInputTests/FileInputTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/SimpleDecision.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/graphs/2Nodes_wEdge.graphml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/graphs/HelloWorldLE.graphml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/graphs/test_graph_LE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/graphs/test_graph_LE2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/graphs/test_graph_empty.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/graphs/width_check.graphml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,13 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/ParserTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#342#343#0" expanded="true" />
-                <element signature="e#382#383#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="771">
+              <caret line="57" column="48" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -121,7 +116,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/edge_open.txt" />
         <option value="$PROJECT_DIR$/src/main/resources/edge_close.txt" />
         <option value="$PROJECT_DIR$/src/main/java/GML/GMLEdge.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt" />
         <option value="$PROJECT_DIR$/src/test/java/ParserTests/LinearControlFlow_ParserTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/GML/GMLNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/GML/AbstractGMLNode.java" />
@@ -156,6 +150,7 @@
         <option value="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java" />
         <option value="$PROJECT_DIR$/in/in.txt" />
         <option value="$PROJECT_DIR$/src/test/resources/SimpleDecision.txt" />
+        <option value="$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt" />
         <option value="$PROJECT_DIR$/src/test/java/ParserTest.java" />
       </list>
     </option>
@@ -402,14 +397,6 @@
             </path>
             <path>
               <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TrollDox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="graphs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
             <path>
@@ -604,9 +591,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FileInputTest - 2019.06.27 at 15h 15m 21s.xml">
-      <configuration name="FileInputTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="FileInputTest - 2019.06.27 at 15h 19m 22s.xml">
       <configuration name="FileInputTest" configurationId="JUnit" />
     </history-entry>
@@ -634,6 +618,9 @@
     <history-entry file="ParserTest - 2019.06.27 at 17h 07m 04s.xml">
       <configuration name="ParserTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ParserTest_SimpleDecision - 2019.06.27 at 17h 25m 08s.xml">
+      <configuration name="ParserTest.SimpleDecision" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="592" y="-1208" width="1936" height="1176" extended-state="6" />
@@ -648,7 +635,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32694152" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.16490892" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.16490892" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39980826" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -802,13 +789,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GML/TextBox.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GML/GMLNode.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/DocumentTests/PageTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/ParserTests/Decisions_ParserTest.java" />
@@ -1063,15 +1043,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="158" selection-start-line="10" selection-start-column="158" selection-end-line="10" selection-end-column="158" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="771">
+          <caret line="57" column="48" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
         </state>
       </provider>
     </entry>
