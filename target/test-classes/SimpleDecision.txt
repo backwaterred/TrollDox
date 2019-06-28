@@ -1,0 +1,8 @@
+// Simple Decision: 1 IF block connects to 2 separate LEs
+
+IF Do_You_Like_Hats? 1 GOTO Hats
+
+LOGEVENT "No Hats!"
+
+#Hats
+LOGEVENT "Hats!"

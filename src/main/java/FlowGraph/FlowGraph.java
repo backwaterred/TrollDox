@@ -12,7 +12,6 @@ public class FlowGraph {
 
     public FlowGraph(String title, String date) {
         nodes = new HashMap<>();
-//        edges = new LinkedList<>();
         edges = new HashSet<>();
         atts = new LinkedList<>();
         this.addAttribute("page", "\"8,11\"");
@@ -74,5 +73,12 @@ public class FlowGraph {
     **/
     public void addEdge(iFlowGraphElement e) {
         edges.add(e);
+    }
+
+    /**
+     * Returns number of edges currently present in the graph.
+     */
+    public int getNodeCount() {
+        return nodes.size();
     }
 }

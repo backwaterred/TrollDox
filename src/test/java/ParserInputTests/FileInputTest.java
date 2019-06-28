@@ -59,6 +59,21 @@ public class FileInputTest {
     }
 
     @Test
+    void testNextLines() throws IOException {
+        // Test all valid lines
+        for (int i=0; i<100; i++) {
+            assertEquals(fileInput.getNextValidLineNumber(i), i+1);
+        }
+    }
+
+    @Test
+    void testLastLineTriggersEOFWarning() {
+        // Starting at last line of file should warn
+        assertThrows(IOException.class,
+                () -> fileInput.getNextValidLineNumber(100));
+    }
+
+    @Test
     public void test101CallsThrowsException() throws IOException {
         assertThrows(IOException.class,
                 () -> fileInput.getLine(101));

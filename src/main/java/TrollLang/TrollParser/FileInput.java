@@ -22,13 +22,13 @@ public class FileInput implements ParserInput {
      * @param lineNumber the lowest valid line number to return
      */
     private int getNextValidLineNumber_helper(int lineNumber) throws IOException{
+        // If past the EOF, then we're done.
+        if (lineNumber > lineMap.size()) throw new IOException("FileInput::getNextValidLineNumber reached EOF");
+        // Else return current line if it's valid; o.w. recurse on next line
         if (TrollParser.validInputLine(lineMap.get(lineNumber))) {
             return lineNumber;
-        } else if (lineNumber < lineMap.size() - 1) {
+        } else
             return getNextValidLineNumber(++lineNumber);
-        } else {
-            throw new IOException("FileInput::getNextValidLineNumber - No more valid lines");
-        }
     }
 
     @Override
