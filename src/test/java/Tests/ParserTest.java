@@ -1,3 +1,5 @@
+package Tests;
+
 import FlowGraph.FlowGraph;
 import TrollLang.AngryTrollException;
 import TrollLang.TrollParser.FileInput;
@@ -35,7 +37,7 @@ import static org.junit.jupiter.api.Assertions.*;
             parser = new TrollParser(input, "OneHundredLEsProduces100Nodes", "0000-00-00");
             graph = parser.parse();
 
-            assertEquals(graph.getNodeCount(), 100 + 4); // START, END, Title, & Date
+            assertEquals(100 + 4, graph.getNodeCount()); // START, END, Title, & Date
         }
 
         @Test
@@ -45,7 +47,7 @@ import static org.junit.jupiter.api.Assertions.*;
             parser = new TrollParser(input, "OneHundredLEsProduces100Nodes", "0000-00-00");
             graph = parser.parse();
 
-            assertEquals(graph.getNodeCount(), 100 + 4); // START, END, Title, & Date
+            assertEquals( 100 + 4, graph.getNodeCount()); // START, END, Title, & Date
         }
 
         @Test
@@ -55,7 +57,7 @@ import static org.junit.jupiter.api.Assertions.*;
             parser = new TrollParser(input, "DecisionsDecisions", "0000-00-00");
             graph = parser.parse();
 
-            assertEquals(graph.getNodeCount(), 5 + 4);
+            assertEquals(8 + 4, graph.getNodeCount());
 
             // todo: check edges
         }

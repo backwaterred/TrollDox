@@ -1,3 +1,5 @@
+package Tests;
+
 import TrollLang.ConnectionType;
 import TrollLang.IOType;
 import TrollLang.TrollParam;

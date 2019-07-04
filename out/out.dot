@@ -5,253 +5,26 @@ graph[page="8,11" ratio=auto fontsize=12 ]
 
 // Nodes
 0[shape="oval"label="START"]
-3[shape="box"label="LogEvent:
-Line: 1"]
-6[shape="box"label="LogEvent:
-Line: 3"]
-7[shape="box"label="LogEvent:
-Line: 4"]
+2[shape="box"label="LogEvent:
+Once upon a time, there was a tale to test decisions"]
+4[shape="diamond"label="Is Afraid Of The Big Bad Wolf == 0?"]
+5[shape="box"label="LogEvent:
+The Big Bad Wolf isn't scary"]
+7[shape="oval"label="BigBadWolfHouse"]
 8[shape="box"label="LogEvent:
-Line: 5"]
-9[shape="box"label="LogEvent:
-Line: 6"]
-14[shape="box"label="LogEvent:
-Line: 9"]
-9999[shape="oval"label="END"]
-17[shape="box"label="LogEvent:
-Line: 11"]
-20[shape="box"label="LogEvent:
-Line: 13"]
-21[shape="box"label="LogEvent:
-Line: 14"]
-22[shape="box"label="LogEvent:
-Line: 15"]
-25[shape="box"label="LogEvent:
-Line: 17"]
-28[shape="box"label="LogEvent:
-Line: 19"]
-29[shape="box"label="LogEvent:
-Line: 20"]
+Ahhhhhhhhhhhhhhhhhhhhh!"]
+10[shape="oval"label="TheEnd"]
 99999[shape="box"label="Test Graph"style="filled"fillcolor="grey"]
-30[shape="box"label="LogEvent:
-Line: 21"]
 99998[shape="box"label="Config: Year - Month - Day"style="filled"fillcolor="grey"]
-31[shape="box"label="LogEvent:
-Line: 22"]
-32[shape="box"label="LogEvent:
-Line: 23"]
-33[shape="box"label="LogEvent:
-Line: 24"]
-34[shape="box"label="LogEvent:
-Line: 25"]
-35[shape="box"label="LogEvent:
-Line: 26"]
-40[shape="box"label="LogEvent:
-Line: 29"]
-41[shape="box"label="LogEvent:
-Line: 30"]
-42[shape="box"label="LogEvent:
-Line: 31"]
-45[shape="box"label="LogEvent:
-Line: 33"]
-46[shape="box"label="LogEvent:
-Line: 34"]
-49[shape="box"label="LogEvent:
-Line: 36"]
-50[shape="box"label="LogEvent:
-Line: 37"]
-51[shape="box"label="LogEvent:
-Line: 38"]
-52[shape="box"label="LogEvent:
-Line: 39"]
-53[shape="box"label="LogEvent:
-Line: 40"]
-54[shape="box"label="LogEvent:
-Line: 41"]
-55[shape="box"label="LogEvent:
-Line: 42"]
-56[shape="box"label="LogEvent:
-Line: 43"]
-57[shape="box"label="LogEvent:
-Line: 44"]
-58[shape="box"label="LogEvent:
-Line: 45"]
-59[shape="box"label="LogEvent:
-Line: 46"]
-60[shape="box"label="LogEvent:
-Line: 47"]
-63[shape="box"label="LogEvent:
-Line: 49"]
-64[shape="box"label="LogEvent:
-Line: 50"]
-65[shape="box"label="LogEvent:
-Line: 51"]
-68[shape="box"label="LogEvent:
-Line: 53"]
-69[shape="box"label="LogEvent:
-Line: 54"]
-70[shape="box"label="LogEvent:
-Line: 55"]
-71[shape="box"label="LogEvent:
-Line: 56"]
-74[shape="box"label="LogEvent:
-Line: 58"]
-75[shape="box"label="LogEvent:
-Line: 59"]
-76[shape="box"label="LogEvent:
-Line: 60"]
-77[shape="box"label="LogEvent:
-Line: 61"]
-78[shape="box"label="LogEvent:
-Line: 62"]
-79[shape="box"label="LogEvent:
-Line: 63"]
-80[shape="box"label="LogEvent:
-Line: 64"]
-81[shape="box"label="LogEvent:
-Line: 65"]
-82[shape="box"label="LogEvent:
-Line: 66"]
-83[shape="box"label="LogEvent:
-Line: 67"]
-88[shape="box"label="LogEvent:
-Line: 69"]
-89[shape="box"label="LogEvent:
-Line: 70"]
-90[shape="box"label="LogEvent:
-Line: 71"]
-91[shape="box"label="LogEvent:
-Line: 72"]
-92[shape="box"label="LogEvent:
-Line: 73"]
-93[shape="box"label="LogEvent:
-Line: 74"]
-96[shape="box"label="LogEvent:
-Line: 76"]
-97[shape="box"label="LogEvent:
-Line: 77"]
-98[shape="box"label="LogEvent:
-Line: 78"]
-99[shape="box"label="LogEvent:
-Line: 79"]
-102[shape="box"label="LogEvent:
-Line: 81"]
-103[shape="box"label="LogEvent:
-Line: 82"]
-104[shape="box"label="LogEvent:
-Line: 83"]
-105[shape="box"label="LogEvent:
-Line: 84"]
-106[shape="box"label="LogEvent:
-Line: 85"]
-107[shape="box"label="LogEvent:
-Line: 86"]
-108[shape="box"label="LogEvent:
-Line: 87"]
-109[shape="box"label="LogEvent:
-Line: 88"]
-110[shape="box"label="LogEvent:
-Line: 89"]
-111[shape="box"label="LogEvent:
-Line: 90"]
-112[shape="box"label="LogEvent:
-Line: 91"]
-113[shape="box"label="LogEvent:
-Line: 92"]
-114[shape="box"label="LogEvent:
-Line: 93"]
-115[shape="box"label="LogEvent:
-Line: 94"]
-118[shape="box"label="LogEvent:
-Line: 96"]
-119[shape="box"label="LogEvent:
-Line: 97"]
-120[shape="box"label="LogEvent:
-Line: 98"]
-125[shape="box"label="LogEvent:
-Line: 100"]
+9999[shape="oval"label="END"]
 
 // Edges
-110 -> 111
-78 -> 79
-71 -> 74
-118 -> 119
-63 -> 64
-0 -> 3
-60 -> 63
-88 -> 89
-108 -> 109
-103 -> 104
-42 -> 45
-111 -> 112
-76 -> 77
-58 -> 59
-74 -> 75
-32 -> 33
-114 -> 115
-119 -> 120
-105 -> 106
-98 -> 99
-33 -> 34
-52 -> 53
-82 -> 83
-79 -> 80
-99 -> 102
-96 -> 97
-49 -> 50
-29 -> 30
-31 -> 32
-35 -> 40
-56 -> 57
-97 -> 98
-17 -> 20
-89 -> 90
-57 -> 58
-90 -> 91
-125 -> 9999
-20 -> 21
-65 -> 68
-34 -> 35
-41 -> 42
-70 -> 71
-40 -> 41
-112 -> 113
-113 -> 114
-68 -> 69
-107 -> 108
-106 -> 107
-93 -> 96
-75 -> 76
-92 -> 93
-115 -> 118
-3 -> 6
-69 -> 70
-28 -> 29
-14 -> 17
-46 -> 49
-8 -> 9
-51 -> 52
-102 -> 103
-80 -> 81
-91 -> 92
-22 -> 25
-25 -> 28
-55 -> 56
-6 -> 7
 7 -> 8
-83 -> 88
-30 -> 31
-53 -> 54
-9 -> 14
-21 -> 22
-59 -> 60
-81 -> 82
-54 -> 55
-104 -> 105
-120 -> 125
-77 -> 78
-109 -> 110
-45 -> 46
-50 -> 51
-64 -> 65
+4 -> 7[xlabel="Yes"]
+8 -> 10
+5 -> 7
+0 -> 2
+2 -> 4
+4 -> 5[xlabel="No"]
+10 -> 9999
 }

@@ -10,22 +10,13 @@ public class FlowGraph {
     HashSet<iFlowGraphElement> edges;
     LinkedList<String> atts;
 
-    public FlowGraph(String title, String date) {
+    public FlowGraph() {
         nodes = new HashMap<>();
         edges = new HashSet<>();
         atts = new LinkedList<>();
         this.addAttribute("page", "\"8,11\"");
         this.addAttribute("ratio", "auto");
         this.addAttribute("fontsize", "12");
-
-        // Add header and date nodes
-        iFlowGraphElement headerNode, dateNode;
-        headerNode = new TextBox(99999, title);
-        headerNode.addAttribute("style", "filled").addAttribute("fillcolor", "grey");
-        this.addNode(headerNode);
-        dateNode = new TextBox(  99998, date);
-        dateNode.addAttribute("style", "filled").addAttribute("fillcolor", "grey");
-        this.addNode(dateNode);
     }
 
     /**

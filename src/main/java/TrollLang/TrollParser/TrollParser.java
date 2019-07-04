@@ -12,8 +12,10 @@ import java.util.LinkedList;
 
 public class TrollParser {
 
-    private static final int START_NODE_ID = 0;
-    private static final int END_NODE_ID = 9999;
+    private static final int START_NODE_ID  = 0;
+    private static final int END_NODE_ID    = 9999;
+    private static final int TITLE_NODE_ID  = 99999;
+    private static final int DATE_NODE_ID   = 99998;
     private static final int ORPHAN_NODE_ID = -1;
     private ParserInput input;
     private LinkedList<TodoEntry> todo;
@@ -50,11 +52,22 @@ public class TrollParser {
         this.input = input;
         this.todo = new LinkedList<>();
         this.visited = new HashSet<>();
-        this.graph = new FlowGraph(graphTitle, graphDate);
+        this.graph = new FlowGraph();
+
+        // Add title, date, start, and end nodes
+        iFlowGraphElement headerNode, dateNode;
+        headerNode = new TextBox(TITLE_NODE_ID, graphTitle);
+        headerNode.addAttribute("style", "filled").addAttribute("fillcolor", "grey");
+        graph.addNode(headerNode);
+        dateNode = new TextBox(  DATE_NODE_ID, graphDate);
+        dateNode.addAttribute("style", "filled").addAttribute("fillcolor", "grey");
+        graph.addNode(dateNode);
+
+        graph.addNode(new TextOval(START_NODE_ID, "START"));
+        graph.addNode(new TextOval(END_NODE_ID, "END"));
     }
 
     public FlowGraph parse() throws AngryTrollException {
-        graph.addNode(new TextOval(START_NODE_ID, "START"));
 
         int startingLine;
         try {
@@ -69,8 +82,6 @@ public class TrollParser {
         while(!todo.isEmpty()) {
             processTodoEntry(todo.pop());
         }
-
-        graph.addNode(new TextOval(END_NODE_ID, "END"));
 
         return graph;
     }
@@ -187,12 +198,8 @@ public class TrollParser {
         try {
             todo.push(new TodoEntry(input.getNextValidLineNumber(currentEntry.lineNum), currentEntry.lineNum, labelText));
         } catch (IOException e) {
-            currentLineIsLastLine(currentEntry);
+            graph.addEdge(new FlowGraphEdge(currentEntry.lineNum, END_NODE_ID));
         }
-    }
-
-    private void currentLineIsLastLine(TodoEntry currentEntry) {
-       graph.addEdge(new FlowGraphEdge(currentEntry.lineNum, END_NODE_ID));
     }
 
     /**
@@ -211,7 +218,7 @@ public class TrollParser {
      */
     private void addGotoTodo(TodoEntry currentEntry, String line, String labelText) throws IOException {
         String label = line.split(" ")[1]; // Given GOTO #label want #label
-        todo.push(new TodoEntry(input.getLineNumberStartingWith(label),currentEntry.lineNum, labelText));
+        todo.push(new TodoEntry(input.getLineNumberStartingWith("#" + label.trim()),currentEntry.lineNum, labelText));
     }
 
     /**
@@ -277,12 +284,9 @@ public class TrollParser {
      * @return The string as mentioned above
      **/
     private String getGotoMsg(String input) throws AngryTrollException {
-        input = input.substring(TrollSpeak.GOTO.getCommandText().length()); // Remove 'GOTO' command text
+        String[] parts = input.split(" ");
 
-        String rtn = input.substring(input.indexOf("#"));
-        // todo: add some more readability. Spaces!
-
-        return rtn;
+        return parts[1];
     }
 
     /**
@@ -293,7 +297,7 @@ public class TrollParser {
     private String getIfQuestion(String line) throws AngryTrollException {
         // todo:
         String[] parts = line.split(" ");
-        return TrollParam.makeParamsPretty(parts[1]) + " == " + parts[2] + "?";
+        return TrollParam.makeParamsPretty(parts[1]) + " == " + TrollParam.makeParamsPretty(parts[2]) + "?";
     }
 
     /**

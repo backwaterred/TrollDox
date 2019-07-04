@@ -8,4 +8,4 @@ LOGEVENT "You are feeling happy. Hooray!"
 GOTO End
 #End
 LOGEVENT "The End"
-// This document should produce 5 + 4 nodes (including start, end, title, and da,  4), title, and d, + 4, title, and d, + 4, title, and d, + 4, title, and date
+// This document should produce 8 + 4 nodes (including start, end, title, and date)

@@ -1,4 +1,4 @@
-package ParserInputTests;
+package Tests;
 
 import TrollLang.TrollParser.FileInput;
 import org.junit.jupiter.api.*;
@@ -77,6 +77,12 @@ public class FileInputTest {
     public void test101CallsThrowsException() throws IOException {
         assertThrows(IOException.class,
                 () -> fileInput.getLine(101));
+    }
+
+    @Test
+    void test2EmptyLine() throws IOException {
+        fileInput = new FileInput("./src/test/resources/OneHundredLogEvents_withCommentsAndEmptyLines.txt");
+        assertEquals(124, fileInput.getNextValidLineNumber(120)); // 120 immediately preceeds 2 empty lines and a comment (lines 121, 122, & 123).
     }
 
 }

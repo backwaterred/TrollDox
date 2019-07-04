@@ -1,4 +1,4 @@
-package ParserInputTests;
+package Tests;
 
 import org.junit.jupiter.api.*;
 

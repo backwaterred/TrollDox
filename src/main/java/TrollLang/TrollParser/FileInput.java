@@ -28,7 +28,7 @@ public class FileInput implements ParserInput {
         if (TrollParser.validInputLine(lineMap.get(lineNumber))) {
             return lineNumber;
         } else
-            return getNextValidLineNumber(++lineNumber);
+            return getNextValidLineNumber_helper(++lineNumber);
     }
 
     @Override
