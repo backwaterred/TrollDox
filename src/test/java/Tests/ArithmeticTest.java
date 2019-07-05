@@ -2,6 +2,7 @@ package Tests;
 
 import FlowGraph.AbstractFlowGraphElement;
 import TrollLang.AngryTrollException;
+import TrollLang.TrollParam;
 import TrollLang.TrollParser.FileInput;
 import TrollLang.TrollParser.TrollParser;
 import TrollLang.TrollSpeak;
@@ -11,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ArithmeticTest extends AbstractTestRunner {
 
+    private String TEST_PARAM = TrollParam.makeParamsPretty("Application:Cust_System.CanOpen:CANopen_Transducers.DI:_0100_Air_Pressure_Normally_Open.Value");
 
     @BeforeAll
     static void beforeAll() {}

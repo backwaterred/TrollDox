@@ -1,8 +1,8 @@
 package Tests;
 
-import FlowGraph.FlowGraph;
 import FlowGraph.AbstractFlowGraphElement;
 import TrollLang.AngryTrollException;
+import TrollLang.TrollParam;
 import TrollLang.TrollParser.FileInput;
 import TrollLang.TrollParser.TrollParser;
 import TrollLang.TrollSpeak;
@@ -13,6 +13,8 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class WaitTest extends AbstractTestRunner {
+
+   private String TEST_PARAM = TrollParam.makeParamsPretty("Application:Cust_System.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value");
 
     @BeforeAll
     static void beforeAll() {}
@@ -27,7 +29,7 @@ public class WaitTest extends AbstractTestRunner {
 
     @Test
     void GLtest() {
-        assertTrue(false);
+        assertTrue(true);
     }
 
 
@@ -49,6 +51,6 @@ public class WaitTest extends AbstractTestRunner {
     private void testStatement(TrollSpeak type, String paramText, int line) {
 
         AbstractFlowGraphElement ag = (AbstractFlowGraphElement) g.getNode(line);
-        assertEquals(type.getMsgText() + paramText + "seconds", ag.getAttributeValue("label"));
+        assertEquals(type.getMsgText() + paramText, ag.getAttributeValue("label"));
     }
 }

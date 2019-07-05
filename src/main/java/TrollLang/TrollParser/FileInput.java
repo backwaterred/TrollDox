@@ -39,7 +39,7 @@ public class FileInput implements ParserInput {
 
     @Override
     public int getLineNumberStartingWith(String label) throws IOException {
-        for (int i=1; i<lineMap.size(); i++) {
+        for (int i=1; i<=lineMap.size(); i++) {
             if (lineMap.get(i).startsWith(label)) {
                 return i;
             }

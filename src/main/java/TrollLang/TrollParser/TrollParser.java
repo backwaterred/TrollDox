@@ -14,8 +14,8 @@ public class TrollParser {
 
     private static final int START_NODE_ID  = 0;
     private static final int END_NODE_ID    = 9999;
-    private static final int TITLE_NODE_ID  = 99999;
-    private static final int DATE_NODE_ID   = 99998;
+    private static final int TITLE_NODE_ID  = 9998;
+    private static final int DATE_NODE_ID   = 9997;
     private static final int ORPHAN_NODE_ID = -1;
     private ParserInput input;
     private LinkedList<TodoEntry> todo;
@@ -107,6 +107,7 @@ public class TrollParser {
             System.out.println("Warning: TrollParser could not parse line " + currentEntry.lineNum);
             e.printStackTrace();
         }
+        String[] parts = line.split(" ");
 
         // Process line
         iFlowGraphElement currentNode = graph.getNode(currentEntry.lineNum);
@@ -114,7 +115,7 @@ public class TrollParser {
             // Do not process empty lines or comments. Assume the entry was created as a next line, and add the next next line instead.
             todo.push(new TodoEntry(1+currentEntry.lineNum, currentEntry.parentId, currentEntry.edgeLabelText));
             return;
-        } else if (line.startsWith(TrollSpeak.LOGEVENT.getCommandText())) {
+        } else if (parts[0].equals(TrollSpeak.LOGEVENT.getCommandText())) {
            try {
                if (currentNode == null)
                    graph.addNode(new TextBox(currentEntry.lineNum, getLogEventMsg(line)));
@@ -124,7 +125,7 @@ public class TrollParser {
                System.out.println("Couldn't parse LOGEVENT statement at line " + currentEntry.lineNum + ":\n\t" + line);
                e.printStackTrace();
            }
-       } else if (line.startsWith(TrollSpeak.LABEL.getCommandText())) {
+       } else if (parts[0].startsWith(TrollSpeak.LABEL.getCommandText())) {
             try {
                 if (currentNode == null)
                     graph.addNode(new TextOval(currentEntry.lineNum, getLabelName(line)));
@@ -134,7 +135,7 @@ public class TrollParser {
                 System.out.println("Couldn't parse label name at line " + currentEntry.lineNum + ":\n\t" + line);
                 e.printStackTrace();
             }
-        } else if (line.startsWith(TrollSpeak.GOTO.getCommandText())) {
+        } else if (parts[0].equals(TrollSpeak.GOTO.getCommandText())) {
             try {
                 if (currentNode == null)
                     graph.addNode(new GotoDart(currentEntry.lineNum, getGotoMsg(line)));
@@ -144,7 +145,7 @@ public class TrollParser {
                 System.out.println("Couldn't parse GOTO statement at line " + currentEntry.lineNum + ":\n\t" + line);
                 e.printStackTrace();
             }
-        } else if (line.startsWith(TrollSpeak.IF.getCommandText())) {
+        } else if (parts[0].equals(TrollSpeak.IF.getCommandText())) {
             try {
                 if (currentNode == null)
                     graph.addNode(new DecisionDiamond(currentEntry.lineNum, getIfQuestion(line)));
@@ -155,7 +156,7 @@ public class TrollParser {
                 System.out.println("Couldn't parse IF statement at line " + currentEntry.lineNum + ":\n\t" + line);
                 e.printStackTrace();
             }
-        } else if (line.startsWith(TrollSpeak.WAIT.getCommandText())) {
+        } else if (parts[0].equalsIgnoreCase(TrollSpeak.WAIT.getCommandText())) {
             try {
                 if (currentNode == null)
                     graph.addNode(new TextBox(currentEntry.lineNum, getWaitMsg(line)));
@@ -166,7 +167,7 @@ public class TrollParser {
                 System.out.println("Couldn't parse WAIT statement at line " + currentEntry.lineNum + ":\n\t" + line);
                 e.printStackTrace();
             }
-        } else if (line.startsWith(TrollSpeak.ADD.getCommandText())) {
+        } else if (parts[0].equals(TrollSpeak.ADD.getCommandText())) {
            try {
                if (currentNode == null)
                    graph.addNode(new TextBox(currentEntry.lineNum, getAddMsg(line)));
@@ -176,7 +177,7 @@ public class TrollParser {
                System.out.println("Error while parsing ADD instruction at line " + currentEntry.lineNum + "\n\t" + line);
                e.printStackTrace();
            }
-        } else if (line.startsWith(TrollSpeak.SUB.getCommandText())) {
+        } else if (parts[0].equals(TrollSpeak.SUB.getCommandText())) {
             try {
                 if (currentNode == null)
                     graph.addNode(new TextBox(currentEntry.lineNum, getSubMsg(line)));
@@ -186,7 +187,7 @@ public class TrollParser {
                 System.out.println("Error while parsing SUB instruction at line " + currentEntry.lineNum + "\n\t" + line);
                 e.printStackTrace();
             }
-        } else if (line.startsWith(TrollSpeak.MUL.getCommandText())) {
+        } else if (parts[0].equals(TrollSpeak.MUL.getCommandText())) {
 
             try {
                 if (currentNode == null)
@@ -197,7 +198,7 @@ public class TrollParser {
                 System.out.println("Error while parsing MUL instruction at line " + currentEntry.lineNum + "\n\t" + line);
                 e.printStackTrace();
             }
-        } else if (line.startsWith(TrollSpeak.DIV.getCommandText())) {
+        } else if (parts[0].equals(TrollSpeak.DIV.getCommandText())) {
             try {
                 if (currentNode == null)
                     graph.addNode(new TextBox(currentEntry.lineNum, getDivMsg(line)));
@@ -207,7 +208,7 @@ public class TrollParser {
                 System.out.println("Error while parsing DIV instruction at line " + currentEntry.lineNum + "\n\t" + line);
                 e.printStackTrace();
             }
-        } else if (line.startsWith(TrollSpeak.WAITFOR.getCommandText())) {
+        } else if (parts[0].equals(TrollSpeak.WAITFOR.getCommandText())) {
             try {
                 if (currentNode == null)
                     graph.addNode(new DecisionDiamond(currentEntry.lineNum, getWaitForQuestion(line)));
@@ -218,11 +219,51 @@ public class TrollParser {
                 System.out.println("Error while parsing WAITFOR instruction at line " + currentEntry.lineNum + "\n\t" + line);
                 e.printStackTrace();
             }
-        } else if (line.startsWith(TrollSpeak.WAITFORL.getCommandText())) {
-        } else if (line.startsWith(TrollSpeak.WAITFORLEQ.getCommandText())) {
-        } else if (line.startsWith(TrollSpeak.WAITFORG.getCommandText())) {
-        } else if (line.startsWith(TrollSpeak.WAITFORGEQ.getCommandText())) {
-        } else if (line.startsWith(TrollSpeak.SET.getCommandText())) {
+        } else if (parts[0].equals(TrollSpeak.WAITFORL.getCommandText())) {
+            try {
+                if (currentNode == null)
+                    graph.addNode(new DecisionDiamond(currentEntry.lineNum, getWaitForLessQuestion(line)));
+                addEdgeFromParent(currentEntry);
+                addGotoTodo(currentEntry, line.substring(line.indexOf("GOTO")), "Yes");
+                addNextLineTodo(currentEntry, "No");
+            } catch (AngryTrollException | IOException e) {
+                System.out.println("Error while parsing WAITFORLESS instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                e.printStackTrace();
+            }
+        } else if (parts[0].equals(TrollSpeak.WAITFORLEQ.getCommandText())) {
+            try {
+                if (currentNode == null)
+                    graph.addNode(new DecisionDiamond(currentEntry.lineNum, getWaitForLessEqualQuestion(line)));
+                addEdgeFromParent(currentEntry);
+                addGotoTodo(currentEntry, line.substring(line.indexOf("GOTO")), "Yes");
+                addNextLineTodo(currentEntry, "No");
+            } catch (AngryTrollException | IOException e) {
+                System.out.println("Error while parsing WAITFORLESSEQUAL instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                e.printStackTrace();
+            }
+        } else if (parts[0].equals(TrollSpeak.WAITFORG.getCommandText())) {
+            try {
+                if (currentNode == null)
+                    graph.addNode(new DecisionDiamond(currentEntry.lineNum, getWaitForGreaterQuestion(line)));
+                addEdgeFromParent(currentEntry);
+                addGotoTodo(currentEntry, line.substring(line.indexOf("GOTO")), "Yes");
+                addNextLineTodo(currentEntry, "No");
+            } catch (AngryTrollException | IOException e) {
+                System.out.println("Error while parsing WAITFORGREATER instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                e.printStackTrace();
+            }
+        } else if (parts[0].equals(TrollSpeak.WAITFORGEQ.getCommandText())) {
+            try {
+                if (currentNode == null)
+                    graph.addNode(new DecisionDiamond(currentEntry.lineNum, getWaitForGreaterEqualQuestion(line)));
+                addEdgeFromParent(currentEntry);
+                addGotoTodo(currentEntry, line.substring(line.indexOf("GOTO")), "Yes");
+                addNextLineTodo(currentEntry, "No");
+            } catch (AngryTrollException | IOException e) {
+                System.out.println("Error while parsing WAITFORGREATEREQUAL instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                e.printStackTrace();
+            }
+        } else if (parts[0].equals(TrollSpeak.SET.getCommandText())) {
         } else {
             // todo: Decide on default behaviour when nothing matches. For now do nothing.
             System.out.println("TrollParser::ProcessTodoEntry unrecognised statement at line: " + currentEntry.lineNum + "\n\t" + line);
@@ -350,7 +391,7 @@ public class TrollParser {
         String[] parts = line.split(" ");
         if (parts.length != 2) throw new AngryTrollException("Malformed WAIT string sent to getWaitMsg " + line);
 
-        String msg = TrollParam.isValidParam(parts[1])? TrollParam.makeParamsPretty(parts[1]) : parts[1] + "seconds" ;
+        String msg = TrollParam.isValidParam(parts[1])? TrollParam.makeParamsPretty(parts[1]) : parts[1];
         return TrollSpeak.WAIT.getMsgText() + msg;
     }
 

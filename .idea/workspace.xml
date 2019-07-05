@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35555637-3109-42bf-93f7-7b4239bec49c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollSpeak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrollLang/TrollSpeak.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/AbstractTestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/AbstractTestRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ArithmeticTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ArithmeticTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/WaitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/WaitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Wait&amp;WaitFors.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Wait&amp;WaitFors.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FlowGraph/AbstractFlowGraphElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FlowGraph/AbstractFlowGraphElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollSpeak.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TrollLang/TrollSpeak.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,11 +27,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
-              <caret line="436" selection-start-line="436" selection-end-line="436" />
+            <state relative-caret-position="3675">
+              <caret line="393" column="104" selection-start-line="393" selection-start-column="104" selection-end-line="393" selection-end-column="104" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#10477#10478#0" expanded="true" />
                 <element signature="e#10526#10527#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -46,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Tests/WaitTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+            <state relative-caret-position="138">
+              <caret line="16" column="162" selection-start-line="16" selection-start-column="162" selection-end-line="16" selection-end-column="162" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,19 +63,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollSpeak.java">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/Wait&amp;WaitFors.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            <state relative-caret-position="51">
+              <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/Wait&amp;WaitFors.txt">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Tests/AbstractTestRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+            <state relative-caret-position="170">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Tests/ParserTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -76,8 +95,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Tests/ArithmeticTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+            <state relative-caret-position="-136">
+              <caret line="14" column="60" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -171,7 +193,6 @@
         <option value="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java" />
         <option value="$PROJECT_DIR$/src/test/java/FlowGraphTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/ParserInputTests/FileInputTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java" />
         <option value="$PROJECT_DIR$/src/test/java/ParserTest.java" />
         <option value="$PROJECT_DIR$/in/BBWDecisions.txt" />
         <option value="$PROJECT_DIR$/src/test/java/Tests/ParserTest.java" />
@@ -181,9 +202,10 @@
         <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollSpeak.java" />
         <option value="$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java" />
         <option value="$PROJECT_DIR$/src/test/resources/Wait.txt" />
+        <option value="$PROJECT_DIR$/src/test/resources/Wait&amp;WaitFors.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java" />
         <option value="$PROJECT_DIR$/src/test/java/Tests/AbstractTestRunner.java" />
         <option value="$PROJECT_DIR$/src/test/java/Tests/ArithmeticTest.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/Wait&amp;WaitFors.txt" />
         <option value="$PROJECT_DIR$/src/test/java/Tests/WaitTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" />
       </list>
@@ -299,6 +321,17 @@
               <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
               <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TrollDox" type="58d84e3e:PackageViewProjectNode" />
+              <item name="TrollDox2" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
@@ -439,17 +472,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="TrollDox" type="58d84e3e:PackageViewProjectNode" />
-              <item name="TrollDox2" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -494,7 +516,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.WaitTest">
+  <component name="RunManager" selected="JUnit.Tests in TrollDox">
     <configuration name="TrollDoxLauncher" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TrollDoxLauncher" />
       <module name="TrollDox" />
@@ -540,21 +562,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParserTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TrollDox" />
-      <option name="PACKAGE_NAME" value="Tests.ParserInputTests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.ParserInputTests.ParserTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.ParserTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParserTest.SimpleDecision" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TrollDox" />
       <option name="PACKAGE_NAME" value="Tests.ParserInputTests" />
       <option name="MAIN_CLASS_NAME" value="Tests.ParserInputTests.ParserTest" />
-      <option name="METHOD_NAME" value="SimpleDecision" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -609,18 +636,18 @@
       <item itemvalue="JUnit.PageTest" />
       <item itemvalue="JUnit.ParserTests" />
       <item itemvalue="JUnit.ParserTest" />
-      <item itemvalue="JUnit.ParserTest.SimpleDecision" />
       <item itemvalue="JUnit.Tests in TrollDox" />
       <item itemvalue="JUnit.ArithmeticTest" />
       <item itemvalue="JUnit.WaitTest" />
+      <item itemvalue="JUnit.ParserTest (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WaitTest" />
-        <item itemvalue="JUnit.ArithmeticTest" />
         <item itemvalue="JUnit.Tests in TrollDox" />
+        <item itemvalue="JUnit.WaitTest" />
+        <item itemvalue="JUnit.ParserTest (1)" />
+        <item itemvalue="JUnit.ArithmeticTest" />
         <item itemvalue="JUnit.ParserTest" />
-        <item itemvalue="JUnit.ParserTest.SimpleDecision" />
       </list>
     </recent_temporary>
   </component>
@@ -638,42 +665,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ArithmeticTest - 2019.07.04 at 14h 50m 19s.xml">
-      <configuration name="ArithmeticTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArithmeticTest - 2019.07.04 at 14h 51m 01s.xml">
-      <configuration name="ArithmeticTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArithmeticTest - 2019.07.04 at 14h 52m 31s.xml">
-      <configuration name="ArithmeticTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArithmeticTest - 2019.07.04 at 14h 52m 42s.xml">
-      <configuration name="ArithmeticTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArithmeticTest - 2019.07.04 at 15h 19m 52s.xml">
-      <configuration name="ArithmeticTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArithmeticTest - 2019.07.04 at 15h 24m 33s.xml">
-      <configuration name="ArithmeticTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArithmeticTest - 2019.07.04 at 15h 25m 27s.xml">
-      <configuration name="ArithmeticTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArithmeticTest - 2019.07.04 at 15h 27m 13s.xml">
-      <configuration name="ArithmeticTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArithmeticTest - 2019.07.04 at 15h 30m 17s.xml">
-      <configuration name="ArithmeticTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WaitTest - 2019.07.04 at 15h 51m 30s.xml">
+    <history-entry file="WaitTest - 2019.07.05 at 16h 05m 13s.xml">
       <configuration name="WaitTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParserTest_(1) - 2019.07.05 at 16h 06m 00s.xml">
+      <configuration name="ParserTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParserTest_(1) - 2019.07.05 at 16h 08m 29s.xml">
+      <configuration name="ParserTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WaitTest - 2019.07.05 at 16h 08m 36s.xml">
+      <configuration name="WaitTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WaitTest - 2019.07.05 at 16h 11m 22s.xml">
+      <configuration name="WaitTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WaitTest - 2019.07.05 at 16h 11m 27s.xml">
+      <configuration name="WaitTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests_in_TrollDox - 2019.07.05 at 16h 19m 08s.xml">
+      <configuration name="Tests in TrollDox" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WaitTest - 2019.07.05 at 16h 20m 55s.xml">
+      <configuration name="WaitTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WaitTest - 2019.07.05 at 16h 22m 11s.xml">
+      <configuration name="WaitTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Tests_in_TrollDox - 2019.07.05 at 16h 37m 26s.xml">
+      <configuration name="Tests in TrollDox" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="592" y="-1208" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.1652452" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.16684435" />
       <window_info id="Structure" order="1" sideWeight="0.5007874" side_tool="true" weight="0.25681818" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -682,7 +709,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32694152" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3384468" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24736337" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39980826" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -739,6 +766,18 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java</url>
+          <line>46</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TrollDox$All_in_TrollDox2.ic" NAME="All in TrollDox2 Coverage Results" MODIFIED="1562197057340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -1007,16 +1046,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/in/BasicDecisions.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/in/BBWDecisions.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1044,13 +1073,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Tests/ParserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1085,58 +1107,10 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/TestTemplate">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/Arithmetic.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Tests/ParamTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Tests/AbstractTestRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Tests/ArithmeticTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/Wait&amp;WaitFors.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Tests/WaitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1147,12 +1121,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/Tests/ParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="436" selection-start-line="436" selection-end-line="436" />
+        <state relative-caret-position="363">
+          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Tests/AbstractTestRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/Arithmetic.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Tests/ArithmeticTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="14" column="60" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Tests/WaitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="16" column="162" selection-start-line="16" selection-start-column="162" selection-end-line="16" selection-end-column="162" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/Wait&amp;WaitFors.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3675">
+          <caret line="393" column="104" selection-start-line="393" selection-start-column="104" selection-end-line="393" selection-end-column="104" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10477#10478#0" expanded="true" />
             <element signature="e#10526#10527#0" expanded="true" />
           </folding>
         </state>
