@@ -2,21 +2,21 @@ package TrollLang;
 
 public enum TrollSpeak {
     LOGEVENT ("LOGEVENT", "LogEvent:\n"),
-    IF ("IF", ""),
+    IF ("IF", " is equal to "),
     GOTO ("GOTO", "Goto:\n"),
     LABEL ("#", ""),
     SET ("SET", "Set:\n"),
-    ADD("ADD",""),
-    SUB("SUB",""),
-    MUL("MUL",""),
-    DIV("DIV",""),
-    FILECOPY("FILECOPY",""),
-    IFEXIST("IFEXIST",""),
-    IFEQ("IFEQUALS",""),
-    IFL("IFLESS",""),
-    IFLEQ("IFLESSEQUAL",""),
-    IFG("IFGREATER",""),
-    IFGEQ("IFGREATEREQUAL", ""),
+    ADD("ADD","Increment "),
+    SUB("SUB","Decrement "),
+    MUL("MUL","Multiply "),
+    DIV("DIV","Divide "),
+    FILECOPY("FILECOPY","Copy file for"),
+    IFEXIST("IFEXIST","IFEXIST"),
+    IFEQ("IFEQUALS"," is equal to "),
+    IFL("IFLESS"," is less than "),
+    IFLEQ("IFLESSEQUAL"," is less than or equal to "),
+    IFG("IFGREATER"," is greater than "),
+    IFGEQ("IFGREATEREQUAL", " is greater than or equal to "),
     WAIT ("WAIT", "Wait:\n"),
     WAITFOR("WAITFOR",""),
     WAITFORL("WAITFORLESS", ""),
@@ -26,9 +26,9 @@ public enum TrollSpeak {
     WAITFORRESULTS("WAITFORRESULTS", ""),
     EXECUTE("EXECUTE", "Scan Sample"),
     DIALOK("DIALOGOK", "Dialogue Box:\n"),
-    DIALINFO("DIALOGINFO",""),
-    DIALINFOCL("DIALOGEINFOCLOSE",""),
-    DIALYN("DIALOGUEYESNO", "");
+    DIALINFO("DIALOGINFO","Dialogue Box:\n"),
+    DIALINFOCL("DIALOGEINFOCLOSE","Close dialogue box"),
+    DIALYN("DIALOGUEYESNO", "Dialogue box Y/N:\n");
 
     private String displayText;
     private String commandText;
@@ -38,7 +38,7 @@ public enum TrollSpeak {
         this.displayText = displayText;
     }
 
-    public String getMsgPrefix() {
+    public String getMsgText() {
         return this.displayText;
     }
 

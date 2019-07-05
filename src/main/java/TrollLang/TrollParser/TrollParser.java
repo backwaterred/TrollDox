@@ -77,8 +77,9 @@ public class TrollParser {
             throw new AngryTrollException("TrollParser::parse could not find any valid line to parse");
         }
 
-        graph.addEdge(new FlowGraphEdge(START_NODE_ID, startingLine));
-        todo.push(new TodoEntry(startingLine, ORPHAN_NODE_ID));
+
+//        graph.addEdge(new FlowGraphEdge(START_NODE_ID, startingLine));
+        todo.push(new TodoEntry(startingLine, START_NODE_ID));
         while(!todo.isEmpty()) {
             processTodoEntry(todo.pop());
         }
@@ -115,65 +116,113 @@ public class TrollParser {
             return;
         } else if (line.startsWith(TrollSpeak.LOGEVENT.getCommandText())) {
            try {
-               // Add new element if needed
                if (currentNode == null)
                    graph.addNode(new TextBox(currentEntry.lineNum, getLogEventMsg(line)));
-               // Add edge from parent
                addEdgeFromParent(currentEntry);
-               // Add next: LEs always proceed to next line
                addNextLineTodo(currentEntry);
            } catch (AngryTrollException e) {
-               System.out.println("Error parsing Logevent " + line);
+               System.out.println("Couldn't parse LOGEVENT statement at line " + currentEntry.lineNum + ":\n\t" + line);
                e.printStackTrace();
            }
        } else if (line.startsWith(TrollSpeak.LABEL.getCommandText())) {
-            if (currentNode == null)
-                graph.addNode(new TextOval(currentEntry.lineNum, line.substring(1+ line.indexOf("#"))));
-            addEdgeFromParent(currentEntry);
-            addNextLineTodo(currentEntry);
+            try {
+                if (currentNode == null)
+                    graph.addNode(new TextOval(currentEntry.lineNum, getLabelName(line)));
+                addEdgeFromParent(currentEntry);
+                addNextLineTodo(currentEntry);
+            } catch (AngryTrollException e) {
+                System.out.println("Couldn't parse label name at line " + currentEntry.lineNum + ":\n\t" + line);
+                e.printStackTrace();
+            }
         } else if (line.startsWith(TrollSpeak.GOTO.getCommandText())) {
             try {
-                // Add new element if needed
                 if (currentNode == null)
                     graph.addNode(new GotoDart(currentEntry.lineNum, getGotoMsg(line)));
-                // Add edge from parent
                 addEdgeFromParent(currentEntry);
-                // Add TD items
                 addGotoTodo(currentEntry, line);
-            } catch (AngryTrollException e) {
-                System.out.println("Error parsing GOTO " + line);
-                e.printStackTrace();
-            } catch (IOException e) {
-                System.out.println("Error parsing GOTO" + line);
+            } catch (AngryTrollException | IOException e) {
+                System.out.println("Couldn't parse GOTO statement at line " + currentEntry.lineNum + ":\n\t" + line);
                 e.printStackTrace();
             }
         } else if (line.startsWith(TrollSpeak.IF.getCommandText())) {
             try {
-                // Add new element if needed
                 if (currentNode == null)
                     graph.addNode(new DecisionDiamond(currentEntry.lineNum, getIfQuestion(line)));
-                // Add edge from parent
                 addEdgeFromParent(currentEntry);
-                // Add TD items
                 addGotoTodo(currentEntry, line.substring(line.indexOf("GOTO")), "Yes");
                 addNextLineTodo(currentEntry, "No");
-            } catch (AngryTrollException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
+            } catch (AngryTrollException | IOException e) {
+                System.out.println("Couldn't parse IF statement at line " + currentEntry.lineNum + ":\n\t" + line);
                 e.printStackTrace();
             }
         } else if (line.startsWith(TrollSpeak.WAIT.getCommandText())) {
-            if (currentNode == null)
-                try {
-                    if (currentNode == null)
-                        graph.addNode(new TextBox(currentEntry.lineNum, getWaitMsg(line)));
-                    addEdgeFromParent(currentEntry);
-                    addNextLineTodo(currentEntry);
-                } catch (AngryTrollException e) {
-                    e.printStackTrace();
-                    System.out.println("Couldn't parse WAIT statement at line " + currentEntry.lineNum + ":\n\t" + line);
-                }
+            try {
+                if (currentNode == null)
+                    graph.addNode(new TextBox(currentEntry.lineNum, getWaitMsg(line)));
+                addEdgeFromParent(currentEntry);
+                addNextLineTodo(currentEntry);
+            } catch (AngryTrollException e) {
+                e.printStackTrace();
+                System.out.println("Couldn't parse WAIT statement at line " + currentEntry.lineNum + ":\n\t" + line);
+                e.printStackTrace();
+            }
+        } else if (line.startsWith(TrollSpeak.ADD.getCommandText())) {
+           try {
+               if (currentNode == null)
+                   graph.addNode(new TextBox(currentEntry.lineNum, getAddMsg(line)));
+               addEdgeFromParent(currentEntry);
+               addNextLineTodo(currentEntry);
+           } catch (AngryTrollException e) {
+               System.out.println("Error while parsing ADD instruction at line " + currentEntry.lineNum + "\n\t" + line);
+               e.printStackTrace();
+           }
+        } else if (line.startsWith(TrollSpeak.SUB.getCommandText())) {
+            try {
+                if (currentNode == null)
+                    graph.addNode(new TextBox(currentEntry.lineNum, getSubMsg(line)));
+                addEdgeFromParent(currentEntry);
+                addNextLineTodo(currentEntry);
+            } catch (AngryTrollException e) {
+                System.out.println("Error while parsing SUB instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                e.printStackTrace();
+            }
+        } else if (line.startsWith(TrollSpeak.MUL.getCommandText())) {
 
+            try {
+                if (currentNode == null)
+                    graph.addNode(new TextBox(currentEntry.lineNum, getMultMsg(line)));
+                addEdgeFromParent(currentEntry);
+                addNextLineTodo(currentEntry);
+            } catch (AngryTrollException e) {
+                System.out.println("Error while parsing MUL instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                e.printStackTrace();
+            }
+        } else if (line.startsWith(TrollSpeak.DIV.getCommandText())) {
+            try {
+                if (currentNode == null)
+                    graph.addNode(new TextBox(currentEntry.lineNum, getDivMsg(line)));
+                addEdgeFromParent(currentEntry);
+                addNextLineTodo(currentEntry);
+            } catch (AngryTrollException e) {
+                System.out.println("Error while parsing DIV instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                e.printStackTrace();
+            }
+        } else if (line.startsWith(TrollSpeak.WAITFOR.getCommandText())) {
+            try {
+                if (currentNode == null)
+                    graph.addNode(new DecisionDiamond(currentEntry.lineNum, getWaitForQuestion(line)));
+                addEdgeFromParent(currentEntry);
+                addGotoTodo(currentEntry, line.substring(line.indexOf("GOTO")), "Yes");
+                addNextLineTodo(currentEntry, "No");
+            } catch (AngryTrollException | IOException e) {
+                System.out.println("Error while parsing WAITFOR instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                e.printStackTrace();
+            }
+        } else if (line.startsWith(TrollSpeak.WAITFORL.getCommandText())) {
+        } else if (line.startsWith(TrollSpeak.WAITFORLEQ.getCommandText())) {
+        } else if (line.startsWith(TrollSpeak.WAITFORG.getCommandText())) {
+        } else if (line.startsWith(TrollSpeak.WAITFORGEQ.getCommandText())) {
+        } else if (line.startsWith(TrollSpeak.SET.getCommandText())) {
         } else {
             // todo: Decide on default behaviour when nothing matches. For now do nothing.
             System.out.println("TrollParser::ProcessTodoEntry unrecognised statement at line: " + currentEntry.lineNum + "\n\t" + line);
@@ -253,7 +302,7 @@ public class TrollParser {
 
         // Check for mismatched quotemarks
         if (!areQuotemarksMatched(input))
-            throw new AngryTrollException("LogElement::parseInterleaved - Quotemark mismatch detected");
+            throw new AngryTrollException("LogElement::getLogEventMsg - Quotemark mismatch detected");
 
         // Remove all quotemarks from the string. We know they match so they are no longer necessary for our purposes.
         input = Arrays.stream(input.split("\""))
@@ -266,7 +315,7 @@ public class TrollParser {
                 .reduce((acc, ele) -> acc + " " + ele)
                 .get();
 
-        return TrollSpeak.LOGEVENT.getMsgPrefix() + rtn;
+        return TrollSpeak.LOGEVENT.getMsgText() + rtn;
     }
 
     private boolean areQuotemarksMatched(String input) {
@@ -280,25 +329,16 @@ public class TrollParser {
      * Input is a string of the form GOTO labelName
      * Removes the GOTO command and replaces it with GOTO msg as specified in TrollSpeak.
      * Formats the label text for readability
-     * @param input The fulls string in the format mentioned above.
+     * @param line The fulls string in the format mentioned above.
      * @return The string as mentioned above
      **/
-    private String getGotoMsg(String input) throws AngryTrollException {
-        String[] parts = input.split(" ");
+    private String getGotoMsg(String line) throws AngryTrollException {
+        String[] parts = line.split(" ");
+        if (parts.length != 2) throw new AngryTrollException("Malformed GOTO string in getGotoMsg " + line);
 
         return parts[1];
     }
 
-    /**
-     * Parse the question from a given IF statement
-     * @param line Statement of the form IF parameter|number parameter|number GOTO #Label
-     * @return A question of the form TODO
-     */
-    private String getIfQuestion(String line) throws AngryTrollException {
-        // todo:
-        String[] parts = line.split(" ");
-        return TrollParam.makeParamsPretty(parts[1]) + " == " + TrollParam.makeParamsPretty(parts[2]) + "?";
-    }
 
     /**
      * Parses the wait message from WAIT param|number.
@@ -308,9 +348,162 @@ public class TrollParser {
      */
     private String getWaitMsg(String line) throws AngryTrollException {
         String[] parts = line.split(" ");
-        if (parts.length != 2) throw new AngryTrollException("Malformed WAIT String sent to getWaitMsg " + line);
+        if (parts.length != 2) throw new AngryTrollException("Malformed WAIT string sent to getWaitMsg " + line);
 
         String msg = TrollParam.isValidParam(parts[1])? TrollParam.makeParamsPretty(parts[1]) : parts[1] + "seconds" ;
-        return "Wait for " + msg;
+        return TrollSpeak.WAIT.getMsgText() + msg;
+    }
+
+    /**
+     * Parse the ADD instruction message from the line ADD Parameter Parameter|Value
+     * @param line ADD Param1 Param2|Value2
+     * @return Increment Param1 by Param2|Value2
+     */
+    private String getAddMsg(String line) throws AngryTrollException {
+        String[] parts = line.split(" ");
+        if (parts.length != 3) throw new AngryTrollException("Malformed ADD instruction string sent to getAddMsg " + line);
+
+        return TrollSpeak.ADD.getMsgText() + TrollParam.makeParamsPretty(parts[1]) + " by " + TrollParam.makeParamsPretty(parts[2]);
+    }
+
+    /**
+     * Parse the SUB instruction message from the line ADD Parameter Parameter|Value
+     * @param line SUB Param1 Param2|Value2
+     * @return Decrement Param1 by Param2|Value2
+     */
+    private String getSubMsg(String line) throws AngryTrollException {
+        String[] parts = line.split(" ");
+        if (parts.length != 3) throw new AngryTrollException("Malformed SUB instruction string sent to getSubMsg" + line);
+
+        return TrollSpeak.SUB.getMsgText() + TrollParam.makeParamsPretty(parts[1]) + " by " + TrollParam.makeParamsPretty(parts[2]);
+    }
+
+    /**
+     * Parse the MUL instruction message from the line ADD Parameter Parameter|Value
+     * @param line ADD Param1 Param2|Value2
+     * @return Multiply Param1 by Param2|Value2
+     */
+    private String getMultMsg(String line) throws AngryTrollException{
+        String[] parts = line.split(" ");
+        if (parts.length != 3) throw new AngryTrollException("Malformed MUL instruction string sent to getMulMsg " + line);
+
+        return TrollSpeak.MUL.getMsgText() + TrollParam.makeParamsPretty(parts[1]) + " by " + TrollParam.makeParamsPretty(parts[2]);
+    }
+
+    /**
+     * Parse the DIV instruction message from the line ADD Parameter Parameter|Value
+     * @param line DIV Param1 Param2|Value2
+     * @return Divide Param1 by Param2|Value2
+     */
+    private String getDivMsg(String line) throws AngryTrollException {
+        String[] parts = line.split(" ");
+        if (parts.length != 3) throw new AngryTrollException("Malformed DIV instruction string sent to getDivMsg " + line);
+
+        return TrollSpeak.DIV.getMsgText() + TrollParam.makeParamsPretty(parts[1]) + " by " + TrollParam.makeParamsPretty(parts[2]);
+    }
+
+    /**
+     * Parse the name of the label shown by #LabelNameHere
+     * @param line A label name of the form #LabelNameHere
+     * @return The parsed label name: Label Name Here
+     */
+    private String getLabelName(String line) throws AngryTrollException {
+        if (!line.startsWith("#")) throw new AngryTrollException("Malformed label name sent ot parseLabelName " + line);
+
+        // todo: Convert from camel case to normal writing.
+        return line.substring(1 + line.indexOf("#"));
+    }
+
+    /**
+     *
+     * @param left
+     * @param comparator
+     * @param right
+     * @return
+     */
+    private String getConditionQuestion(String left, String comparator, String right) {
+        return TrollParam.makeParamsPretty(left) + comparator + TrollParam.makeParamsPretty(right) + "?";
+    }
+
+    /**
+     * Parse the question from a given IF statement
+     * @param line Statement of the form IF parameter|number parameter|number GOTO #Label
+     * @return A question of the form TODO
+     */
+    private String getIfQuestion(String line) throws AngryTrollException {
+        String[] parts = line.split(" ");
+        if (parts.length != 5) throw new AngryTrollException("Malformed IF string in getIfQuestion" + line);
+
+        return getConditionQuestion(parts[1], TrollSpeak.IF.getMsgText(), parts[2]);
+    }
+
+    /**
+     * get the message from a WAITFOR statement
+     * @throws AngryTrollException when the number of parts is wrong
+     * @param line A string of the form WAITFOR
+     * @return the formatted string
+     */
+    private String getWaitForQuestion(String line) throws AngryTrollException {
+        String[] parts = line.split(" ");
+        if (parts.length != 7) throw new AngryTrollException("Malformed WAITFOR instruction string sent to getWaitForQuestion " + line);
+
+        // WAITFOR param str|num|param TIMEOUT num GOTO Label
+        return getConditionQuestion(parts[1], TrollSpeak.WAITFOR.getMsgText(), parts[2]);
+    }
+
+    /**
+     * get the message from a WAITFOR statement
+     * @throws AngryTrollException when the number of parts is wrong
+     * @param line A string of the form WAITFOR
+     * @return the formatted string
+     */
+    private String getWaitForLessQuestion(String line) throws AngryTrollException {
+        String[] parts = line.split(" ");
+        if (parts.length != 7) throw new AngryTrollException("Malformed WAITFOR instruction string sent to getWaitForQuestion " + line);
+
+        // WAITFOR param str|num|param TIMEOUT num GOTO Label
+        return getConditionQuestion(parts[1], TrollSpeak.WAITFORL.getMsgText(), parts[2]);
+    }
+
+    /**
+     * get the message from a WAITFOR statement
+     * @throws AngryTrollException when the number of parts is wrong
+     * @param line A string of the form WAITFOR
+     * @return the formatted string
+     */
+    private String getWaitForLessEqualQuestion(String line) throws AngryTrollException {
+        String[] parts = line.split(" ");
+        if (parts.length != 7) throw new AngryTrollException("Malformed WAITFOR instruction string sent to getWaitForQuestion " + line);
+
+        // WAITFOR param str|num|param TIMEOUT num GOTO Label
+        return getConditionQuestion(parts[1], TrollSpeak.WAITFORLEQ.getMsgText(), parts[2]);
+    }
+
+    /**
+     * get the message from a WAITFOR statement
+     * @throws AngryTrollException when the number of parts is wrong
+     * @param line A string of the form WAITFOR
+     * @return the formatted string
+     */
+    private String getWaitForGreaterQuestion(String line) throws AngryTrollException {
+        String[] parts = line.split(" ");
+        if (parts.length != 7) throw new AngryTrollException("Malformed WAITFOR instruction string sent to getWaitForQuestion " + line);
+
+        // WAITFOR param str|num|param TIMEOUT num GOTO Label
+        return getConditionQuestion(parts[1], TrollSpeak.WAITFORG.getMsgText(), parts[2]);
+    }
+
+        /**
+     * get the message from a WAITFOR statement
+     * @throws AngryTrollException when the number of parts is wrong
+     * @param line A string of the form WAITFOR
+     * @return the formatted string
+     */
+    private String getWaitForGreaterEqualQuestion(String line) throws AngryTrollException {
+        String[] parts = line.split(" ");
+        if (parts.length != 7) throw new AngryTrollException("Malformed WAITFOR instruction string sent to getWaitForQuestion " + line);
+
+        // WAITFOR param str|num|param TIMEOUT num GOTO Label
+        return getConditionQuestion(parts[1], TrollSpeak.WAITFORGEQ.getMsgText(), parts[2]);
     }
 }

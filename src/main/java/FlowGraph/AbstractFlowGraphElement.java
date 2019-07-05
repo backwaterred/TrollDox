@@ -12,6 +12,17 @@ public abstract class AbstractFlowGraphElement implements iFlowGraphElement {
         atts = new LinkedList<>();
     }
 
+    public String getAttributeValue(String attName) {
+        String ret = "";
+        for (String att : atts) {
+            if (att.startsWith(attName)) {
+                ret = att.substring(att.indexOf("=")+2, att.length()-1);
+                break;
+            }
+        }
+        return ret;
+    }
+
     @Override
     public iFlowGraphElement addAttribute(String attLabel, String attValue) {
         atts.add(attLabel + "=\"" + attValue + "\"");
