@@ -7,7 +7,7 @@ import java.util.LinkedList;
 public class FlowGraph {
 
     HashMap<Integer, iFlowGraphElement> nodes;
-    HashSet<iFlowGraphElement> edges;
+    HashSet<FlowGraphEdge> edges;
     LinkedList<String> atts;
 
     public FlowGraph() {
@@ -62,7 +62,7 @@ public class FlowGraph {
     /**
      * Adds an edge to the graph
     **/
-    public void addEdge(iFlowGraphElement e) {
+    public void addEdge(FlowGraphEdge e) {
         edges.add(e);
     }
 
@@ -71,5 +71,20 @@ public class FlowGraph {
      */
     public int getNodeCount() {
         return nodes.size();
+    }
+
+    /**
+     * Returns true iff the connection from->to exists
+     * @param from
+     * @param to
+     * @return
+     */
+    public boolean hasConnection(int from, int to) {
+
+        for (FlowGraphEdge e : edges) {
+            if (e.getFromId() == from && e.getToId() == to)
+                    return true;
+        }
+        return false;
     }
 }

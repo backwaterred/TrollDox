@@ -19,6 +19,14 @@ public class FlowGraphEdge extends AbstractFlowGraphElement {
         if (!labelText.isEmpty()) this.addAttribute("xlabel", labelText);
     }
 
+    public int getFromId() {
+        return fromId;
+    }
+
+    public int getToId() {
+        return toId;
+    }
+
     @Override
     public String render() {
         StringBuilder rtn = new StringBuilder();

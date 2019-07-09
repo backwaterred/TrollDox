@@ -12,8 +12,8 @@ import java.util.LinkedList;
 
 public class TrollParser {
 
-    private static final int START_NODE_ID  = 0;
-    private static final int END_NODE_ID    = 9999;
+    public static final int START_NODE_ID  = 0;
+    public static final int END_NODE_ID    = 9999;
     private static final int TITLE_NODE_ID  = 9998;
     private static final int DATE_NODE_ID   = 9997;
     private static final int ORPHAN_NODE_ID = -1;
