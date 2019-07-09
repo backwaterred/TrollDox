@@ -122,7 +122,7 @@ public class TrollParser {
                addEdgeFromParent(currentEntry);
                addNextLineTodo(currentEntry);
            } catch (AngryTrollException e) {
-               System.out.println("Couldn't parse LOGEVENT statement at line " + currentEntry.lineNum + ":\n\t" + line);
+               System.out.println("Error parsing LOGEVENT statement at line " + currentEntry.lineNum + ":\n\t" + line);
                e.printStackTrace();
            }
        } else if (parts[0].startsWith(TrollSpeak.LABEL.getCommandText())) {
@@ -132,7 +132,7 @@ public class TrollParser {
                 addEdgeFromParent(currentEntry);
                 addNextLineTodo(currentEntry);
             } catch (AngryTrollException e) {
-                System.out.println("Couldn't parse label name at line " + currentEntry.lineNum + ":\n\t" + line);
+                System.out.println("Error parsing label name at line " + currentEntry.lineNum + ":\n\t" + line);
                 e.printStackTrace();
             }
         } else if (parts[0].equals(TrollSpeak.GOTO.getCommandText())) {
@@ -142,7 +142,7 @@ public class TrollParser {
                 addEdgeFromParent(currentEntry);
                 addGotoTodo(currentEntry, line);
             } catch (AngryTrollException | IOException e) {
-                System.out.println("Couldn't parse GOTO statement at line " + currentEntry.lineNum + ":\n\t" + line);
+                System.out.println("Error parsing GOTO statement at line " + currentEntry.lineNum + ":\n\t" + line);
                 e.printStackTrace();
             }
         } else if (parts[0].equals(TrollSpeak.IF.getCommandText())) {
@@ -153,7 +153,7 @@ public class TrollParser {
                 addGotoTodo(currentEntry, line.substring(line.indexOf("GOTO")), "Yes");
                 addNextLineTodo(currentEntry, "No");
             } catch (AngryTrollException | IOException e) {
-                System.out.println("Couldn't parse IF statement at line " + currentEntry.lineNum + ":\n\t" + line);
+                System.out.println("Error parsing IF statement at line " + currentEntry.lineNum + ":\n\t" + line);
                 e.printStackTrace();
             }
         } else if (parts[0].equalsIgnoreCase(TrollSpeak.WAIT.getCommandText())) {
@@ -164,7 +164,7 @@ public class TrollParser {
                 addNextLineTodo(currentEntry);
             } catch (AngryTrollException e) {
                 e.printStackTrace();
-                System.out.println("Couldn't parse WAIT statement at line " + currentEntry.lineNum + ":\n\t" + line);
+                System.out.println("Error parsing WAIT statement at line " + currentEntry.lineNum + ":\n\t" + line);
                 e.printStackTrace();
             }
         } else if (parts[0].equals(TrollSpeak.ADD.getCommandText())) {
@@ -174,7 +174,7 @@ public class TrollParser {
                addEdgeFromParent(currentEntry);
                addNextLineTodo(currentEntry);
            } catch (AngryTrollException e) {
-               System.out.println("Error while parsing ADD instruction at line " + currentEntry.lineNum + "\n\t" + line);
+               System.out.println("Error parsing ADD instruction at line " + currentEntry.lineNum + "\n\t" + line);
                e.printStackTrace();
            }
         } else if (parts[0].equals(TrollSpeak.SUB.getCommandText())) {
@@ -184,7 +184,7 @@ public class TrollParser {
                 addEdgeFromParent(currentEntry);
                 addNextLineTodo(currentEntry);
             } catch (AngryTrollException e) {
-                System.out.println("Error while parsing SUB instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                System.out.println("Error parsing SUB instruction at line " + currentEntry.lineNum + "\n\t" + line);
                 e.printStackTrace();
             }
         } else if (parts[0].equals(TrollSpeak.MUL.getCommandText())) {
@@ -195,7 +195,7 @@ public class TrollParser {
                 addEdgeFromParent(currentEntry);
                 addNextLineTodo(currentEntry);
             } catch (AngryTrollException e) {
-                System.out.println("Error while parsing MUL instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                System.out.println("Error parsing MUL instruction at line " + currentEntry.lineNum + "\n\t" + line);
                 e.printStackTrace();
             }
         } else if (parts[0].equals(TrollSpeak.DIV.getCommandText())) {
@@ -205,7 +205,7 @@ public class TrollParser {
                 addEdgeFromParent(currentEntry);
                 addNextLineTodo(currentEntry);
             } catch (AngryTrollException e) {
-                System.out.println("Error while parsing DIV instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                System.out.println("Error parsing DIV instruction at line " + currentEntry.lineNum + "\n\t" + line);
                 e.printStackTrace();
             }
         } else if (parts[0].equals(TrollSpeak.WAITFOR.getCommandText())) {
@@ -216,7 +216,7 @@ public class TrollParser {
                 addGotoTodo(currentEntry, line.substring(line.indexOf("GOTO")), "Yes");
                 addNextLineTodo(currentEntry, "No");
             } catch (AngryTrollException | IOException e) {
-                System.out.println("Error while parsing WAITFOR instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                System.out.println("Error parsing WAITFOR instruction at line " + currentEntry.lineNum + "\n\t" + line);
                 e.printStackTrace();
             }
         } else if (parts[0].equals(TrollSpeak.WAITFORL.getCommandText())) {
@@ -227,7 +227,7 @@ public class TrollParser {
                 addGotoTodo(currentEntry, line.substring(line.indexOf("GOTO")), "Yes");
                 addNextLineTodo(currentEntry, "No");
             } catch (AngryTrollException | IOException e) {
-                System.out.println("Error while parsing WAITFORLESS instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                System.out.println("Error parsing WAITFORLESS instruction at line " + currentEntry.lineNum + "\n\t" + line);
                 e.printStackTrace();
             }
         } else if (parts[0].equals(TrollSpeak.WAITFORLEQ.getCommandText())) {
@@ -238,7 +238,7 @@ public class TrollParser {
                 addGotoTodo(currentEntry, line.substring(line.indexOf("GOTO")), "Yes");
                 addNextLineTodo(currentEntry, "No");
             } catch (AngryTrollException | IOException e) {
-                System.out.println("Error while parsing WAITFORLESSEQUAL instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                System.out.println("Error parsing WAITFORLESSEQUAL instruction at line " + currentEntry.lineNum + "\n\t" + line);
                 e.printStackTrace();
             }
         } else if (parts[0].equals(TrollSpeak.WAITFORG.getCommandText())) {
@@ -249,7 +249,7 @@ public class TrollParser {
                 addGotoTodo(currentEntry, line.substring(line.indexOf("GOTO")), "Yes");
                 addNextLineTodo(currentEntry, "No");
             } catch (AngryTrollException | IOException e) {
-                System.out.println("Error while parsing WAITFORGREATER instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                System.out.println("Error parsing WAITFORGREATER instruction at line " + currentEntry.lineNum + "\n\t" + line);
                 e.printStackTrace();
             }
         } else if (parts[0].equals(TrollSpeak.WAITFORGEQ.getCommandText())) {
@@ -260,10 +260,74 @@ public class TrollParser {
                 addGotoTodo(currentEntry, line.substring(line.indexOf("GOTO")), "Yes");
                 addNextLineTodo(currentEntry, "No");
             } catch (AngryTrollException | IOException e) {
-                System.out.println("Error while parsing WAITFORGREATEREQUAL instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                System.out.println("Error parsing WAITFORGREATEREQUAL instruction at line " + currentEntry.lineNum + "\n\t" + line);
                 e.printStackTrace();
             }
         } else if (parts[0].equals(TrollSpeak.SET.getCommandText())) {
+            try {
+                if (currentNode == null)
+                    graph.addNode(new TextBox(currentEntry.lineNum, getSetMsg(line)));
+                addEdgeFromParent(currentEntry);
+                addNextLineTodo(currentEntry);
+            } catch (AngryTrollException e) {
+                e.printStackTrace();
+                System.out.println("Error parsing SET statement at line " + currentEntry.lineNum + ":\n\t" + line);
+                e.printStackTrace();
+            }
+        } else if (parts[0].equals(TrollSpeak.IFL.getCommandText())) {
+            try {
+                if (currentNode == null)
+                    graph.addNode(new DecisionDiamond(currentEntry.lineNum, getIFLQuestion(line)));
+                addEdgeFromParent(currentEntry);
+                addGotoTodo(currentEntry, line.substring(line.indexOf("GOTO")), "Yes");
+                addNextLineTodo(currentEntry, "No");
+            } catch (AngryTrollException | IOException e) {
+                System.out.println("Error parsing WAITFORGREATEREQUAL instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                e.printStackTrace();
+            }
+        } else if (parts[0].equals(TrollSpeak.IFLEQ.getCommandText())) {
+            try {
+                if (currentNode == null)
+                    graph.addNode(new DecisionDiamond(currentEntry.lineNum, getIFLEQQuestion(line)));
+                addEdgeFromParent(currentEntry);
+                addGotoTodo(currentEntry, line.substring(line.indexOf("GOTO")), "Yes");
+                addNextLineTodo(currentEntry, "No");
+            } catch (AngryTrollException | IOException e) {
+                System.out.println("Error parsing WAITFORGREATEREQUAL instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                e.printStackTrace();
+            }
+        } else if (parts[0].equals(TrollSpeak.IFG.getCommandText())) {
+            try {
+                if (currentNode == null)
+                    graph.addNode(new DecisionDiamond(currentEntry.lineNum, getIFGQuestion(line)));
+                addEdgeFromParent(currentEntry);
+                addGotoTodo(currentEntry, line.substring(line.indexOf("GOTO")), "Yes");
+                addNextLineTodo(currentEntry, "No");
+            } catch (AngryTrollException | IOException e) {
+                System.out.println("Error parsing WAITFORGREATEREQUAL instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                e.printStackTrace();
+            }
+        } else if (parts[0].equals(TrollSpeak.IFGEQ.getCommandText())) {
+            try {
+                if (currentNode == null)
+                    graph.addNode(new DecisionDiamond(currentEntry.lineNum, getIFGEQQuestion(line)));
+                addEdgeFromParent(currentEntry);
+                addGotoTodo(currentEntry, line.substring(line.indexOf("GOTO")), "Yes");
+                addNextLineTodo(currentEntry, "No");
+            } catch (AngryTrollException | IOException e) {
+                System.out.println("Error parsing WAITFORGREATEREQUAL instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                e.printStackTrace();
+            }
+        } else if (parts[0].equals(TrollSpeak.EXECUTE.getCommandText())) {
+            if (currentNode == null)
+                graph.addNode(new TextBox(currentEntry.lineNum, "Execute"));
+            addEdgeFromParent(currentEntry);
+            addNextLineTodo(currentEntry);
+        } else if (parts[0].equals(TrollSpeak.WAITFORRESULTS.getCommandText())) {
+            if (currentNode == null)
+                graph.addNode(new TextBox(currentEntry.lineNum, "Wait for results"));
+            addEdgeFromParent(currentEntry);
+            addNextLineTodo(currentEntry);
         } else {
             // todo: Decide on default behaviour when nothing matches. For now do nothing.
             System.out.println("TrollParser::ProcessTodoEntry unrecognised statement at line: " + currentEntry.lineNum + "\n\t" + line);
@@ -546,5 +610,45 @@ public class TrollParser {
 
         // WAITFOR param str|num|param TIMEOUT num GOTO Label
         return getConditionQuestion(parts[1], TrollSpeak.WAITFORGEQ.getMsgText(), parts[2]);
+    }
+
+    private String getSetMsg(String line) throws AngryTrollException {
+        String[] parts = line.split(" ");
+        if (parts.length != 3) throw new AngryTrollException("Malformed SET instruction string sent to getSetMsg " + line);
+
+        if ((parts[1].contains("valve") || parts[1].contains("Valve")) && parts[2].equals("1")) {
+            return "Open: " + TrollParam.makeParamsPretty(parts[1]);
+        } else if ((parts[1].contains("valve") || parts[1].contains("Valve")) && parts[2].equals("0")) {
+            return "Close: " + TrollParam.makeParamsPretty(parts[1]);
+        } else
+            return TrollSpeak.SET.getMsgText() + TrollParam.makeParamsPretty(parts[1]) + " to " + parts[2];
+    }
+
+    private String getIFLQuestion(String line) throws AngryTrollException {
+        String[] parts = line.split(" ");
+        if (parts.length != 5) throw new AngryTrollException("Malformed IFL instruction string sent to getIFLQuestion" + line);
+
+        return getConditionQuestion(parts[1], TrollSpeak.IFL.getMsgText(), parts[2]);
+    }
+
+    private String getIFLEQQuestion(String line) throws AngryTrollException {
+        String[] parts = line.split(" ");
+        if (parts.length != 5) throw new AngryTrollException("Malformed IFLEQ instruction string sent to getIFLEQQuestion" + line);
+
+        return getConditionQuestion(parts[1], TrollSpeak.IFLEQ.getMsgText(), parts[2]);
+    }
+
+    private String getIFGQuestion(String line) throws AngryTrollException {
+        String[] parts = line.split(" ");
+        if (parts.length != 5) throw new AngryTrollException("Malformed IFG instruction string sent to getIFGQQuestion" + line);
+
+        return getConditionQuestion(parts[1], TrollSpeak.IFG.getMsgText(), parts[2]);
+    }
+
+    private String getIFGEQQuestion(String line) throws AngryTrollException {
+        String[] parts = line.split(" ");
+        if (parts.length != 5) throw new AngryTrollException("Malformed IFGEQ instruction string sent to getIFGEQQuestion" + line);
+
+        return getConditionQuestion(parts[1], TrollSpeak.IFGEQ.getMsgText(), parts[2]);
     }
 }

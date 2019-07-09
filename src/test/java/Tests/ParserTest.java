@@ -1,10 +1,13 @@
 package Tests;
 
 import FlowGraph.FlowGraph;
+import FlowGraph.AbstractFlowGraphElement;
 import TrollLang.AngryTrollException;
+import TrollLang.TrollParam;
 import TrollLang.TrollParser.FileInput;
 import TrollLang.TrollParser.ParserInput;
 import TrollLang.TrollParser.TrollParser;
+import TrollLang.TrollSpeak;
 import org.junit.jupiter.api.*;
 
 import java.io.IOException;
@@ -87,5 +90,45 @@ import static org.junit.jupiter.api.Assertions.*;
             assertTrue(graph.hasConnection(2, 6));
         }
 
+        @Test
+        void testSetTrioText() throws IOException, AngryTrollException {
+
+            input = new FileInput("./src/test/resources/SETtrio.txt");
+            parser = new TrollParser(input, "Sets and things", "0000-00-00");
+            graph = parser.parse();
+
+            AbstractFlowGraphElement age;
+            age = (AbstractFlowGraphElement) graph.getNode(1);
+            assertEquals(TrollSpeak.SET.getMsgText() + TrollParam.makeParamsPretty("Application:Mood_Graph.Console_Parameter:Console_Parameters.AI:_1234_Are_You_Feeling_Happy.Value") + " to " + 1,
+                    age.getAttributeValue("label"));
+            age = (AbstractFlowGraphElement) graph.getNode(2);
+            assertEquals("Open: " + TrollParam.makeParamsPretty("Application:Mood_Graph.Console_Parameter:Console_Parameters.AI:_1234_SV1_This_Is_A_Valve.Value"),
+                    age.getAttributeValue("label"));
+            age = (AbstractFlowGraphElement) graph.getNode(3);
+            assertEquals("Close: " + TrollParam.makeParamsPretty("Application:Mood_Graph.Console_Parameter:Console_Parameters.AI:_1234_SV2_This_Is_Another_Valve.Value"),
+                    age.getAttributeValue("label"));
+            age = (AbstractFlowGraphElement) graph.getNode(4);
+            assertEquals(TrollSpeak.SET.getMsgText() + TrollParam.makeParamsPretty("Application:Mood_Graph.Console_Parameter:Console_Parameters.AI:_1234_This_Is_A_Running_Flag.Value") + " to " + 1,
+                    age.getAttributeValue("label"));
+        }
+
+        @Test
+        void testIF_IFbool() throws IOException, AngryTrollException {
+
+
+            input = new FileInput("./src/test/resources/IF&IFbool.txt");
+            parser = new TrollParser(input, "Test for IF, IFLESS, IFLESSEQUAL, IFGREATER, & IFGREATEREQUAL", "0000-00-00");
+            graph = parser.parse();
+
+            assertTrue(graph.hasConnection(1, 7));
+            assertTrue(graph.hasConnection(1, 2));
+            assertTrue(graph.hasConnection(2, 7));
+            assertTrue(graph.hasConnection(2, 3));
+            assertTrue(graph.hasConnection(3, 7));
+            assertTrue(graph.hasConnection(3, 4));
+            assertTrue(graph.hasConnection(4, 7));
+            assertTrue(graph.hasConnection(4, 5));
+            assertTrue(graph.hasConnection(5, 7));
+        }
 
     }

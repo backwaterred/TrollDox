@@ -12,7 +12,6 @@ public enum TrollSpeak {
     DIV("DIV","Divide "),
     FILECOPY("FILECOPY","Copy file for"),
     IFEXIST("IFEXIST","IFEXIST"),
-    IFEQ("IFEQUALS"," is equal to "),
     IFL("IFLESS"," is less than "),
     IFLEQ("IFLESSEQUAL"," is less than or equal to "),
     IFG("IFGREATER"," is greater than "),
