@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35555637-3109-42bf-93f7-7b4239bec49c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/IF&amp;IFbool.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/SETtrio.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollSpeak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrollLang/TrollSpeak.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollSpeak.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TrollLang/TrollSpeak.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Tests/ParserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Tests/ParserTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in/in.txt" beforeDir="false" afterPath="$PROJECT_DIR$/in/in.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,7 +23,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="5525">
               <caret line="327" column="81" selection-start-line="327" selection-start-column="81" selection-end-line="327" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -455,7 +447,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Tests in TrollDox">
+  <component name="RunManager" selected="Application.TrollDoxLauncher">
     <configuration name="TrollDoxLauncher" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TrollDoxLauncher" />
       <module name="TrollDox" />
@@ -611,9 +603,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ParserTest_(1) - 2019.07.09 at 13h 36m 12s.xml">
-      <configuration name="ParserTest (1)" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="WaitTest - 2019.07.09 at 13h 41m 12s.xml">
       <configuration name="WaitTest" configurationId="JUnit" />
     </history-entry>
@@ -641,11 +630,15 @@
     <history-entry file="ParserTest_(1) - 2019.07.09 at 15h 17m 29s.xml">
       <configuration name="ParserTest (1)" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Tests_in_TrollDox - 2019.07.09 at 15h 29m 44s.xml">
+      <configuration name="Tests in TrollDox" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="592" y="-1208" width="1936" height="1176" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.1684435" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.1684435" />
       <window_info id="Structure" order="1" sideWeight="0.5007874" side_tool="true" weight="0.25681818" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1155,7 +1148,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="5525">
           <caret line="327" column="81" selection-start-line="327" selection-start-column="81" selection-end-line="327" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />

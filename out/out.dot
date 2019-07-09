@@ -5,26 +5,30 @@ graph[page="8,11" ratio=auto fontsize=12 ]
 
 // Nodes
 0[shape="oval"label="START"]
-2[shape="box"label="LogEvent:
-Once upon a time, there was a tale to test decisions"]
-4[shape="diamond"label="Is Afraid Of The Big Bad Wolf == 0?"]
-5[shape="box"label="LogEvent:
-The Big Bad Wolf isn't scary"]
-7[shape="oval"label="BigBadWolfHouse"]
-8[shape="box"label="LogEvent:
-Ahhhhhhhhhhhhhhhhhhhhh!"]
-10[shape="oval"label="TheEnd"]
-99999[shape="box"label="Test Graph"style="filled"fillcolor="grey"]
-99998[shape="box"label="Config: Year - Month - Day"style="filled"fillcolor="grey"]
+4[shape="diamond"label="hidden Special Flag For 1A-Causticizer Low Intensity is equal to 1?"]
+6[shape="invhouse"label="Scan_Sample"]
+8[shape="oval"label="Low_Intensity"]
+9[shape="box"label="Set:
+Settling Flag FSS B to 1"]
+10[shape="box"label="Wait:
+1A Delay To Settle When Low Intensity"]
+11[shape="box"label="Set:
+Settling Flag FSS B to 0"]
+9997[shape="box"label="Config: Year - Month - Day"style="filled"fillcolor="grey"]
+13[shape="oval"label="Scan_Sample"]
+9998[shape="box"label="Test Graph"style="filled"fillcolor="grey"]
+14[shape="box"label="Set:
+hidden Sample Temperature Through Cell FSS A to Application:Monsteras_Recaust.CanOpen:CANopen_Transducers.AI:_0010_Sample_Temp_FSS_A.Value"]
 9999[shape="oval"label="END"]
 
 // Edges
-4 -> 5[xlabel="No"]
-10 -> 9999
-2 -> 4
-8 -> 10
-5 -> 7
-7 -> 8
-4 -> 7[xlabel="Yes"]
-0 -> 2
+6 -> 13
+4 -> 6[xlabel="No"]
+9 -> 10
+8 -> 9
+10 -> 11
+13 -> 14
+11 -> 13
+4 -> 8[xlabel="Yes"]
+0 -> 4
 }
