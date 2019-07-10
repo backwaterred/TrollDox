@@ -130,5 +130,12 @@ import static org.junit.jupiter.api.Assertions.*;
             assertTrue(graph.hasConnection(4, 5));
             assertTrue(graph.hasConnection(5, 7));
         }
+        @Test
+        void checkOddErrata() throws IOException, AngryTrollException {
+            input = new FileInput("./src/test/resources/oddErrata.txt");
+            parser = new TrollParser(input, "Odds", "0000-00-00");
+            graph = parser.parse();
 
+            assertEquals(2 + 4, graph.getNodeCount()); // START, END, Title, & Date
+        }
     }

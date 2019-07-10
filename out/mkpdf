@@ -1,0 +1,4 @@
+#!/bin/bash
+
+test -f out.pdf && rm out.pdf
+dot -Tpdf -o out.pdf out.dot

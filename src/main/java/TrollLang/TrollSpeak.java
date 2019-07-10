@@ -2,7 +2,7 @@ package TrollLang;
 
 public enum TrollSpeak {
     LOGEVENT ("LOGEVENT", "LogEvent:\n"),
-    IF ("IF", " is equal to "),
+    IF ("IF", " = "),
     GOTO ("GOTO", "Goto:\n"),
     LABEL ("#", ""),
     SET ("SET", "Set:\n"),
@@ -12,10 +12,10 @@ public enum TrollSpeak {
     DIV("DIV","Divide "),
     FILECOPY("FILECOPY","Copy file for"),
     IFEXIST("IFEXIST","IFEXIST"),
-    IFL("IFLESS"," is less than "),
-    IFLEQ("IFLESSEQUAL"," is less than or equal to "),
-    IFG("IFGREATER"," is greater than "),
-    IFGEQ("IFGREATEREQUAL", " is greater than or equal to "),
+    IFL("IFLESS"," < "),
+    IFLEQ("IFLESSEQUAL"," <= "),
+    IFG("IFGREATER"," > "),
+    IFGEQ("IFGREATEREQUAL", " >= "),
     WAIT ("WAIT", "Wait:\n"),
     WAITFOR("WAITFOR",""),
     WAITFORL("WAITFORLESS", ""),

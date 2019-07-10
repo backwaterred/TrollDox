@@ -87,6 +87,16 @@ public class TrollParser {
         return graph;
     }
 
+    private boolean isParsableLine(String line) {
+        if (line.isEmpty() || line.startsWith("//")) {
+            return false;
+        }
+        String[] parts = line.split("\\s++");
+        if (parts.length <= 0) {
+            return false;
+        }
+        return true;
+    }
     /**
      * Process a single TD list item. Fail-fast if previously visited.
      * @param currentEntry The TD list item to process
@@ -107,12 +117,12 @@ public class TrollParser {
             System.out.println("Warning: TrollParser could not parse line " + currentEntry.lineNum);
             e.printStackTrace();
         }
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
 
         // Process line
         iFlowGraphElement currentNode = graph.getNode(currentEntry.lineNum);
-        if (line.isEmpty() || line.startsWith("//")) {
-            // Do not process empty lines or comments. Assume the entry was created as a next line, and add the next next line instead.
+        if (!isParsableLine(line)) {
+            // Do not process un-parsable lines. Assume the entry was created as a next line, and add the next-next line instead.
             todo.push(new TodoEntry(1+currentEntry.lineNum, currentEntry.parentId, currentEntry.edgeLabelText));
             return;
         } else if (parts[0].equals(TrollSpeak.LOGEVENT.getCommandText())) {
@@ -371,7 +381,7 @@ public class TrollParser {
      * @param labelText String to add to edgeLabel
      */
     private void addGotoTodo(TodoEntry currentEntry, String line, String labelText) throws IOException {
-        String label = line.split(" ")[1]; // Given GOTO #label want #label
+        String label = line.split("\\s++")[1]; // Given GOTO #label want #label
         todo.push(new TodoEntry(input.getLineNumberStartingWith("#" + label.trim()),currentEntry.lineNum, labelText));
     }
 
@@ -415,7 +425,7 @@ public class TrollParser {
                 .get();
 
         // Map each troll param to it's pretty string equivalent
-        String rtn = Arrays.stream(input.split(" "))
+        String rtn = Arrays.stream(input.split("\\s++"))
                 .map(word -> (TrollParam.isValidParam(word)) ? (new TrollParam(word)).getPrettyText() : word)
                 .reduce((acc, ele) -> acc + " " + ele)
                 .get();
@@ -438,7 +448,7 @@ public class TrollParser {
      * @return The string as mentioned above
      **/
     private String getGotoMsg(String line) throws AngryTrollException {
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 2) throw new AngryTrollException("Malformed GOTO string in getGotoMsg " + line);
 
         return parts[1];
@@ -452,7 +462,7 @@ public class TrollParser {
      * @return A nice string
      */
     private String getWaitMsg(String line) throws AngryTrollException {
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 2) throw new AngryTrollException("Malformed WAIT string sent to getWaitMsg " + line);
 
         String msg = TrollParam.isValidParam(parts[1])? TrollParam.makeParamsPretty(parts[1]) : parts[1];
@@ -465,7 +475,7 @@ public class TrollParser {
      * @return Increment Param1 by Param2|Value2
      */
     private String getAddMsg(String line) throws AngryTrollException {
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 3) throw new AngryTrollException("Malformed ADD instruction string sent to getAddMsg " + line);
 
         return TrollSpeak.ADD.getMsgText() + TrollParam.makeParamsPretty(parts[1]) + " by " + TrollParam.makeParamsPretty(parts[2]);
@@ -477,7 +487,7 @@ public class TrollParser {
      * @return Decrement Param1 by Param2|Value2
      */
     private String getSubMsg(String line) throws AngryTrollException {
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 3) throw new AngryTrollException("Malformed SUB instruction string sent to getSubMsg" + line);
 
         return TrollSpeak.SUB.getMsgText() + TrollParam.makeParamsPretty(parts[1]) + " by " + TrollParam.makeParamsPretty(parts[2]);
@@ -489,7 +499,7 @@ public class TrollParser {
      * @return Multiply Param1 by Param2|Value2
      */
     private String getMultMsg(String line) throws AngryTrollException{
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 3) throw new AngryTrollException("Malformed MUL instruction string sent to getMulMsg " + line);
 
         return TrollSpeak.MUL.getMsgText() + TrollParam.makeParamsPretty(parts[1]) + " by " + TrollParam.makeParamsPretty(parts[2]);
@@ -501,7 +511,7 @@ public class TrollParser {
      * @return Divide Param1 by Param2|Value2
      */
     private String getDivMsg(String line) throws AngryTrollException {
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 3) throw new AngryTrollException("Malformed DIV instruction string sent to getDivMsg " + line);
 
         return TrollSpeak.DIV.getMsgText() + TrollParam.makeParamsPretty(parts[1]) + " by " + TrollParam.makeParamsPretty(parts[2]);
@@ -527,7 +537,7 @@ public class TrollParser {
      * @return
      */
     private String getConditionQuestion(String left, String comparator, String right) {
-        return TrollParam.makeParamsPretty(left) + comparator + TrollParam.makeParamsPretty(right) + "?";
+        return "Is " + TrollParam.makeParamsPretty(left) + comparator + TrollParam.makeParamsPretty(right) + "?";
     }
 
     /**
@@ -536,7 +546,7 @@ public class TrollParser {
      * @return A question of the form TODO
      */
     private String getIfQuestion(String line) throws AngryTrollException {
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 5) throw new AngryTrollException("Malformed IF string in getIfQuestion" + line);
 
         return getConditionQuestion(parts[1], TrollSpeak.IF.getMsgText(), parts[2]);
@@ -549,7 +559,7 @@ public class TrollParser {
      * @return the formatted string
      */
     private String getWaitForQuestion(String line) throws AngryTrollException {
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 7) throw new AngryTrollException("Malformed WAITFOR instruction string sent to getWaitForQuestion " + line);
 
         // WAITFOR param str|num|param TIMEOUT num GOTO Label
@@ -563,7 +573,7 @@ public class TrollParser {
      * @return the formatted string
      */
     private String getWaitForLessQuestion(String line) throws AngryTrollException {
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 7) throw new AngryTrollException("Malformed WAITFOR instruction string sent to getWaitForQuestion " + line);
 
         // WAITFOR param str|num|param TIMEOUT num GOTO Label
@@ -577,7 +587,7 @@ public class TrollParser {
      * @return the formatted string
      */
     private String getWaitForLessEqualQuestion(String line) throws AngryTrollException {
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 7) throw new AngryTrollException("Malformed WAITFOR instruction string sent to getWaitForQuestion " + line);
 
         // WAITFOR param str|num|param TIMEOUT num GOTO Label
@@ -591,7 +601,7 @@ public class TrollParser {
      * @return the formatted string
      */
     private String getWaitForGreaterQuestion(String line) throws AngryTrollException {
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 7) throw new AngryTrollException("Malformed WAITFOR instruction string sent to getWaitForQuestion " + line);
 
         // WAITFOR param str|num|param TIMEOUT num GOTO Label
@@ -605,7 +615,7 @@ public class TrollParser {
      * @return the formatted string
      */
     private String getWaitForGreaterEqualQuestion(String line) throws AngryTrollException {
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 7) throw new AngryTrollException("Malformed WAITFOR instruction string sent to getWaitForQuestion " + line);
 
         // WAITFOR param str|num|param TIMEOUT num GOTO Label
@@ -613,7 +623,7 @@ public class TrollParser {
     }
 
     private String getSetMsg(String line) throws AngryTrollException {
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 3) throw new AngryTrollException("Malformed SET instruction string sent to getSetMsg " + line);
 
         if ((parts[1].contains("valve") || parts[1].contains("Valve")) && parts[2].equals("1")) {
@@ -621,32 +631,32 @@ public class TrollParser {
         } else if ((parts[1].contains("valve") || parts[1].contains("Valve")) && parts[2].equals("0")) {
             return "Close: " + TrollParam.makeParamsPretty(parts[1]);
         } else
-            return TrollSpeak.SET.getMsgText() + TrollParam.makeParamsPretty(parts[1]) + " to " + parts[2];
+            return TrollSpeak.SET.getMsgText() + TrollParam.makeParamsPretty(parts[1]) + " to " + TrollParam.makeParamsPretty(parts[2]);
     }
 
     private String getIFLQuestion(String line) throws AngryTrollException {
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 5) throw new AngryTrollException("Malformed IFL instruction string sent to getIFLQuestion" + line);
 
         return getConditionQuestion(parts[1], TrollSpeak.IFL.getMsgText(), parts[2]);
     }
 
     private String getIFLEQQuestion(String line) throws AngryTrollException {
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 5) throw new AngryTrollException("Malformed IFLEQ instruction string sent to getIFLEQQuestion" + line);
 
         return getConditionQuestion(parts[1], TrollSpeak.IFLEQ.getMsgText(), parts[2]);
     }
 
     private String getIFGQuestion(String line) throws AngryTrollException {
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 5) throw new AngryTrollException("Malformed IFG instruction string sent to getIFGQQuestion" + line);
 
         return getConditionQuestion(parts[1], TrollSpeak.IFG.getMsgText(), parts[2]);
     }
 
     private String getIFGEQQuestion(String line) throws AngryTrollException {
-        String[] parts = line.split(" ");
+        String[] parts = line.split("\\s++");
         if (parts.length != 5) throw new AngryTrollException("Malformed IFGEQ instruction string sent to getIFGEQQuestion" + line);
 
         return getConditionQuestion(parts[1], TrollSpeak.IFGEQ.getMsgText(), parts[2]);
