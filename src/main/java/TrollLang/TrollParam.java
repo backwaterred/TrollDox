@@ -20,7 +20,7 @@ public class TrollParam {
     }
 
     // Takes mixed input. Finds the TrollParams and maps them to 'pretty' params using the TrollParam getPrettyText method
-    public static String makeParamsPretty(String paramful) {
+    public static String makeParamsPretty(String paramful) throws AngryTrollException {
         // Map each troll param to it's pretty string equivalent
         return Arrays.stream(paramful.split(" "))
                 .map(word -> (TrollParam.isValidParam(word)) ? (new TrollParam(word)).getPrettyText() : word)
@@ -36,6 +36,7 @@ public class TrollParam {
 
     // Example Input:
     // Application:Comp_Name.ModBUS:Modbus_RTU_slave.DO:_0540_Process_Flag_B.Value
+    // Application:Project_Name.Stream:_0320_Specific_Stream_XYZ_B.enabled
     public TrollParam(String paramText) {
         this.fullText = paramText;
         String[] param_split = paramText.split(":");
@@ -94,7 +95,7 @@ public class TrollParam {
         this.isHidden = ug_split[0].equalsIgnoreCase("hidden");
 
         if (!isHidden) {
-            // This is a little hack-y (but not in a good way)
+            // This is a little hack-y (and not in a good way)
             // If the first element is a number, ignore it (by stetting it to "")
             // otherwise assume it is part of the name and carry on
             try {

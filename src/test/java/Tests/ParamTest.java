@@ -13,7 +13,8 @@ public class ParamTest {
             "Application:Cust_System.ModBUS:Modbus_RTU_slave_dig.DO:_0500_B_WL_Sample_In_Progress.Value",
             "Application:Cust_System.CanOpen:CANopen_Transducers.DI:_0100_Air_Pressure_Normally_Open.Value",
             "Application:Cust_System.Console_Parameter:Console_Parameters.AI:_1470_Minimum_FSS2_Demin_Water_Pressure.Value",
-            "Application:Cust_System.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value"
+            "Application:Cust_System.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value",
+            "Application:Project_Name.Stream:_0320_Specific_Stream_XYZ_B.enabled"
     };
 
     final String[] invalidParams = {
@@ -107,5 +108,20 @@ public class ParamTest {
 
         assertEquals("ConsoleParam.AO:hidden Digester Cell Temperature",
                 param.toString());
+    }
+
+    @Test
+    public void testIncorrectlyParsedParam() {
+        param = new TrollParam(validParams[4]);
+        assertEquals(validParams[4],
+                param.getFullText());
+        assertEquals(ConnectionType.INTERNAL, param.getCxnType());
+        assertEquals(IOType.NONE, param.getIoType());
+        assertFalse(param.isHidden());
+
+        assertEquals("Enable Disable 1A Stream from ABC",
+                param.toString());
+        assertEquals("Enable Disable 1A Stream from ABC",
+                TrollParam.makeParamsPretty(validParams[4]));
     }
 }
