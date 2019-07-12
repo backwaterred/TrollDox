@@ -414,19 +414,23 @@ public class TrollParser {
      *  */
     private String getLogEventMsg(String input) throws AngryTrollException {
         input = input.substring(1+ TrollSpeak.LOGEVENT.getCommandText().length()); // Remove 'LOGEVENT' command text
+        // Parse input string
+        String[] parts = input.split("\\s++");
+        if (parts.length <2)
+            throw new AngryTrollException("Malformed LOGEVENT string sent to getLogEventMsg " + input);
 
         // Check for mismatched quotemarks
         if (!areQuotemarksMatched(input))
             throw new AngryTrollException("LogElement::getLogEventMsg - Quotemark mismatch detected");
 
-        // Remove all quotemarks from the string. We know they match so they are no longer necessary for our purposes.
+        // Remove all quotemarks from the string now that we know they match.
         input = Arrays.stream(input.split("\""))
                 .reduce((acc, ele) -> acc + ele)
                 .get();
 
         // Map each troll param to it's pretty string equivalent
         String rtn = Arrays.stream(input.split("\\s++"))
-                .map(word -> (TrollParam.isValidParam(word)) ? (new TrollParam(word)).getPrettyText() : word)
+                .map(word -> TrollParam.makeParamsPretty(word))
                 .reduce((acc, ele) -> acc + " " + ele)
                 .get();
 
@@ -530,13 +534,19 @@ public class TrollParser {
     }
 
     /**
+     * Forms a question from the left, right and comparator of a condition statement. Parses TrollParams and applies the makePretty method to them.
+     * EG:
+     * left == "Garbage:Garbage.Garbage_Garbage...Garbage_GAR_Sample_Flow.Garbage"
+     * comparator == "="
+     * right == "Garbage:Garbage.Garbage_Garbage...Garbage_GAR_Min_Sample_Flow.Garbage"
+     * returns -> "Is Sample Flow = Min Sample Flow?"
      *
-     * @param left
-     * @param comparator
-     * @param right
-     * @return
+     * @param left The left side of the condition question. TrollParams will be made pretty.
+     * @param comparator The comparator used in the question
+     * @param right The right side of the condition statement. TrollParams will be made pretty.
+     * @return The condition statement
      */
-    private String getConditionQuestion(String left, String comparator, String right) {
+    private String getConditionQuestion(String left, String comparator, String right) throws AngryTrollException {
         return "Is " + TrollParam.makeParamsPretty(left) + comparator + TrollParam.makeParamsPretty(right) + "?";
     }
 

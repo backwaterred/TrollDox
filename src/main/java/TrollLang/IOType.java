@@ -5,5 +5,5 @@ public enum IOType {
     DI,
     AO,
     AI,
-    NONE;
+    Internal;
 }
