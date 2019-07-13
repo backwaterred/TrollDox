@@ -1,11 +1,11 @@
 package TrollLang;
 
 public enum TrollSpeak {
-    LOGEVENT ("LOGEVENT", "LogEvent:\n"),
+    LOGEVENT ("LOGEVENT", "LogEvent:\\n"),
     IF ("IF", " = "),
-    GOTO ("GOTO", "Goto:\n"),
+    GOTO ("GOTO", "Goto:\\n"),
     LABEL ("#", ""),
-    SET ("SET", "Set:\n"),
+    SET ("SET", "Set:\\n"),
     ADD("ADD","Increment "),
     SUB("SUB","Decrement "),
     MUL("MUL","Multiply "),
@@ -16,7 +16,7 @@ public enum TrollSpeak {
     IFLEQ("IFLESSEQUAL"," <= "),
     IFG("IFGREATER"," > "),
     IFGEQ("IFGREATEREQUAL", " >= "),
-    WAIT ("WAIT", "Wait:\n"),
+    WAIT ("WAIT", "Wait:\\n"),
     WAITFOR("WAITFOR",""),
     WAITFORL("WAITFORLESS", ""),
     WAITFORLEQ("WAITFORLESSEQUAL", ""),
@@ -24,10 +24,10 @@ public enum TrollSpeak {
     WAITFORGEQ("WAITFORGREATEREQUAL", ""),
     WAITFORRESULTS("WAITFORRESULTS", ""),
     EXECUTE("EXECUTE", "Scan Sample"),
-    DIALOK("DIALOGOK", "Dialogue Box:\n"),
-    DIALINFO("DIALOGINFO","Dialogue Box:\n"),
+    DIALOK("DIALOGOK", "Dialogue Box:\\n"),
+    DIALINFO("DIALOGINFO","Dialogue Box:\\n"),
     DIALINFOCL("DIALOGEINFOCLOSE","Close dialogue box"),
-    DIALYN("DIALOGUEYESNO", "Dialogue box Y/N:\n");
+    DIALYN("DIALOGUEYESNO", "Dialogue box Y/N:\\n");
 
     private String displayText;
     private String commandText;
