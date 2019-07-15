@@ -151,14 +151,13 @@ public class TrollParser {
             try {
                 int nextLine = input.getLineNumberStartingWith(parts[1]);
 
-                if (nextLine - currentEntry.lineNum < GOTO_MIN_CONNECTION_DISTANCE) {
+                if (currentNode != null && nextLine - currentEntry.lineNum < GOTO_MIN_CONNECTION_DISTANCE) {
                     // skip adding GOTODart. Next line is too close.
                     addGotoTodo(currentEntry.parentId, parts[1]);
-                } else if (currentNode == null) {
-                    graph.addNode(new GotoDart(currentEntry.lineNum, getGotoMsg(line)));
-                    addEdgeFromParent(currentEntry);
-                    addGotoTodo(ORPHAN_NODE_ID, parts[1]);
                 } else {
+                    // add new node as expected.
+                    if (currentNode == null)
+                        graph.addNode(new GotoDart(currentEntry.lineNum, getGotoMsgFromLabeName(line)));
                     addEdgeFromParent(currentEntry);
                     addGotoTodo(ORPHAN_NODE_ID, parts[1]);
                 }
@@ -171,8 +170,13 @@ public class TrollParser {
                 if (currentNode == null)
                     graph.addNode(new DecisionDiamond(currentEntry.lineNum, getIfQuestion(line)));
                 addEdgeFromParent(currentEntry);
-                addGotoTodo(currentEntry, parts[4], "Yes");
                 addNextLineTodo(currentEntry, "No");
+                addGotoDartConditional(currentEntry, parts[4], "Yes");
+
+//                if (nextLineNumber - currentEntry.lineNum < GOTO_MIN_CONNECTION_DISTANCE)
+//                    addGotoTodo(currentEntry.lineNum, parts[4], "Yes");
+//                else
+//                    addNewGotoDart((new TodoEntry(MAX_NODE_ID + currentEntry.lineNum, currentEntry.lineNum,"Yes")), parts[4]);
             } catch (AngryTrollException | IOException e) {
                 System.out.println("Error parsing IF statement at line " + currentEntry.lineNum + ":\n\t" + line);
                 e.printStackTrace();
@@ -356,6 +360,24 @@ public class TrollParser {
        }
     }
 
+    /**
+     * Checks distance between current and target; adds GTDart if less than GOTO_MIN_CONNECTION_DISTANCE.
+     * Avoids code repetition since IF, IFLESS, ... WAITFORGREATEREQUAL all perform this task.
+     * @param currentEntry A TodoEntry with the currentLine, parentLine, ... state information.
+     * @param target The text following the 'GOTO'
+     */
+    private void addGotoDartConditional(TodoEntry currentEntry, String target, String edgeLabelText) throws AngryTrollException, IOException {
+        int nextLineNumber = input.getLineNumberStartingWith(target);
+
+        if (nextLineNumber - currentEntry.lineNum < GOTO_MIN_CONNECTION_DISTANCE) {
+            // next line is close; proceed as normal
+            addGotoTodo(currentEntry.lineNum, target, edgeLabelText);
+        } else {
+            // next line is far. Add extra GotoDart
+           graph.addNode(new GotoDart(MAX_NODE_ID + currentEntry.lineNum,getGotoMsgFromLabeName(target)));
+           addEdgeFromParent(new TodoEntry(MAX_NODE_ID + currentEntry.lineNum, currentEntry.lineNum, edgeLabelText));
+        }
+    }
 
     /**
      * Adds the next line to the TD list if present in the file. Sets the given item as parent.
@@ -366,7 +388,7 @@ public class TrollParser {
     }
     /**
      * Adds the next line to the TD list if present in the file. Sets the given item as parent.
-     * @param currentEntry the line before the line to be added.
+     * @param currentEntry The line right before the 'next line' which is to be added.
      * @param labelText String to add to edgeLabel
      */
     private void addNextLineTodo(TodoEntry currentEntry, String labelText) {
@@ -392,14 +414,13 @@ public class TrollParser {
      * @param labelText String to add to edgeLabel
      */
     private void addGotoTodo(int parentLineNum, String target, String labelText) throws IOException {
-        int nextLine = input.getLineNumberStartingWith("#" + target.trim());
+        int targetLineNum = input.getLineNumberStartingWith("#" + target.trim());
 
-        todo.push(new TodoEntry(nextLine, parentLineNum, labelText));
+        todo.push(new TodoEntry(targetLineNum, parentLineNum, labelText));
     }
 
     /**
      * Adds edge from parent node to current node if not an orphan.
-     * @param currentEntry The element to use as edge destination. Will use the parentId as edge source if not set to ORPHAN_NODE_ID.
      */
     private void addEdgeFromParent(TodoEntry currentEntry) {
         if ((currentEntry.parentId != ORPHAN_NODE_ID))
@@ -461,9 +482,9 @@ public class TrollParser {
      * @param line The fulls string in the format mentioned above.
      * @return The string as mentioned above
      **/
-    private String getGotoMsg(String line) throws AngryTrollException {
+    private String getGotoMsgFromLabeName(String line) throws AngryTrollException {
         String[] parts = line.split("\\s++");
-        if (parts.length != 2) throw new AngryTrollException("Malformed GOTO string in getGotoMsg " + line);
+        if (parts.length != 2) throw new AngryTrollException("Malformed GOTO string in getGotoMsgFromLabeName " + line);
 
         return parts[1];
     }
