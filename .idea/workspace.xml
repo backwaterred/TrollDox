@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35555637-3109-42bf-93f7-7b4239bec49c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/startChecks.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/out.dot" beforeDir="false" afterPath="$PROJECT_DIR$/out/out.dot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/out.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/out.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/GOTOLong.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/GOTOLong.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/GOTOShort.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/GOTOShort.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/IF&amp;IFbool.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/IF&amp;IFbool.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser$TodoEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser$TodoEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TrollLang/TrollParser/TrollParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/DecisionsDecisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/DecisionsDecisions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/IF&amp;IFbool.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/IF&amp;IFbool.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Tests/ParserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Tests/ParserTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,42 +34,21 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
-                  <caret line="172" column="52" selection-start-line="172" selection-start-column="52" selection-end-line="172" selection-end-column="52" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#18654#18655#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="508">
-                  <caret line="375" column="50" selection-start-line="375" selection-start-column="50" selection-end-line="375" selection-end-column="50" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#18654#18655#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="382" column="37" selection-start-line="382" selection-start-column="37" selection-end-line="382" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#19044#19045#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -123,7 +115,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Graph/iGraphNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/Doc/Doc.java" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.txt" />
         <option value="$PROJECT_DIR$/src/main/resources/samples/test.dot" />
@@ -142,7 +133,6 @@
         <option value="$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java" />
         <option value="$PROJECT_DIR$/src/test/java/ParamTest.java" />
         <option value="$PROJECT_DIR$/src/test/resources/SimpleDecision.txt" />
-        <option value="$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt" />
         <option value="$PROJECT_DIR$/src/test/java/FlowGraphTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/ParserInputTests/FileInputTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ParserTest.java" />
@@ -158,7 +148,6 @@
         <option value="$PROJECT_DIR$/src/test/java/Tests/ArithmeticTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraphEdge.java" />
         <option value="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/IF&amp;IFbool.txt" />
         <option value="$PROJECT_DIR$/src/test/resources/SETtrio.txt" />
         <option value="$PROJECT_DIR$/src/test/resources/oddErrata.txt" />
         <option value="$PROJECT_DIR$/in/in.txt" />
@@ -168,11 +157,14 @@
         <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParam.java" />
         <option value="$PROJECT_DIR$/src/test/resources/GOTO-Long&amp;Short.txt" />
         <option value="$PROJECT_DIR$/src/test/resources/IFLongAndShort.txt" />
-        <option value="$PROJECT_DIR$/src/test/resources/GOTOShort.txt" />
-        <option value="$PROJECT_DIR$/src/test/resources/GOTOLong.txt" />
-        <option value="$PROJECT_DIR$/src/test/java/Tests/ParserTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollSpeak.java" />
         <option value="$PROJECT_DIR$/src/test/java/Tests/WaitTest.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/GOTOLong.txt" />
+        <option value="$PROJECT_DIR$/src/test/resources/GOTOShort.txt" />
+        <option value="$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt" />
+        <option value="$PROJECT_DIR$/src/test/resources/startChecks.txt" />
+        <option value="$PROJECT_DIR$/src/test/resources/IF&amp;IFbool.txt" />
+        <option value="$PROJECT_DIR$/src/test/java/Tests/ParserTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" />
       </list>
     </option>
@@ -486,7 +478,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TrollDoxLauncher">
+  <component name="RunManager" selected="JUnit.Tests in TrollDox">
     <configuration name="TrollDoxLauncher" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TrollDoxLauncher" />
       <module name="TrollDox" />
@@ -532,7 +524,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParserTest.OneHundredLEsProduces100Nodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParserTest.SimpleDecision" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TrollDox" />
       <extension name="coverage">
         <pattern>
@@ -542,7 +534,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
       <option name="MAIN_CLASS_NAME" value="Tests.ParserTest" />
-      <option name="METHOD_NAME" value="OneHundredLEsProduces100Nodes" />
+      <option name="METHOD_NAME" value="SimpleDecision" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -559,6 +551,22 @@
       <option name="PACKAGE_NAME" value="Tests" />
       <option name="MAIN_CLASS_NAME" value="Tests.ParserTest" />
       <option name="METHOD_NAME" value="checkGotoLongJump" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParserTest.checkGotoShortJump" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TrollDox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.ParserTest" />
+      <option name="METHOD_NAME" value="checkGotoShortJump" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -595,7 +603,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests in TrollDox" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests in TrollDox" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="TrollDox" />
       <extension name="coverage">
         <pattern>
@@ -627,18 +635,19 @@
       <item itemvalue="JUnit.PageTest" />
       <item itemvalue="JUnit.ParserTests" />
       <item itemvalue="JUnit.Tests in TrollDox" />
+      <item itemvalue="JUnit.ParserTest.checkGotoShortJump" />
       <item itemvalue="JUnit.ParserTest" />
-      <item itemvalue="JUnit.ParserTest.OneHundredLEsProduces100Nodes" />
       <item itemvalue="JUnit.ParserTest.simpleDesicionsEdgeTest" />
       <item itemvalue="JUnit.ParserTest.checkGotoLongJump" />
+      <item itemvalue="JUnit.ParserTest.SimpleDecision" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Tests in TrollDox" />
-        <item itemvalue="JUnit.ParserTest.checkGotoLongJump" />
         <item itemvalue="JUnit.ParserTest" />
+        <item itemvalue="JUnit.ParserTest.SimpleDecision" />
+        <item itemvalue="JUnit.ParserTest.checkGotoShortJump" />
+        <item itemvalue="JUnit.ParserTest.checkGotoLongJump" />
         <item itemvalue="JUnit.ParserTest.simpleDesicionsEdgeTest" />
-        <item itemvalue="JUnit.ParserTest.OneHundredLEsProduces100Nodes" />
       </list>
     </recent_temporary>
   </component>
@@ -656,42 +665,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ParserTest_OneHundredLEsProduces100Nodes - 2019.07.12 at 14h 45m 16s.xml">
-      <configuration name="ParserTest.OneHundredLEsProduces100Nodes" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Tests_in_TrollDox - 2019.07.12 at 14h 45m 30s.xml">
-      <configuration name="Tests in TrollDox" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Tests_in_TrollDox - 2019.07.12 at 14h 50m 10s.xml">
-      <configuration name="Tests in TrollDox" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ParserTest_OneHundredLEsProduces100Nodes - 2019.07.12 at 15h 05m 30s.xml">
-      <configuration name="ParserTest.OneHundredLEsProduces100Nodes" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Tests_in_TrollDox - 2019.07.12 at 15h 19m 03s.xml">
-      <configuration name="Tests in TrollDox" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ParserTest_simpleDesicionsEdgeTest - 2019.07.12 at 15h 22m 58s.xml">
-      <configuration name="ParserTest.simpleDesicionsEdgeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ParserTest - 2019.07.12 at 15h 23m 06s.xml">
+    <history-entry file="ParserTest - 2019.07.15 at 15h 52m 25s.xml">
       <configuration name="ParserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ParserTest_checkGotoLongJump - 2019.07.12 at 15h 24m 54s.xml">
-      <configuration name="ParserTest.checkGotoLongJump" configurationId="JUnit" />
+    <history-entry file="ParserTest - 2019.07.15 at 15h 54m 35s.xml">
+      <configuration name="ParserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ParserTest_checkGotoLongJump - 2019.07.12 at 15h 25m 00s.xml">
-      <configuration name="ParserTest.checkGotoLongJump" configurationId="JUnit" />
+    <history-entry file="ParserTest - 2019.07.15 at 15h 54m 50s.xml">
+      <configuration name="ParserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Tests_in_TrollDox - 2019.07.12 at 15h 25m 09s.xml">
-      <configuration name="Tests in TrollDox" configurationId="JUnit" />
+    <history-entry file="ParserTest - 2019.07.15 at 16h 02m 21s.xml">
+      <configuration name="ParserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParserTest - 2019.07.15 at 16h 02m 26s.xml">
+      <configuration name="ParserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParserTest - 2019.07.15 at 16h 02m 53s.xml">
+      <configuration name="ParserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParserTest - 2019.07.15 at 16h 03m 27s.xml">
+      <configuration name="ParserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParserTest - 2019.07.15 at 16h 04m 48s.xml">
+      <configuration name="ParserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParserTest - 2019.07.15 at 16h 06m 32s.xml">
+      <configuration name="ParserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParserTest - 2019.07.15 at 16h 07m 13s.xml">
+      <configuration name="ParserTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="592" y="-1208" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992126" weight="0.1748401" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.1748401" />
       <window_info id="Structure" order="1" sideWeight="0.5007874" side_tool="true" weight="0.25681818" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -700,7 +709,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32694152" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4161074" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2885906" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39980826" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -816,6 +825,21 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>graph.render()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>input.getLineNumberStartingWith(&quot;#Long&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>u</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>input.substring(TrollSpeak.LOGEVENT.getMsgText().length()-1)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -847,34 +871,9 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>TrollParam.isValidParam(&quot;Application:Mood_Graph.Console_Parameter:Console_Parameters.AI:_1234_Are_You_Feeling_Happy&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>paramful.split(&quot; &quot;);</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>lineReader.readLine();</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/MockInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-          <folding>
-            <element signature="e#659#660#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/in/OneHundredLogEvents.txt" />
     <entry file="file://$PROJECT_DIR$/src/test/resources/OneHundredLogEvents.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -1004,13 +1003,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Util/Util.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/resources/IF&amp;IFbool.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" selection-start-column="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/SETtrio.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1027,13 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/in/in.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -1085,30 +1070,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/GOTO-Long&amp;Short.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/ParserInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/GOTOShort.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/IFLongAndShort.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1123,13 +1084,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Tests/WaitTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
@@ -1137,23 +1091,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Tests/ParserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2261">
-          <caret line="147" column="12" selection-start-line="147" selection-start-column="12" selection-end-line="147" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/GOTOLong.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1177,17 +1114,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-          <folding>
-            <element signature="e#875#876#0" expanded="true" />
-            <element signature="e#919#920#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1202,13 +1128,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/ParserInput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="375" column="50" selection-start-line="375" selection-start-column="50" selection-end-line="375" selection-end-column="50" />
+        <state relative-caret-position="136">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/GOTOShort.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/DecisionsDecisions.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/FileInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#18654#18655#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="788">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+          <folding>
+            <element signature="e#875#876#0" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/GOTOLong.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/startChecks.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/in/in.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/IF&amp;IFbool.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Tests/ParserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="118" column="31" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="382" column="37" selection-start-line="382" selection-start-column="37" selection-end-line="382" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#19044#19045#0" expanded="true" />
           </folding>
         </state>
       </provider>

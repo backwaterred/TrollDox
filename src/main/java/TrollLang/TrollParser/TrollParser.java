@@ -76,7 +76,7 @@ public class TrollParser {
             startingLine = input.getNextValidLineNumber(0); // Next valid will be > 0
         } catch (IOException e) {
             e.printStackTrace();
-            throw new AngryTrollException("TrollParser::parse could not find any valid line to parse");
+            throw new AngryTrollException("TrollParser::parse could not find any valid lines to parse");
         }
 
 
@@ -116,7 +116,7 @@ public class TrollParser {
         try {
             line = input.getLine(currentEntry.lineNum);
         } catch (IOException e) {
-            System.out.println("Warning: TrollParser could not parse line " + currentEntry.lineNum);
+            System.out.println("Warning: TrollParser couldn't retrieve line " + currentEntry.lineNum);
             e.printStackTrace();
         }
         String[] parts = line.split("\\s++");
@@ -149,9 +149,9 @@ public class TrollParser {
             }
         } else if (parts[0].equals(TrollSpeak.GOTO.getCommandText())) {
             try {
-                int nextLine = input.getLineNumberStartingWith(parts[1]);
+                int nextLine = input.getLineNumberStartingWith("#" + parts[1]);
 
-                if (currentNode != null && nextLine - currentEntry.lineNum < GOTO_MIN_CONNECTION_DISTANCE) {
+                if (currentNode == null && nextLine - currentEntry.lineNum < GOTO_MIN_CONNECTION_DISTANCE) {
                     // skip adding GOTODart. Next line is too close.
                     addGotoTodo(currentEntry.parentId, parts[1]);
                 } else {
@@ -171,12 +171,7 @@ public class TrollParser {
                     graph.addNode(new DecisionDiamond(currentEntry.lineNum, getIfQuestion(line)));
                 addEdgeFromParent(currentEntry);
                 addNextLineTodo(currentEntry, "No");
-                addGotoDartConditional(currentEntry, parts[4], "Yes");
-
-//                if (nextLineNumber - currentEntry.lineNum < GOTO_MIN_CONNECTION_DISTANCE)
-//                    addGotoTodo(currentEntry.lineNum, parts[4], "Yes");
-//                else
-//                    addNewGotoDart((new TodoEntry(MAX_NODE_ID + currentEntry.lineNum, currentEntry.lineNum,"Yes")), parts[4]);
+                addConditionalBranch(currentEntry, parts[4], "Yes");
             } catch (AngryTrollException | IOException e) {
                 System.out.println("Error parsing IF statement at line " + currentEntry.lineNum + ":\n\t" + line);
                 e.printStackTrace();
@@ -238,7 +233,8 @@ public class TrollParser {
                 if (currentNode == null)
                     graph.addNode(new DecisionDiamond(currentEntry.lineNum, getWaitForQuestion(line)));
                 addEdgeFromParent(currentEntry);
-                addGotoTodo(currentEntry, parts[6], "Yes");
+//                addGotoTodo(currentEntry, parts[6], "Yes");
+                addConditionalBranch(currentEntry, parts[6], "Yes");
                 addNextLineTodo(currentEntry, "No");
             } catch (AngryTrollException | IOException e) {
                 System.out.println("Error parsing WAITFOR instruction at line " + currentEntry.lineNum + "\n\t" + line);
@@ -249,7 +245,8 @@ public class TrollParser {
                 if (currentNode == null)
                     graph.addNode(new DecisionDiamond(currentEntry.lineNum, getWaitForLessQuestion(line)));
                 addEdgeFromParent(currentEntry);
-                addGotoTodo(currentEntry, parts[6], "Yes");
+                addConditionalBranch(currentEntry, parts[6], "Yes");
+//                addGotoTodo(currentEntry, parts[6], "Yes");
                 addNextLineTodo(currentEntry, "No");
             } catch (AngryTrollException | IOException e) {
                 System.out.println("Error parsing WAITFORLESS instruction at line " + currentEntry.lineNum + "\n\t" + line);
@@ -260,7 +257,8 @@ public class TrollParser {
                 if (currentNode == null)
                     graph.addNode(new DecisionDiamond(currentEntry.lineNum, getWaitForLessEqualQuestion(line)));
                 addEdgeFromParent(currentEntry);
-                addGotoTodo(currentEntry, parts[6], "Yes");
+                addConditionalBranch(currentEntry, parts[6], "Yes");
+//                addGotoTodo(currentEntry, parts[6], "Yes");
                 addNextLineTodo(currentEntry, "No");
             } catch (AngryTrollException | IOException e) {
                 System.out.println("Error parsing WAITFORLESSEQUAL instruction at line " + currentEntry.lineNum + "\n\t" + line);
@@ -271,7 +269,8 @@ public class TrollParser {
                 if (currentNode == null)
                     graph.addNode(new DecisionDiamond(currentEntry.lineNum, getWaitForGreaterQuestion(line)));
                 addEdgeFromParent(currentEntry);
-                addGotoTodo(currentEntry, parts[6], "Yes");
+                addConditionalBranch(currentEntry, parts[6], "Yes");
+//                addGotoTodo(currentEntry, parts[6], "Yes");
                 addNextLineTodo(currentEntry, "No");
             } catch (AngryTrollException | IOException e) {
                 System.out.println("Error parsing WAITFORGREATER instruction at line " + currentEntry.lineNum + "\n\t" + line);
@@ -282,7 +281,8 @@ public class TrollParser {
                 if (currentNode == null)
                     graph.addNode(new DecisionDiamond(currentEntry.lineNum, getWaitForGreaterEqualQuestion(line)));
                 addEdgeFromParent(currentEntry);
-                addGotoTodo(currentEntry, parts[6], "Yes");
+//                addGotoTodo(currentEntry, parts[6], "Yes");
+                addConditionalBranch(currentEntry, parts[6], "Yes");
                 addNextLineTodo(currentEntry, "No");
             } catch (AngryTrollException | IOException e) {
                 System.out.println("Error parsing WAITFORGREATEREQUAL instruction at line " + currentEntry.lineNum + "\n\t" + line);
@@ -304,7 +304,8 @@ public class TrollParser {
                 if (currentNode == null)
                     graph.addNode(new DecisionDiamond(currentEntry.lineNum, getIFLQuestion(line)));
                 addEdgeFromParent(currentEntry);
-                addGotoTodo(currentEntry, parts[4], "Yes");
+                addConditionalBranch(currentEntry, parts[4], "Yes");
+//                addGotoTodo(currentEntry, parts[4], "Yes");
                 addNextLineTodo(currentEntry, "No");
             } catch (AngryTrollException | IOException e) {
                 System.out.println("Error parsing WAITFORGREATEREQUAL instruction at line " + currentEntry.lineNum + "\n\t" + line);
@@ -315,7 +316,8 @@ public class TrollParser {
                 if (currentNode == null)
                     graph.addNode(new DecisionDiamond(currentEntry.lineNum, getIFLEQQuestion(line)));
                 addEdgeFromParent(currentEntry);
-                addGotoTodo(currentEntry, parts[4], "Yes");
+                addConditionalBranch(currentEntry, parts[4], "Yes");
+//                addGotoTodo(currentEntry, parts[4], "Yes");
                 addNextLineTodo(currentEntry, "No");
             } catch (AngryTrollException | IOException e) {
                 System.out.println("Error parsing WAITFORGREATEREQUAL instruction at line " + currentEntry.lineNum + "\n\t" + line);
@@ -326,7 +328,8 @@ public class TrollParser {
                 if (currentNode == null)
                     graph.addNode(new DecisionDiamond(currentEntry.lineNum, getIFGQuestion(line)));
                 addEdgeFromParent(currentEntry);
-                addGotoTodo(currentEntry, parts[4], "Yes");
+                addConditionalBranch(currentEntry, parts[4], "Yes");
+//                addGotoTodo(currentEntry, parts[4], "Yes");
                 addNextLineTodo(currentEntry, "No");
             } catch (AngryTrollException | IOException e) {
                 System.out.println("Error parsing WAITFORGREATEREQUAL instruction at line " + currentEntry.lineNum + "\n\t" + line);
@@ -337,7 +340,8 @@ public class TrollParser {
                 if (currentNode == null)
                     graph.addNode(new DecisionDiamond(currentEntry.lineNum, getIFGEQQuestion(line)));
                 addEdgeFromParent(currentEntry);
-                addGotoTodo(currentEntry, parts[4], "Yes");
+                addConditionalBranch(currentEntry, parts[4], "Yes");
+//                addGotoTodo(currentEntry, parts[4], "Yes");
                 addNextLineTodo(currentEntry, "No");
             } catch (AngryTrollException | IOException e) {
                 System.out.println("Error parsing WAITFORGREATEREQUAL instruction at line " + currentEntry.lineNum + "\n\t" + line);
@@ -366,16 +370,17 @@ public class TrollParser {
      * @param currentEntry A TodoEntry with the currentLine, parentLine, ... state information.
      * @param target The text following the 'GOTO'
      */
-    private void addGotoDartConditional(TodoEntry currentEntry, String target, String edgeLabelText) throws AngryTrollException, IOException {
-        int nextLineNumber = input.getLineNumberStartingWith(target);
+    private void addConditionalBranch(TodoEntry currentEntry, String target, String edgeLabelText) throws AngryTrollException, IOException {
+        int nextLineNumber = input.getLineNumberStartingWith( "#" + target);
 
         if (nextLineNumber - currentEntry.lineNum < GOTO_MIN_CONNECTION_DISTANCE) {
             // next line is close; proceed as normal
             addGotoTodo(currentEntry.lineNum, target, edgeLabelText);
         } else {
             // next line is far. Add extra GotoDart
-           graph.addNode(new GotoDart(MAX_NODE_ID + currentEntry.lineNum,getGotoMsgFromLabeName(target)));
+           graph.addNode(new GotoDart(MAX_NODE_ID + currentEntry.lineNum,getGotoMsgFromLabeName("GOTO " + target)));
            addEdgeFromParent(new TodoEntry(MAX_NODE_ID + currentEntry.lineNum, currentEntry.lineNum, edgeLabelText));
+           addGotoTodo(ORPHAN_NODE_ID, target);
         }
     }
 
@@ -395,6 +400,7 @@ public class TrollParser {
         try {
             todo.push(new TodoEntry(input.getNextValidLineNumber(currentEntry.lineNum), currentEntry.lineNum, labelText));
         } catch (IOException e) {
+            System.out.println("TrollParser::addNextLineTodo could not find " + labelText);
             graph.addEdge(new FlowGraphEdge(currentEntry.lineNum, END_NODE_ID));
         }
     }
@@ -402,10 +408,10 @@ public class TrollParser {
     /**
      * Adds a TD for a GOTO statement. Called by both the GOTO instruction and any instruction containing a GOTO statement.
      * @param parentLineNum The parent of the new TD
-     * @param line The line beginning with the GOTO instruction
+     * @param target The line beginning with the GOTO instruction
      */
-    private void addGotoTodo(int parentLineNum, String line) throws IOException {
-        addGotoTodo(parentLineNum, line, "");
+    private void addGotoTodo(int parentLineNum, String target) throws IOException {
+        addGotoTodo(parentLineNum, target, "");
     }
     /**
      * Adds a TD for a GOTO statement. Called by both the GOTO instruction and any instruction containing a GOTO statement.

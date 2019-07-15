@@ -74,9 +74,7 @@ import static org.junit.jupiter.api.Assertions.*;
             parser = new TrollParser(input, "DecisionsDecisions", "0000-00-00");
             graph = parser.parse();
 
-            assertEquals(8 + 4, graph.getNodeCount());
-
-            // todo: check edges
+            assertEquals(6 + 4, graph.getNodeCount());
         }
 
         @Test
@@ -86,8 +84,8 @@ import static org.junit.jupiter.api.Assertions.*;
             parser = new TrollParser(input, "DecisionsDecisions", "0000-00-00");
             graph = parser.parse();
 
-//            assertTrue(graph.hasConnection(2, 4));
-//            assertTrue(graph.hasConnection(2, 6));
+            assertTrue(graph.hasConnection(2, 4));
+            assertTrue(graph.hasConnection(2, 6));
         }
 
         @Test
@@ -114,21 +112,20 @@ import static org.junit.jupiter.api.Assertions.*;
 
         @Test
         void testIF_IFbool() throws IOException, AngryTrollException {
-
-
             input = new FileInput("./src/test/resources/IF&IFbool.txt");
             parser = new TrollParser(input, "Test for IF, IFLESS, IFLESSEQUAL, IFGREATER, & IFGREATEREQUAL", "0000-00-00");
             graph = parser.parse();
 
-//            assertTrue(graph.hasConnection(1, 7));
-//            assertTrue(graph.hasConnection(1, 2));
-//            assertTrue(graph.hasConnection(2, 7));
-//            assertTrue(graph.hasConnection(2, 3));
-//            assertTrue(graph.hasConnection(3, 7));
-//            assertTrue(graph.hasConnection(3, 4));
-//            assertTrue(graph.hasConnection(4, 7));
-//            assertTrue(graph.hasConnection(4, 5));
-//            assertTrue(graph.hasConnection(5, 7));
+            assertEquals(5*2 + 2 + 4, graph.getNodeCount());
+            assertFalse(graph.hasConnection(1, input.getLineNumberStartingWith("#Sandbox")));
+            assertFalse(graph.hasConnection(2, input.getLineNumberStartingWith("#Sandbox")));
+            assertFalse(graph.hasConnection(3, input.getLineNumberStartingWith("#Sandbox")));
+            assertFalse(graph.hasConnection(4, input.getLineNumberStartingWith("#Sandbox")));
+            assertFalse(graph.hasConnection(5, input.getLineNumberStartingWith("#Sandbox")));
+            assertTrue(graph.hasConnection(1, 2));
+            assertTrue(graph.hasConnection(2, 3));
+            assertTrue(graph.hasConnection(3, 4));
+            assertTrue(graph.hasConnection(4, 5));
         }
         @Test
         void checkOddErrata() throws IOException, AngryTrollException {
@@ -145,9 +142,12 @@ import static org.junit.jupiter.api.Assertions.*;
             parser = new TrollParser(input, "Test Goto long jump behaviour", "0000-00-00");
             graph = parser.parse();
 
-            assertFalse(graph.hasConnection(1,input.getLineNumberStartingWith("#Long")));
+            // Should have connection between LE and GTD
+            assertTrue(graph.hasConnection(1,2));
+            // Shouldn't have connection between LE and Long
+            assertFalse(graph.hasConnection(2,input.getLineNumberStartingWith("#Long")));
             // A 'bonus' check that doesn't truly belong here. The filler LEs between this jump and the destination shouldn't be parsed.
-            assertEquals(2+4, graph.getNodeCount());
+            assertEquals(3+4, graph.getNodeCount());
         }
 
         @Test
