@@ -5,16 +5,29 @@ import java.util.Arrays;
 public class TrollParam {
 
     public static boolean isValidParam(String possibleParam) {
-        return possibleParam.startsWith("Application:") &&
-               possibleParam.split(":").length == 4 &&
-                possibleParam.split("\\.").length == 4;
+        if (possibleParam.split("\\s++").length > 1)
+            return false;
+        else
+            return possibleParam.startsWith("Application:") &&
+                    ((possibleParam.split(":").length == 4 && possibleParam.split("\\.").length == 4) ||
+                     (possibleParam.split(":").length == 3 && possibleParam.split("\\.").length == 3));
     }
 
     // Takes mixed input. Finds the TrollParams and maps them to 'informative' params using the TrollParam toString method
     public static String makeParamsInformative(String paramful) {
         // Map each troll param to it's pretty string equivalent
         return Arrays.stream(paramful.split(" "))
-                .map(word -> (TrollParam.isValidParam(word)) ? (new TrollParam(word)).toString() : word)
+                .map(word -> {
+                    if (TrollParam.isValidParam(word)) {
+                        try {
+                            return (new TrollParam(word).toString());
+                        } catch (AngryTrollException e) {
+                            System.out.println("Error parsing troll param which appeared valid: " + word);
+                            return word;
+                        }
+                    } else
+                        return word;
+                })
                 .reduce((acc, ele) -> acc + " " + ele)
                 .get();
     }
@@ -23,7 +36,17 @@ public class TrollParam {
     public static String makeParamsPretty(String paramful) {
         // Map each troll param to it's pretty string equivalent
         return Arrays.stream(paramful.split(" "))
-                .map(word -> (TrollParam.isValidParam(word)) ? (new TrollParam(word)).getPrettyText() : word)
+                .map(word -> {
+                    if (TrollParam.isValidParam(word)) {
+                        try {
+                            return (new TrollParam(word).getPrettyText());
+                        } catch (AngryTrollException e) {
+                            System.out.println("Error parsing troll param which appeared valid: " + word);
+                            return word;
+                        }
+                    } else
+                        return word;
+                })
                 .reduce((acc, ele) -> acc + " " + ele)
                 .get();
     }
@@ -36,12 +59,19 @@ public class TrollParam {
 
     // Example Input:
     // Application:Comp_Name.ModBUS:Modbus_RTU_slave.DO:_0540_Process_Flag_B.Value
-    public TrollParam(String paramText) {
+    // Application:Project_Name.Stream:_0320_Specific_Stream_XYZ_B.enabled
+    public TrollParam(String paramText) throws AngryTrollException {
         this.fullText = paramText;
         String[] param_split = paramText.split(":");
-        setConnectionType(param_split[2]);
-        setIOType(param_split[2]);
-        setPrettyText(param_split[3]);
+        if (param_split.length == 4) {
+            setConnectionType(param_split[2]);
+            setIOType(param_split[2]);
+            setPrettyText(param_split[3]);
+        } else {
+            this.cxnType = ConnectionType.INTERNAL;
+            this.ioType = IOType.Internal;
+            setPrettyText(param_split[2]);
+        }
     }
 
     // Example Input:
@@ -62,12 +92,12 @@ public class TrollParam {
     // Modbus_RTU_slave.DO
     // CANopen_Transducers.AI
     // Console_Parameters.DI
-    private void setIOType(String uglyText) {
-        String type = "";
+    private void setIOType(String uglyText) throws AngryTrollException {
+        String type;
         try {
             type = uglyText.split("\\.")[1];
         } catch (Exception e) {
-            /* Catch array out of bounds errors */
+            throw new AngryTrollException("TrollParam::setIOType - Couldn't parse IOType from: " + uglyText);
         }
 
         if (type.equals("DO")) {
@@ -94,7 +124,7 @@ public class TrollParam {
         this.isHidden = ug_split[0].equalsIgnoreCase("hidden");
 
         if (!isHidden) {
-            // This is a little hack-y (but not in a good way)
+            // This is a little hack-y (and not in a good way)
             // If the first element is a number, ignore it (by stetting it to "")
             // otherwise assume it is part of the name and carry on
             try {
@@ -111,8 +141,8 @@ public class TrollParam {
 
     @Override
     public String toString() {
-        return this.cxnType + "." +
-                this.ioType + ":" +
+        return (this.cxnType.toString().isEmpty() ? "" : this.cxnType.toString() + ".") +
+               (this.ioType.toString().isEmpty()  ? "" : this.ioType.toString()  + ":") +
                 this.prettyText;
     }
 

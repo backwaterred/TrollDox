@@ -5,26 +5,358 @@ graph[page="8,11" ratio=auto fontsize=12 ]
 
 // Nodes
 0[shape="oval"label="START"]
-2[shape="box"label="LogEvent:
-Once upon a time, there was a tale to test decisions"]
-4[shape="diamond"label="Is Afraid Of The Big Bad Wolf == 0?"]
-5[shape="box"label="LogEvent:
-The Big Bad Wolf isn't scary"]
-7[shape="oval"label="BigBadWolfHouse"]
-8[shape="box"label="LogEvent:
-Ahhhhhhhhhhhhhhhhhhhhh!"]
-10[shape="oval"label="TheEnd"]
-99999[shape="box"label="Test Graph"style="filled"fillcolor="grey"]
-99998[shape="box"label="Config: Year - Month - Day"style="filled"fillcolor="grey"]
+2[shape="box"label="Set:\n1A Sample In Progress to 1"]
+10245[shape="invhouse"label="Skip_Stream"]
+8[shape="diamond"label="Is CGL Sample In Progress1?"]
+9[shape="diamond"label="Is Slaker Sample In Progress1?"]
+11[shape="diamond"label="Is 3A Sample In Progress1?"]
+267[shape="oval"label="Report_CGL"]
+12[shape="diamond"label="Is 1B Sample In Progress1?"]
+268[shape="box"label="LogEvent:\n CGL is in progress"]
+9997[shape="box"label="Config: Year - Month - Day"style="filled"fillcolor="grey"]
+13[shape="diamond"label="Is 4B Sample In Progress1?"]
+269[shape="invhouse"label="Skip_Stream"]
+9998[shape="box"label="Test Graph"style="filled"fillcolor="grey"]
+14[shape="diamond"label="Is WL to Dig Sample In Progress1?"]
 9999[shape="oval"label="END"]
+271[shape="oval"label="Report_Slaker"]
+272[shape="box"label="LogEvent:\n Slaker is in progress"]
+17[shape="diamond"label="Is Reference In Progress FSS B1?"]
+273[shape="invhouse"label="Skip_Stream"]
+20[shape="diamond"label="Is Enable Disable 1A Caust from DCS = 0?"]
+23[shape="diamond"label="Is Reference Stream FSS B = 1?"]
+279[shape="oval"label="Report_3A"]
+10008[shape="invhouse"label="Report_CGL"]
+24[shape="box"label="LogEvent:\n FSS2 reference is disabled 1A Causticizer stream aborted"]
+280[shape="box"label="LogEvent:\n 3A is in progress"]
+10009[shape="invhouse"label="Report_Slaker"]
+25[shape="box"label="Set:\nReference Stream FSS B to 1"]
+281[shape="invhouse"label="Skip_Stream"]
+26[shape="box"label="Set:\nhidden Reference Trigger FSS B to 1"]
+10011[shape="invhouse"label="Report_3A"]
+27[shape="box"label="Set:\nhidden Reference Trigger FSS B to 0"]
+283[shape="oval"label="Report_1B"]
+10012[shape="invhouse"label="Report_1B"]
+28[shape="invhouse"label="Skip_Stream"]
+284[shape="box"label="LogEvent:\n 1B is in progress"]
+10013[shape="invhouse"label="Report_4B"]
+285[shape="invhouse"label="Skip_Stream"]
+10014[shape="invhouse"label="Report_WL"]
+30[shape="oval"label="Reference_Enabled"]
+287[shape="oval"label="Report_4B"]
+32[shape="diamond"label="Is Reference In Progress FSS B = 1?"]
+288[shape="box"label="LogEvent:\n 4B is in progress"]
+10017[shape="invhouse"label="Report_Ref_FSS_B"]
+289[shape="invhouse"label="Skip_Stream"]
+35[shape="diamond"label="Is PS201B-Air Pressure = 0?"]
+291[shape="oval"label="Report_WL"]
+10020[shape="invhouse"label="Skip_Stream"]
+292[shape="box"label="LogEvent:\n WL is in progress"]
+37[shape="box"label="Set:\nLow Air Pressure FSS B to 0"]
+293[shape="invhouse"label="Skip_Stream"]
+10023[shape="invhouse"label="Reference_Enabled"]
+40[shape="box"label="Set:\nWater Pump B Command To DCS to 1"]
+43[shape="diamond"label="Is Demin Water Pressure FSS BMinimum Demin Water Pressure FSS B?"]
+46[shape="box"label="Set:\nLow Demin Water pressure FSS B to 0"]
+303[shape="oval"label="Report_Ref_FSS_B"]
+10032[shape="invhouse"label="Skip_Stream"]
+304[shape="box"label="LogEvent:\n Ref FSS_B is in progress"]
+49[shape="box"label="Close: SV1B Cell Inlet Valve"]
+306[shape="oval"label="Skip_Stream"]
+50[shape="box"label="Close: SV2B Cell Outlet Valve"]
+307[shape="box"label="Wait:\n10"]
+10035[shape="invhouse"label="Air_Pressure_Alarm_And_Skip"]
+51[shape="box"label="Close: SV4B Slaker Flush Water Valve"]
+308[shape="box"label="Set:\n1A Sample In Progress to 0"]
+52[shape="box"label="Close: SV5B Drain Valve"]
+309[shape="oval"label="End_Stream"]
+53[shape="box"label="Close: SV6B CGL Sample Valve"]
+54[shape="box"label="Close: SV7B Slaker Sample Valve"]
+55[shape="box"label="Close: SV9B 3A Sample Valve"]
+56[shape="box"label="Close: SV10B 1B Sample Valve"]
+57[shape="box"label="Close: SV11B 4B Sample Valve"]
+58[shape="box"label="Close: SV12B WL to Dig Sample Valve"]
+10043[shape="invhouse"label="Demin_Water_Pressure_Alarm_And_Skip"]
+61[shape="box"label="Open: SV3B Demin Water Valve"]
+62[shape="box"label="Open: SV8B 1A Sample Valve"]
+64[shape="box"label="Set:\nBackflushing Flag FSS B to 1"]
+67[shape="box"label="Wait:\nDelay Initial Backflush"]
+70[shape="box"label="Set:\nWater Pump B Command To DCS to 0"]
+73[shape="box"label="Set:\nBackflushing Flag FSS B to 0"]
+74[shape="box"label="Set:\nLiquor Through Drain FSS B to 1"]
+76[shape="box"label="Close: SV3B Demin Water Valve"]
+77[shape="box"label="Wait:\nDelay To Close SV3B"]
+78[shape="box"label="Open: SV5B Drain Valve"]
+81[shape="box"label="Wait:\n1A Delay Sample Through Drain"]
+84[shape="box"label="Set:\nLiquor Through Drain FSS B to 0"]
+85[shape="box"label="Set:\nLiquor Through Cell FSS B to 1"]
+88[shape="box"label="Open: SV1B Cell Inlet Valve"]
+89[shape="box"label="Open: SV2B Cell Outlet Valve"]
+90[shape="box"label="Wait:\n2"]
+91[shape="box"label="Close: SV5B Drain Valve"]
+94[shape="box"label="Wait:\n1A Delay Before Checking Flow"]
+97[shape="diamond"label="Is Flow Through Cell FSS B1A Minimum Sample Flow?"]
+98[shape="invhouse"label="Check_Temperature"]
+100[shape="oval"label="Low_Flow"]
+102[shape="box"label="Set:\nLow Flow FSS B to 1"]
+103[shape="box"label="LogEvent:\n West WLPF sample flow is low : Flow Through Cell FSS B Limit = 1A Minimum Sample Flow"]
+104[shape="invhouse"label="No_Liquor_Flag"]
+106[shape="oval"label="Check_Temperature"]
+108[shape="diamond"label="Is Sample Temp FSS B1A Minimum Sample Temperature?"]
+109[shape="invhouse"label="Sample_Conditions_OK"]
+111[shape="oval"label="Low_Temperature"]
+113[shape="box"label="Set:\nLow Temperature FSS B to 1"]
+114[shape="box"label="LogEvent:\n West WLPF sample temperature is low : Sample Temp FSS B Limit = 1A Minimum Sample Temperature"]
+116[shape="oval"label="No_Liquor_Flag"]
+117[shape="box"label="Set:\nNo Liquor Flag FSS B to 1"]
+119[shape="invhouse"label="Backflush"]
+121[shape="oval"label="Sample_Conditions_OK"]
+122[shape="box"label="Wait:\nDelay after Criteria"]
+125[shape="box"label="Set:\nhidden Sample Flow Through Cell FSS B to Flow Through Cell FSS B"]
+126[shape="box"label="Set:\nhidden Sample Temperature Through Cell FSS B to Sample Temp FSS B"]
+127[shape="box"label="Set:\nhidden Cell Temperature FSS B to Cell Temp FSS B"]
+129[shape="oval"label="Backflush"]
+131[shape="box"label="Set:\nLiquor Through Cell FSS B to 0"]
+132[shape="box"label="Set:\nSettling Flag FSS B to 1"]
+135[shape="box"label="Open: SV5B Drain Valve"]
+136[shape="box"label="Wait:\n2"]
+137[shape="box"label="Close: SV1B Cell Inlet Valve"]
+138[shape="box"label="Close: SV2B Cell Outlet Valve"]
+139[shape="box"label="Wait:\n2"]
+142[shape="box"label="Set:\nWater Pump B Command To DCS to 1"]
+145[shape="diamond"label="Is Demin Water Pressure FSS BMinimum Demin Water Pressure FSS B?"]
+148[shape="box"label="Set:\nLow Demin Water pressure FSS B to 0"]
+151[shape="box"label="Set:\nBackflushing Flag FSS B to 1"]
+152[shape="box"label="Open: SV3B Demin Water Valve"]
+153[shape="box"label="Close: SV5B Drain Valve"]
+156[shape="box"label="Wait:\n1A Delay To Flush"]
+159[shape="box"label="Open: SV5B Drain Valve"]
+160[shape="box"label="Close: SV8B 1A Sample Valve"]
+10145[shape="invhouse"label="Demin_Water_Pressure_Alarm_And_Skip"]
+162[shape="box"label="Set:\nBackflushing Flag FSS B to 0"]
+163[shape="box"label="Set:\nFlushing Drain Flag FSS B to 1"]
+165[shape="box"label="Wait:\nDelay To Flush Drain"]
+168[shape="box"label="Set:\nWater Pump B Command To DCS to 0"]
+171[shape="box"label="Close: SV3B Demin Water Valve"]
+172[shape="box"label="Wait:\nDelay To Close SV3B"]
+173[shape="box"label="Set:\nFlushing Drain Flag FSS B to 0"]
+174[shape="box"label="Close: SV5B Drain Valve"]
+177[shape="diamond"label="Is No Liquor Flag FSS B = 1?"]
+180[shape="box"label="Wait:\n1A Additional Delay To Settle"]
+182[shape="box"label="Set:\nhidden Sample Temperature Through Cell FSS B to Sample Temp FSS B"]
+185[shape="invhouse"label="Trigger_Intensity_Test"]
+187[shape="oval"label="Bad_Value"]
+189[shape="box"label="Increment 1A Alarm Counter by 1"]
+192[shape="diamond"label="Is 1A Alarm Counter < 1A Max Alarm Counter Limit?"]
+10177[shape="invhouse"label="Bad_Value"]
+195[shape="box"label="Set:\n1A Measurement Status to 0"]
+196[shape="box"label="LogEvent:\n 1A Causticizer Measurement status bad in 1A Causticizer Phase 1"]
+198[shape="oval"label="Clean_Cell"]
+200[shape="box"label="Set:\nWater Pump B Command To DCS to 1"]
+203[shape="diamond"label="Is Demin Water Pressure FSS BMinimum Demin Water Pressure FSS B?"]
+206[shape="box"label="Set:\nLow Demin Water pressure FSS B to 0"]
+10192[shape="invhouse"label="Clean_Cell"]
+209[shape="box"label="Set:\nFlushing cell Flag FSS B to 1"]
+210[shape="box"label="Set:\nSettling Flag FSS B to 0"]
+213[shape="box"label="Open: SV3B Demin Water Valve"]
+214[shape="box"label="Open: SV1B Cell Inlet Valve"]
+215[shape="box"label="Open: SV2B Cell Outlet Valve"]
+217[shape="box"label="Wait:\nDelay To Clean Cell"]
+10203[shape="invhouse"label="Demin_Water_Pressure_Alarm_And_Skip"]
+220[shape="box"label="Set:\nFlushing cell Flag FSS B to 0"]
+223[shape="box"label="Set:\nWater Pump B Command To DCS to 0"]
+226[shape="box"label="Close: SV3B Demin Water Valve"]
+227[shape="box"label="Wait:\nDelay To Close SV3B"]
+228[shape="box"label="Close: SV2B Cell Outlet Valve"]
+229[shape="box"label="Close: SV1B Cell Inlet Valve"]
+232[shape="box"label="Set:\n1A Sample In Progress to 0"]
+233[shape="box"label="Set:\nLow Flow FSS B to 0"]
+234[shape="box"label="Set:\nLow Temperature FSS B to 0"]
+235[shape="box"label="Set:\nNo Liquor Flag FSS B to 0"]
+236[shape="invhouse"label="End_Stream"]
+238[shape="oval"label="Air_Pressure_Alarm_And_Skip"]
+239[shape="diamond"label="Is Low Air Pressure FSS B = 1?"]
+240[shape="box"label="Set:\nLow Air Pressure FSS B to 1"]
+241[shape="box"label="LogEvent:\n Air pressure is low - 1A Causticizer stream aborted"]
+242[shape="invhouse"label="Skip_Stream"]
+244[shape="oval"label="Demin_Water_Pressure_Alarm_And_Skip"]
+245[shape="diamond"label="Is Low Demin Water pressure FSS B = 1?"]
+246[shape="box"label="Set:\nLow Demin Water pressure FSS B to 1"]
+247[shape="box"label="LogEvent:\n Demin water pressure is low - 1A Causticizer stream aborted"]
+248[shape="invhouse"label="Skip_Stream"]
+250[shape="oval"label="Trigger_Intensity_Test"]
+251[shape="box"label="Set:\nhidden 1A Intensity Test Trigger to 1"]
+252[shape="box"label="Set:\nhidden 1A Intensity Test Trigger to 0"]
+253[shape="invhouse"label="End_Stream"]
+10239[shape="invhouse"label="Skip_Stream"]
 
 // Edges
-4 -> 5[xlabel="No"]
-10 -> 9999
-2 -> 4
-8 -> 10
-5 -> 7
-7 -> 8
-4 -> 7[xlabel="Yes"]
+245 -> 246[xlabel="No"]
+210 -> 213
+214 -> 215
+53 -> 54
+13 -> 14[xlabel="No"]
+116 -> 117
+90 -> 91
+13 -> 10013[xlabel="Yes"]
+132 -> 135
+27 -> 28
+234 -> 235
+26 -> 27
+145 -> 148[xlabel="No"]
+40 -> 43
+61 -> 62
+111 -> 113
+251 -> 252
+46 -> 49
+160 -> 162
+12 -> 10012[xlabel="Yes"]
+223 -> 226
+241 -> 242
+77 -> 78
+131 -> 132
+70 -> 73
+142 -> 145
+114 -> 116
+159 -> 160
+32 -> 35[xlabel="No"]
+228 -> 229
+97 -> 100[xlabel="Yes"]
+291 -> 292
+136 -> 137
+162 -> 163
+145 -> 10145[xlabel="Yes"]
+174 -> 177
+177 -> 10177[xlabel="Yes"]
+246 -> 247
+106 -> 108
+11 -> 10011[xlabel="Yes"]
+108 -> 111[xlabel="Yes"]
+220 -> 223
+250 -> 251
+57 -> 58
+198 -> 200
+247 -> 248
+245 -> 10245[xlabel="Yes"]
+49 -> 50
+304 -> 306
+203 -> 206[xlabel="No"]
+235 -> 236
+17 -> 10017[xlabel="Yes"]
+37 -> 40
+232 -> 233
+56 -> 57
+308 -> 309
+271 -> 272
+74 -> 76
+287 -> 288
+67 -> 70
+209 -> 210
+102 -> 103
 0 -> 2
+292 -> 293
+180 -> 182
+30 -> 32
+163 -> 165
+215 -> 217
+192 -> 195[xlabel="No"]
+62 -> 64
+100 -> 102
+148 -> 151
+85 -> 88
+127 -> 129
+195 -> 196
+9 -> 11[xlabel="No"]
+138 -> 139
+35 -> 10035[xlabel="Yes"]
+153 -> 156
+168 -> 171
+8 -> 9[xlabel="No"]
+173 -> 174
+288 -> 289
+55 -> 56
+196 -> 198
+309 -> 9999
+2 -> 8
+226 -> 227
+213 -> 214
+229 -> 232
+89 -> 90
+151 -> 152
+43 -> 46[xlabel="No"]
+20 -> 23[xlabel="No"]
+233 -> 234
+306 -> 307
+88 -> 89
+156 -> 159
+23 -> 24[xlabel="No"]
+283 -> 284
+24 -> 25
+192 -> 10192[xlabel="Yes"]
+125 -> 126
+137 -> 138
+238 -> 239
+121 -> 122
+64 -> 67
+217 -> 220
+165 -> 168
+206 -> 209
+279 -> 280
+307 -> 308
+284 -> 285
+172 -> 173
+244 -> 245
+73 -> 74
+51 -> 52
+54 -> 55
+268 -> 269
+8 -> 10008[xlabel="Yes"]
+25 -> 26
+23 -> 10023[xlabel="Yes"]
+203 -> 10203[xlabel="Yes"]
+103 -> 104
+58 -> 61
+117 -> 119
+108 -> 109[xlabel="No"]
+189 -> 192
+84 -> 85
+239 -> 10239[xlabel="Yes"]
+126 -> 127
+11 -> 12[xlabel="No"]
+239 -> 240[xlabel="No"]
+171 -> 172
+14 -> 17[xlabel="No"]
+20 -> 10020[xlabel="Yes"]
+50 -> 51
+78 -> 81
+187 -> 189
+35 -> 37[xlabel="No"]
+52 -> 53
+122 -> 125
+152 -> 153
+17 -> 20[xlabel="No"]
+267 -> 268
+177 -> 180[xlabel="No"]
+113 -> 114
+227 -> 228
+94 -> 97
+139 -> 142
+81 -> 84
+280 -> 281
+135 -> 136
+182 -> 185
+200 -> 203
+129 -> 131
+252 -> 253
+91 -> 94
+97 -> 98[xlabel="No"]
+76 -> 77
+12 -> 13[xlabel="No"]
+32 -> 10032[xlabel="Yes"]
+9 -> 10009[xlabel="Yes"]
+272 -> 273
+240 -> 241
+303 -> 304
+43 -> 10043[xlabel="Yes"]
+14 -> 10014[xlabel="Yes"]
 }

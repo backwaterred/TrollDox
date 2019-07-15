@@ -1,0 +1,4 @@
+LOGEVENT "SHORT"
+GOTO Short
+#Short
+LOGEVENT "DONE"

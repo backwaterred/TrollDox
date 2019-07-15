@@ -74,9 +74,7 @@ import static org.junit.jupiter.api.Assertions.*;
             parser = new TrollParser(input, "DecisionsDecisions", "0000-00-00");
             graph = parser.parse();
 
-            assertEquals(8 + 4, graph.getNodeCount());
-
-            // todo: check edges
+            assertEquals(6 + 4, graph.getNodeCount());
         }
 
         @Test
@@ -114,21 +112,63 @@ import static org.junit.jupiter.api.Assertions.*;
 
         @Test
         void testIF_IFbool() throws IOException, AngryTrollException {
-
-
             input = new FileInput("./src/test/resources/IF&IFbool.txt");
             parser = new TrollParser(input, "Test for IF, IFLESS, IFLESSEQUAL, IFGREATER, & IFGREATEREQUAL", "0000-00-00");
             graph = parser.parse();
 
-            assertTrue(graph.hasConnection(1, 7));
+            assertEquals(5*2 + 2 + 4, graph.getNodeCount());
+            assertFalse(graph.hasConnection(1, input.getLineNumberStartingWith("#Sandbox")));
+            assertFalse(graph.hasConnection(2, input.getLineNumberStartingWith("#Sandbox")));
+            assertFalse(graph.hasConnection(3, input.getLineNumberStartingWith("#Sandbox")));
+            assertFalse(graph.hasConnection(4, input.getLineNumberStartingWith("#Sandbox")));
+            assertFalse(graph.hasConnection(5, input.getLineNumberStartingWith("#Sandbox")));
             assertTrue(graph.hasConnection(1, 2));
-            assertTrue(graph.hasConnection(2, 7));
             assertTrue(graph.hasConnection(2, 3));
-            assertTrue(graph.hasConnection(3, 7));
             assertTrue(graph.hasConnection(3, 4));
-            assertTrue(graph.hasConnection(4, 7));
             assertTrue(graph.hasConnection(4, 5));
-            assertTrue(graph.hasConnection(5, 7));
+        }
+        @Test
+        void checkOddErrata() throws IOException, AngryTrollException {
+            input = new FileInput("./src/test/resources/oddErrata.txt");
+            parser = new TrollParser(input, "Odds", "0000-00-00");
+            graph = parser.parse();
+
+            assertEquals(2 + 4, graph.getNodeCount()); // START, END, Title, & Date
         }
 
+        @Test
+        void checkGotoLongJump() throws IOException, AngryTrollException {
+            input = new FileInput("./src/test/resources/GOTOLong.txt");
+            parser = new TrollParser(input, "Test Goto long jump behaviour", "0000-00-00");
+            graph = parser.parse();
+
+            // Should have connection between LE and GTD
+            assertTrue(graph.hasConnection(1,2));
+            // Shouldn't have connection between LE and Long
+            assertFalse(graph.hasConnection(2,input.getLineNumberStartingWith("#Long")));
+            // A 'bonus' check that doesn't truly belong here. The filler LEs between this jump and the destination shouldn't be parsed.
+            assertEquals(3+4, graph.getNodeCount());
+        }
+
+        @Test
+        void checkGotoShortJump() throws IOException, AngryTrollException {
+            input = new FileInput("./src/test/resources/GOTOShort.txt");
+            parser = new TrollParser(input, "Test Goto short jump behaviour", "0000-00-00");
+            graph = parser.parse();
+
+            assertTrue(graph.hasConnection(1,input.getLineNumberStartingWith("#Short")));
+        }
+
+        @Test
+        void testIFLongAndShort() throws IOException, AngryTrollException {
+            input = new FileInput("./src/test/resources/IFLongAndShort.txt");
+            parser = new TrollParser(input, "Test Conditional statement long and short jump behaviour", "0000-00-00");
+            graph = parser.parse();
+
+            assertTrue(graph.hasConnection(1,2));
+            assertTrue(graph.hasConnection(1,3));
+
+            assertTrue(graph.hasConnection(4,5));
+            assertFalse(graph.hasConnection(4,input.getLineNumberStartingWith("#Long")));
+        }
     }
