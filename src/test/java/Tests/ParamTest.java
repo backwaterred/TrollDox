@@ -15,7 +15,8 @@ public class ParamTest {
             "Application:Cust_System.CanOpen:CANopen_Transducers.DI:_0100_Air_Pressure_Normally_Open.Value",
             "Application:Cust_System.Console_Parameter:Console_Parameters.AI:_1470_Minimum_FSS2_Demin_Water_Pressure.Value",
             "Application:Cust_System.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value",
-            "Application:Project_Name.Stream:_0320_Specific_Stream_XYZ_B.enabled"
+            "Application:Project_Name.Stream:_0320_Specific_Stream_XYZ_B.enabled",
+            "Application:Project_Name.Stream:_0180_1A-Encabulator_Intensity_Test.Sample:Sample.Analysis:Analysis.Diagnostic:Raw.LossOfIntensity:LossOfIntensity.RemainingIntensity"
     };
 
     final String[] invalidParams = {
@@ -125,5 +126,20 @@ public class ParamTest {
                 param.toString());
         assertEquals("Specific Stream XYZ B",
                 TrollParam.makeParamsPretty(validParams[4]));
+    }
+
+    @Test
+    public void testExtraLongParam() throws AngryTrollException {
+        param = new TrollParam(validParams[5]);
+        assertEquals(validParams[5],
+                param.getFullText());
+        assertEquals(ConnectionType.INTERNAL, param.getCxnType());
+        assertEquals(IOType.Internal, param.getIoType());
+        assertFalse(param.isHidden());
+
+        assertEquals("Internal:" + "1A-Encabulator Intensity Test",
+                param.toString());
+        assertEquals("1A-Encabulator Intensity Test",
+                TrollParam.makeParamsPretty(validParams[5]));
     }
 }

@@ -6,6 +6,7 @@ public abstract class AbstractFlowGraphElement implements iFlowGraphElement {
 
     int id;
     protected LinkedList<String> atts;
+    private static int LABEL_TEXT_MAX_WIDTH = 80;
 
     public AbstractFlowGraphElement(int id) {
         this.id = id;

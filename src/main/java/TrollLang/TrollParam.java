@@ -7,10 +7,15 @@ public class TrollParam {
     public static boolean isValidParam(String possibleParam) {
         if (possibleParam.split("\\s++").length > 1)
             return false;
-        else
+        else {
+            String[] partsColonDelim = possibleParam.split(":");
+            String[] partsPeriodDelim = possibleParam.split("\\.");
+
             return possibleParam.startsWith("Application:") &&
-                    ((possibleParam.split(":").length == 4 && possibleParam.split("\\.").length == 4) ||
-                     (possibleParam.split(":").length == 3 && possibleParam.split("\\.").length == 3));
+                    ((partsColonDelim.length == 4 && partsPeriodDelim.length == 4) ||
+                     (partsColonDelim.length == 7 && partsPeriodDelim.length == 7) ||
+                     (partsColonDelim.length == 3 && partsPeriodDelim.length == 3));
+        }
     }
 
     // Takes mixed input. Finds the TrollParams and maps them to 'informative' params using the TrollParam toString method

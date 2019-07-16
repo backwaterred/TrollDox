@@ -17,7 +17,7 @@ public class TrollParser {
     private static final int DATE_NODE_ID   =  9997;
     private static final int TITLE_NODE_ID  =  9998;
     public static final int  END_NODE_ID    =  9999;
-    private static final int MAX_NODE_ID    = 10000;
+    public static final int MAX_NODE_ID    = 10000;
     private static final int GOTO_MIN_CONNECTION_DISTANCE = 5;
     private ParserInput input;
     private LinkedList<TodoEntry> todo;

@@ -12,6 +12,7 @@ import org.junit.jupiter.api.*;
 
 import java.io.IOException;
 
+import static TrollLang.TrollParser.TrollParser.MAX_NODE_ID;
 import static org.junit.jupiter.api.Assertions.*;
 
     public class ParserTest {
@@ -117,11 +118,11 @@ import static org.junit.jupiter.api.Assertions.*;
             graph = parser.parse();
 
             assertEquals(5*2 + 2 + 4, graph.getNodeCount());
-            assertFalse(graph.hasConnection(1, input.getLineNumberStartingWith("#Sandbox")));
-            assertFalse(graph.hasConnection(2, input.getLineNumberStartingWith("#Sandbox")));
-            assertFalse(graph.hasConnection(3, input.getLineNumberStartingWith("#Sandbox")));
-            assertFalse(graph.hasConnection(4, input.getLineNumberStartingWith("#Sandbox")));
-            assertFalse(graph.hasConnection(5, input.getLineNumberStartingWith("#Sandbox")));
+            assertFalse(graph.hasConnection(1 + MAX_NODE_ID, input.getLineNumberStartingWith("#Sandbox")));
+            assertFalse(graph.hasConnection(2 + MAX_NODE_ID, input.getLineNumberStartingWith("#Sandbox")));
+            assertFalse(graph.hasConnection(3 + MAX_NODE_ID, input.getLineNumberStartingWith("#Sandbox")));
+            assertFalse(graph.hasConnection(4 + MAX_NODE_ID, input.getLineNumberStartingWith("#Sandbox")));
+            assertFalse(graph.hasConnection(5 + MAX_NODE_ID, input.getLineNumberStartingWith("#Sandbox")));
             assertTrue(graph.hasConnection(1, 2));
             assertTrue(graph.hasConnection(2, 3));
             assertTrue(graph.hasConnection(3, 4));
@@ -169,6 +170,6 @@ import static org.junit.jupiter.api.Assertions.*;
             assertTrue(graph.hasConnection(1,3));
 
             assertTrue(graph.hasConnection(4,5));
-            assertFalse(graph.hasConnection(4,input.getLineNumberStartingWith("#Long")));
+            assertFalse(graph.hasConnection(4 + MAX_NODE_ID,input.getLineNumberStartingWith("#Long")));
         }
     }

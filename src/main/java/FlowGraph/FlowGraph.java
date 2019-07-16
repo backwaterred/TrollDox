@@ -15,8 +15,8 @@ public class FlowGraph {
         edges = new HashSet<>();
         atts = new LinkedList<>();
         this.addAttribute("page", "\"8,11\"");
-        this.addAttribute("ratio", "auto");
-        this.addAttribute("fontsize", "12");
+        this.addAttribute("ratio", "compress");
+//        this.addAttribute("fontsize", "12");
     }
 
     /**
