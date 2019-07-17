@@ -16,7 +16,8 @@ public class ParamTest {
             "Application:Cust_System.Console_Parameter:Console_Parameters.AI:_1470_Minimum_FSS2_Demin_Water_Pressure.Value",
             "Application:Cust_System.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value",
             "Application:Project_Name.Stream:_0320_Specific_Stream_XYZ_B.enabled",
-            "Application:Project_Name.Stream:_0180_1A-Encabulator_Intensity_Test.Sample:Sample.Analysis:Analysis.Diagnostic:Raw.LossOfIntensity:LossOfIntensity.RemainingIntensity"
+            "Application:Project_Name.Stream:_0180_1A-Encabulator_Intensity_Test.Sample:Sample.Analysis:Analysis.Diagnostic:Raw.LossOfIntensity:LossOfIntensity.RemainingIntensity",
+            "Application:Project_Name.Stream:_0190_1A-Encabulator.Sample:Sample.Analysis:Analysis.Prediction:Prediction.Property:_0010_EA.PlsMethod:PLS.FRatio"
     };
 
     final String[] invalidParams = {

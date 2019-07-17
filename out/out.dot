@@ -1,89 +1,258 @@
 digraph {
 
 // Graph Attributes
-graph[page="8,11" ratio=compress ]
+graph[page="8,11" ratio=auto fontsize=12 margin=0.25 ranksep=0.25 nodesep=0.25 ]
 
 // Nodes
 0[shape="oval"label="START"]
-64[shape="box"label="Increment 1A Intensity Test Total Settling Time by 1A Delay To Flush"]
-65[shape="box"label="Increment 1A Intensity Test Total Settling Time by Delay To Flush Drain"]
-66[shape="box"label="Set:\n1A Intensity Test Counter to 0"]
-4[shape="diamond"label="Is hidden Special Flag For 1A-Causticizer Low Intensity = 1?"]
-68[shape="oval"label="End_Stream"]
-6[shape="invhouse"label="Scan_Sample"]
-8[shape="oval"label="Low_Intensity"]
-9[shape="box"label="Set:\nSettling Flag FSS B to 1"]
-10[shape="box"label="Wait:\n1A Delay To Settle When Low Intensity"]
-11[shape="box"label="Set:\nSettling Flag FSS B to 0"]
+6[shape="diamond"label="Is hidden Trigger One 1A Sample From Intensity \nTest = 0?"]
+9[shape="box"label="Set:\n1A Intensity Test Counter to 0"]
+10[shape="box"label="Set:\nhidden Special Flag For 1A-Causticizer \nLow Intensity to 0"]
 9997[shape="box"label="Config: Year - Month - Day"style="filled"fillcolor="grey"]
-13[shape="oval"label="Scan_Sample"]
+13[shape="box"label="Set:\nhidden Trigger One 1A Sample From Intensity \nTest to 0"]
 9998[shape="box"label="Test Graph"style="filled"fillcolor="grey"]
-14[shape="box"label="Set:\nhidden Sample Temperature Through Cell FSS A to Sample Temp FSS A"]
+14[shape="box"label="Set:\nhidden Sample Temperature Through Cell \nFSS B to Sample Temp FSS B"]
 9999[shape="oval"label="END"]
-17[shape="box"label="Set:\nScanning Flag FSS B to 1"]
-19[shape="box"label="Execute"]
-22[shape="box"label="Wait for results"]
-25[shape="box"label="Set:\nScanning Flag FSS B to 0"]
-29[shape="diamond"label="Is 1A-Causticizer Intensity Test < 1A Intensity Must Be Below?"]
-31[shape="box"label="Increment 1A Intensity Test Counter by 1"]
-32[shape="box"label="Set:\nhidden Special Flag For 1A-Causticizer Low Intensity to 1"]
-34[shape="diamond"label="Is 1A Intensity Test Counter > 1A Intensity Test Max Retry Limit?"]
-38[shape="box"label="Set:\nhidden 1A Intensity Test Trigger to 1"]
-39[shape="box"label="Set:\nhidden 1A Intensity Test Trigger to 0"]
-40[shape="invhouse"label="End_Stream"]
-42[shape="oval"label="Scan_Anyway"]
-44[shape="box"label="LogEvent:\n 1A Causticizer liquor scanned after Intensity test counter exceeded : 1A Intensity Test Counter High limit = 1A Intensity Test Max Retry Limit LOI = 1A-Causticizer Intensity Test"]
-10029[shape="invhouse"label="Trigger_1A_Causticizer"]
-46[shape="oval"label="Trigger_1A_Causticizer"]
-47[shape="box"label="Set:\nhidden Trigger One 1A Sample From Intensity Test to 1"]
-10034[shape="invhouse"label="Scan_Anyway"]
-50[shape="box"label="Set:\n1A Intensity Test Settling Time In Seconds to 1A Delay To Settle When Low Intensity"]
-51[shape="box"label="Multiply 1A Intensity Test Settling Time In Seconds by 1A Intensity Test Counter"]
-52[shape="box"label="Increment 1A Intensity Test Settling Time In Seconds by 1A Delay To Settle When Low Intensity"]
-55[shape="box"label="Set:\n1A Intensity Test Scanning Time Estimate to Intensity Scan Estimate"]
-56[shape="box"label="Multiply 1A Intensity Test Scanning Time Estimate by 1A Intensity Test Counter"]
-57[shape="box"label="Increment 1A Intensity Test Scanning Time Estimate by Intensity Scan Estimate"]
-61[shape="box"label="Set:\n1A Intensity Test Total Settling Time to 1A Intensity Test Settling Time In Seconds"]
-62[shape="box"label="Increment 1A Intensity Test Total Settling Time by 1A Intensity Test Scanning Time Estimate"]
-63[shape="box"label="Increment 1A Intensity Test Total Settling Time by 1A Additional Delay To Settle"]
+17[shape="box"label="Set:\nSettling Flag FSS B to 0"]
+20[shape="box"label="Set:\nScanning Flag FSS B to 1"]
+10006[shape="invhouse"label="Goto:\nSkip_Stream"]
+22[shape="box"label="Execute"]
+25[shape="box"label="Wait for results"]
+28[shape="box"label="Set:\nScanning Flag FSS B to 0"]
+31[shape="diamond"label="Is 1A-Causticizer <= 1A EA F-Ratio High Limit?"]
+33[shape="box"label="LogEvent:\n 1A Causticizer EA F-Ratio is \nhigh : 1A-Causticizer Limit = 1A EA F-Ratio \nHigh Limit"]
+34[shape="invhouse"label="Goto:\nBad_Value"]
+36[shape="oval"label="Check_EA_Low_Limit"]
+37[shape="diamond"label="Is 1A-Causticizer >= 1A EA Low Limit?"]
+39[shape="box"label="LogEvent:\n 1A Causticizer EA is low : 1A-Causticizer \nLimit = 1A EA Low Limit"]
+40[shape="invhouse"label="Goto:\nBad_Value"]
+42[shape="oval"label="Check_EA_High_Limit"]
+43[shape="diamond"label="Is 1A-Causticizer <= 1A EA High Limit?"]
+45[shape="box"label="LogEvent:\n 1A Causticizer EA is high : 1A-Causticizer \nLimit = 1A EA High Limit"]
+46[shape="invhouse"label="Goto:\nBad_Value"]
+10031[shape="invhouse"label="Goto:\nCheck_EA_Low_Limit"]
+48[shape="oval"label="EA_Concentration_In_Range"]
+50[shape="box"label="Set:\n1A EA Deviation to 1A-Causticizer"]
+51[shape="box"label="Decrement 1A EA Deviation by Previous 1A \nEA"]
+52[shape="diamond"label="Is 1A EA Deviation > 1A EA Deviation High \nLimit?"]
+10037[shape="invhouse"label="Goto:\nCheck_EA_High_Limit"]
+53[shape="box"label="Multiply 1A EA Deviation by -1"]
+54[shape="diamond"label="Is 1A EA Deviation > 1A EA Deviation High \nLimit?"]
+57[shape="diamond"label="Is 1A-Causticizer <= 1A Carb F-Ratio High \nLimit?"]
+10043[shape="invhouse"label="Goto:\nEA_Concentration_In_Range"]
+59[shape="box"label="LogEvent:\n 1A Causticizer carbonate F-Ratio \nis high : 1A-Causticizer Limit = 1A Carb \nF-Ratio High Limit"]
+60[shape="invhouse"label="Goto:\nBad_Value"]
+62[shape="oval"label="Check_Carb_Low_Limit"]
+63[shape="diamond"label="Is 1A-Causticizer >= 1A Carb Low Limit?"]
+65[shape="box"label="LogEvent:\n 1A Causticizer carbonate is low \n: 1A-Causticizer Limit = 1A Carb Low Limit"]
+66[shape="invhouse"label="Goto:\nBad_Value"]
+10052[shape="invhouse"label="Goto:\nBad_Value"]
+68[shape="oval"label="Check_Carb_High_Limit"]
+69[shape="diamond"label="Is 1A-Causticizer <= 1A Carb High Limit?"]
+10054[shape="invhouse"label="Goto:\nBad_Value"]
+71[shape="box"label="LogEvent:\n 1A Causticizer carbonate is high \n: 1A-Causticizer Limit = 1A Carb High Limit"]
+72[shape="invhouse"label="Goto:\nBad_Value"]
+10057[shape="invhouse"label="Goto:\nCheck_Carb_Low_Limit"]
+74[shape="oval"label="Sodium_Carbonate_In_Range"]
+76[shape="box"label="Set:\n1A Carb Deviation to 1A-Causticizer"]
+77[shape="box"label="Decrement 1A Carb Deviation by Previous 1A \nCarb"]
+78[shape="diamond"label="Is 1A Carb Deviation > 1A Carb Deviation \nHigh Limit?"]
+10063[shape="invhouse"label="Goto:\nCheck_Carb_High_Limit"]
+79[shape="box"label="Multiply 1A Carb Deviation by -1"]
+80[shape="diamond"label="Is 1A Carb Deviation > 1A Carb Deviation \nHigh Limit?"]
+83[shape="diamond"label="Is 1A-Causticizer <= 1A Sulfide F-Ratio High \nLimit?"]
+10069[shape="invhouse"label="Goto:\nSodium_Carbonate_In_Range"]
+85[shape="box"label="LogEvent:\n 1A Causticizer sulfide F-Ratio \nis high : 1A-Causticizer Limit = 1A Sulfide \nF-Ratio High Limit"]
+86[shape="invhouse"label="Goto:\nBad_Value"]
+88[shape="oval"label="Check_Sodium_Sulfide_Low_Limit"]
+89[shape="diamond"label="Is 1A-Causticizer >= 1A Sulfide Low Limit?"]
+91[shape="box"label="LogEvent:\n 1A Causticizer sulfide is low \n: 1A-Causticizer Limit = 1A Sulfide Low Limit"]
+92[shape="invhouse"label="Goto:\nBad_Value"]
+10078[shape="invhouse"label="Goto:\nBad_Value"]
+94[shape="oval"label="Check_Sodium_Sulfide_High_Limit"]
+95[shape="diamond"label="Is 1A-Causticizer <= 1A Sulfide High Limit?"]
+10080[shape="invhouse"label="Goto:\nBad_Value"]
+97[shape="box"label="LogEvent:\n 1A Causticizer sulfide is high \n: 1A-Causticizer Limit = 1A Sulfide High \nLimit"]
+98[shape="invhouse"label="Goto:\nBad_Value"]
+10083[shape="invhouse"label="Goto:\nCheck_Sodium_Sulfide_Low_Limit"]
+100[shape="oval"label="Sodium_Sulfide_In_Range"]
+102[shape="box"label="Set:\n1A Sulfide Deviation to 1A-Causticizer"]
+103[shape="box"label="Decrement 1A Sulfide Deviation by Previous \n1A Sulfide"]
+104[shape="diamond"label="Is 1A Sulfide Deviation > 1A Sulfide Deviation \nHigh Limit?"]
+10089[shape="invhouse"label="Goto:\nCheck_Sodium_Sulfide_High_Limit"]
+105[shape="box"label="Multiply 1A Sulfide Deviation by -1"]
+106[shape="diamond"label="Is 1A Sulfide Deviation > 1A Sulfide Deviation \nHigh Limit?"]
+109[shape="box"label="Set:\n1A Measurement Status to 1"]
+10095[shape="invhouse"label="Goto:\nSodium_Sulfide_In_Range"]
+112[shape="box"label="Set:\n1A TTA to 1A-Causticizer"]
+113[shape="box"label="Set:\n1A EA to 1A-Causticizer"]
+114[shape="box"label="Set:\n1A Carbonate to 1A-Causticizer"]
+115[shape="box"label="Set:\n1A Sulfide to 1A-Causticizer"]
+116[shape="box"label="Set:\n1A Sulfate to 1A-Causticizer"]
+117[shape="box"label="Set:\n1A Thiosulfate to 1A-Causticizer"]
+118[shape="box"label="Set:\n1A Sulfidity to 1A-Causticizer"]
+119[shape="box"label="Set:\n1A CE to 1A-Causticizer"]
+10104[shape="invhouse"label="Goto:\nBad_Value"]
+120[shape="box"label="Set:\n1A AA to 1A-Causticizer"]
+121[shape="box"label="Set:\n1A EA f ratio to 1A-Causticizer"]
+10106[shape="invhouse"label="Goto:\nBad_Value"]
+122[shape="box"label="Set:\n1A Carbonate f ratio to 1A-Causticizer"]
+123[shape="box"label="Set:\n1A Sulfide f ratio to 1A-Causticizer"]
+124[shape="box"label="Set:\n1A LOI to 1A-Causticizer"]
+127[shape="box"label="Set:\nPrevious 1A EA to 1A-Causticizer"]
+128[shape="box"label="Set:\nPrevious 1A Carb to 1A-Causticizer"]
+129[shape="box"label="Set:\nPrevious 1A Sulfide to 1A-Causticizer"]
+132[shape="box"label="Set:\n1A Alarm Counter to 0"]
+134[shape="invhouse"label="Goto:\nClean_Cell"]
+136[shape="oval"label="Bad_Value"]
+138[shape="box"label="Increment 1A Alarm Counter by 1"]
+141[shape="diamond"label="Is 1A Alarm Counter < 3A Max Alarm Counter \nLimit?"]
+144[shape="box"label="Set:\n1A Measurement Status to 0"]
+145[shape="box"label="LogEvent:\n 1A Causticizer Measurement status \nbad in 1A Causticizer operation"]
+147[shape="oval"label="Clean_Cell"]
+150[shape="box"label="Set:\nFlushing cell Flag FSS B to 1"]
+151[shape="box"label="Set:\nScanning Flag FSS B to 0"]
+152[shape="box"label="Set:\nSettling Flag FSS B to 0"]
+155[shape="box"label="Set:\nWater Pump B Command To DCS to 1"]
+10141[shape="invhouse"label="Goto:\nClean_Cell"]
+158[shape="diamond"label="Is Demin Water Pressure FSS BMinimum Demin \nWater Pressure FSS B?"]
+160[shape="box"label="Set:\nLow Demin Water pressure FSS B to 0"]
+163[shape="box"label="Open: SV3B Demin Water Valve"]
+164[shape="box"label="Open: SV1B Cell Inlet Valve"]
+165[shape="box"label="Open: SV2B Cell Outlet Valve"]
+167[shape="box"label="Wait:\nDelay To Clean Cell"]
+170[shape="box"label="Set:\nWater Pump B Command To DCS to 0"]
+173[shape="box"label="Close: SV3B Demin Water Valve"]
+10158[shape="invhouse"label="Goto:\nDemin_Water_Pressure_Alarm_And_Skip"]
+174[shape="box"label="Wait:\nDelay To Close SV3B"]
+175[shape="box"label="Close: SV2B Cell Outlet Valve"]
+176[shape="box"label="Close: SV1B Cell Inlet Valve"]
+178[shape="invhouse"label="Goto:\nSkip_Stream"]
+180[shape="oval"label="Demin_Water_Pressure_Alarm_And_Skip"]
+181[shape="diamond"label="Is Low Demin Water pressure FSS B = 1?"]
+182[shape="box"label="Set:\nLow Demin Water pressure FSS B to 1"]
+183[shape="box"label="LogEvent:\n Demin water pressure is low in \n1A - Cell flush not done"]
+185[shape="oval"label="Skip_Stream"]
+187[shape="box"label="Set:\n1A Sample In Progress to 0"]
+188[shape="box"label="Set:\nFlushing cell Flag FSS B to 0"]
 
 // Edges
-4 -> 6[xlabel="No"]
-19 -> 22
-42 -> 44
-38 -> 39
-31 -> 32
-34 -> 38[xlabel="No"]
-29 -> 10029[xlabel="Yes"]
-32 -> 34
-64 -> 65
-63 -> 64
-47 -> 50
-46 -> 47
-65 -> 66
-57 -> 61
-34 -> 10034[xlabel="Yes"]
-0 -> 4
-68 -> 9999
-9 -> 10
-22 -> 25
+127 -> 128
+129 -> 132
+181 -> 182[xlabel="No"]
+20 -> 22
+59 -> 60
+17 -> 20
+78 -> 79[xlabel="No"]
+89 -> 10089[xlabel="Yes"]
+167 -> 170
+158 -> 160[xlabel="No"]
 39 -> 40
-56 -> 57
-44 -> 46
-62 -> 63
-52 -> 55
-10 -> 11
-14 -> 17
-55 -> 56
-50 -> 51
-11 -> 13
-4 -> 8[xlabel="Yes"]
-25 -> 29
+174 -> 175
+100 -> 102
 13 -> 14
-61 -> 62
-66 -> 68
-8 -> 9
-17 -> 19
+163 -> 164
+52 -> 10052[xlabel="Yes"]
+78 -> 10078[xlabel="Yes"]
+45 -> 46
+85 -> 86
+97 -> 98
+33 -> 34
+155 -> 158
+150 -> 151
+80 -> 10080[xlabel="Yes"]
+102 -> 103
+88 -> 89
+109 -> 112
+112 -> 113
+65 -> 66
+9 -> 10
+37 -> 10037[xlabel="Yes"]
+119 -> 120
+175 -> 176
+122 -> 123
+28 -> 31
+165 -> 167
+147 -> 150
+36 -> 37
+145 -> 147
+50 -> 51
+43 -> 45[xlabel="No"]
+124 -> 127
+0 -> 6
+185 -> 187
+103 -> 104
+132 -> 134
+116 -> 117
+42 -> 43
+89 -> 91[xlabel="No"]
+54 -> 57[xlabel="No"]
+76 -> 77
+117 -> 118
+6 -> 9[xlabel="No"]
+83 -> 10083[xlabel="Yes"]
+136 -> 138
+95 -> 10095[xlabel="Yes"]
+104 -> 105[xlabel="No"]
+106 -> 109[xlabel="No"]
+183 -> 185
+118 -> 119
+6 -> 10006[xlabel="Yes"]
+128 -> 129
+57 -> 59[xlabel="No"]
+91 -> 92
+173 -> 174
+57 -> 10057[xlabel="Yes"]
+95 -> 97[xlabel="No"]
+115 -> 116
+71 -> 72
+80 -> 83[xlabel="No"]
+138 -> 141
+69 -> 10069[xlabel="Yes"]
+43 -> 10043[xlabel="Yes"]
+104 -> 10104[xlabel="Yes"]
+123 -> 124
+106 -> 10106[xlabel="Yes"]
+48 -> 50
+180 -> 181
+182 -> 183
+152 -> 155
+187 -> 188
+121 -> 122
+37 -> 39[xlabel="No"]
+68 -> 69
+114 -> 115
+54 -> 10054[xlabel="Yes"]
+151 -> 152
+141 -> 10141[xlabel="Yes"]
+74 -> 76
+10 -> 13
+141 -> 144[xlabel="No"]
+105 -> 106
+25 -> 28
+176 -> 178
+52 -> 53[xlabel="No"]
+113 -> 114
+164 -> 165
+181 -> 185[xlabel="Yes"]
+69 -> 71[xlabel="No"]
+94 -> 95
+31 -> 10031[xlabel="Yes"]
+158 -> 10158[xlabel="Yes"]
+144 -> 145
+63 -> 10063[xlabel="Yes"]
+83 -> 85[xlabel="No"]
+53 -> 54
+79 -> 80
+120 -> 121
+77 -> 78
+62 -> 63
+63 -> 65[xlabel="No"]
 51 -> 52
-29 -> 31[xlabel="No"]
+14 -> 17
+31 -> 33[xlabel="No"]
+188 -> 9999
+160 -> 163
+170 -> 173
+22 -> 25
 }

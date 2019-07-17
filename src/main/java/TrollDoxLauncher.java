@@ -5,7 +5,6 @@ import TrollLang.TrollParser.TrollParser;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 
 public class TrollDoxLauncher {
 

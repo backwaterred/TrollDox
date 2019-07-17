@@ -12,9 +12,10 @@ public class TrollParam {
             String[] partsPeriodDelim = possibleParam.split("\\.");
 
             return possibleParam.startsWith("Application:") &&
-                    ((partsColonDelim.length == 4 && partsPeriodDelim.length == 4) ||
+                    ((partsColonDelim.length == 3 && partsPeriodDelim.length == 3) ||
+                     (partsColonDelim.length == 4 && partsPeriodDelim.length == 4) ||
                      (partsColonDelim.length == 7 && partsPeriodDelim.length == 7) ||
-                     (partsColonDelim.length == 3 && partsPeriodDelim.length == 3));
+                     (partsColonDelim.length == 8 && partsPeriodDelim.length == 8));
         }
     }
 

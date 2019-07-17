@@ -57,15 +57,19 @@ public class TrollParser {
         this.graph = new FlowGraph();
 
         // Add title, date, start, and end nodes
-        iFlowGraphElement headerNode, dateNode;
+        iFlowGraphElement headerNode, dateNode, startNode;
+
         headerNode = new TextBox(TITLE_NODE_ID, graphTitle);
         headerNode.addAttribute("style", "filled").addAttribute("fillcolor", "grey");
         graph.addNode(headerNode);
+
         dateNode = new TextBox(  DATE_NODE_ID, graphDate);
         dateNode.addAttribute("style", "filled").addAttribute("fillcolor", "grey");
         graph.addNode(dateNode);
 
-        graph.addNode(new TextOval(START_NODE_ID, "START"));
+        startNode = new TextOval(START_NODE_ID, "START");
+        graph.addNode(startNode);
+
         graph.addNode(new TextOval(END_NODE_ID, "END"));
     }
 
@@ -80,7 +84,6 @@ public class TrollParser {
         }
 
 
-//        graph.addEdge(new FlowGraphEdge(START_NODE_ID, startingLine));
         todo.push(new TodoEntry(startingLine, START_NODE_ID));
         while(!todo.isEmpty()) {
             processTodoEntry(todo.pop());
@@ -492,7 +495,7 @@ public class TrollParser {
         String[] parts = line.split("\\s++");
         if (parts.length != 2) throw new AngryTrollException("Malformed GOTO string in getGotoMsgFromLabeName " + line);
 
-        return parts[1];
+        return TrollSpeak.GOTO.getMsgText() + parts[1];
     }
 
 

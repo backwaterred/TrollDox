@@ -28,6 +28,11 @@ public class FlowGraphEdge extends AbstractFlowGraphElement {
     }
 
     @Override
+    public iFlowGraphElement addLabel(String labelText) {
+        return this.addAttribute("xLabel", labelText);
+    }
+
+    @Override
     public String render() {
         StringBuilder rtn = new StringBuilder();
         rtn.append(fromId).append(" -> ").append(toId);
