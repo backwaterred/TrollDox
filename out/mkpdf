@@ -1,4 +1,6 @@
 #!/bin/bash
 
+echo "Making pdf at $(date +%T)"
 test -f out.pdf && rm out.pdf
-dot -Tpdf -o out.pdf out.dot
+dot -T ps2 -o out.ps out.dot
+ps2pdf out.ps

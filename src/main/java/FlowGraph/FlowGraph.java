@@ -6,20 +6,22 @@ import java.util.LinkedList;
 
 public class FlowGraph {
 
-    HashMap<Integer, iFlowGraphElement> nodes;
-    HashSet<FlowGraphEdge> edges;
-    LinkedList<String> atts;
+    private HashMap<Integer, iFlowGraphElement> nodes;
+    private HashSet<FlowGraphEdge> edges;
+    private LinkedList<String> atts;
 
     public FlowGraph() {
         nodes = new HashMap<>();
         edges = new HashSet<>();
         atts = new LinkedList<>();
-        this.addAttribute("page", "\"8,11\"");
-        this.addAttribute("ratio", "auto");
-        this.addAttribute("fontsize", "12");
-        this.addAttribute("margin", "0.25");
-        this.addAttribute("ranksep", "0.25");
-        this.addAttribute("nodesep", "0.25");
+//        this.addAttribute("size",        "10.5,16.5");
+        this.addAttribute("page",        "8.5,11");
+        this.addAttribute("ratio",       "auto");
+        this.addAttribute("pagedir",     "BR");
+        this.addAttribute("orientation", "landscape");
+//        this.addAttribute("fontsize",    "10");
+        this.addAttribute("margin",      "0.25");
+        this.addAttribute("nodesep",     "0.25");
     }
 
     /**
@@ -32,7 +34,7 @@ public class FlowGraph {
     }
 
     public void addAttribute(String name, String value) {
-        atts.add(name + "=" + value);
+        atts.add(name + "=\"" + value + "\"");
     }
 
     public String render() {

@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35555637-3109-42bf-93f7-7b4239bec49c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/out.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/DecisionDiamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/DecisionDiamond.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraphEdge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraphEdge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/GotoDart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/GotoDart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/TextBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/TextBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/TextOval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/TextOval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/iFlowGraphElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/iFlowGraphElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ParamTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ParamTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,15 +26,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#18994#18995#0" expanded="true" />
-                <element signature="e#19043#19044#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="283">
+              <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -51,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="272">
+              <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -172,8 +158,8 @@
         <option value="$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java" />
         <option value="$PROJECT_DIR$/src/test/java/Tests/ParamTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParam.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java" />
         <option value="$PROJECT_DIR$/src/main/java/TrollLang/TrollParser/TrollParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java" />
         <option value="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java" />
       </list>
     </option>
@@ -201,17 +187,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="TrollDox" type="58d84e3e:PackageViewProjectNode" />
-              <item name="TrollDox2" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -303,6 +278,17 @@
               <item name="TrollDox" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
               <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TrollDox" type="58d84e3e:PackageViewProjectNode" />
+              <item name="TrollDox2" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
@@ -706,8 +692,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="592" y="-1208" width="1936" height="1176" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.17643923" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992126" visible="true" weight="0.17803837" />
       <window_info id="Structure" order="1" sideWeight="0.5007874" side_tool="true" weight="0.25681818" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1194,24 +1181,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/iFlowGraphElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/in/in.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="120" column="87" selection-start-line="120" selection-start-column="87" selection-end-line="120" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -1240,16 +1213,28 @@
           <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#18994#18995#0" expanded="true" />
-            <element signature="e#19043#19044#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/iFlowGraphElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="272">
+          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
         </state>
       </provider>
     </entry>

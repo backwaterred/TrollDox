@@ -7,11 +7,16 @@ public abstract class AbstractFlowGraphElement implements iFlowGraphElement {
     int id;
     protected LinkedList<String> atts;
     private static int LABEL_TEXT_MAX_WIDTH = 40;
-//    private static int LABEL_TEXT_MAX_WORD_WIDTH = 40;
 
     public AbstractFlowGraphElement(int id) {
         this.id = id;
         atts = new LinkedList<>();
+        addDefaultAtts();
+    }
+
+    private void addDefaultAtts() {
+        this.addAttribute("margin", "0.125");
+        this.addAttribute("fontsize", "10");
     }
 
     public String getAttributeValue(String attName) {
@@ -31,9 +36,6 @@ public abstract class AbstractFlowGraphElement implements iFlowGraphElement {
 
         int charSinceLastWrap = 0;
         for (String word : labelText.split("\\s++")) {
-            // Shorten any super-long words
-//            if (word.length() > LABEL_TEXT_MAX_WORD_WIDTH)
-//                word = "..." + word.substring(word.length() - LABEL_TEXT_MAX_WORD_WIDTH - 1);
             // Add NL if width is greater than max
             if (charSinceLastWrap > LABEL_TEXT_MAX_WIDTH) {
                 lineWrappedLabel.append("\\n");
