@@ -6,6 +6,7 @@ import java.util.LinkedList;
 
 public class FlowGraph {
 
+    private FlowGraphType graphType;
     private HashMap<Integer, iFlowGraphElement> nodes;
     private HashSet<FlowGraphEdge> edges;
     private LinkedList<String> atts;
@@ -39,7 +40,7 @@ public class FlowGraph {
 
     public String render() {
         StringBuilder rtn = new StringBuilder();
-        rtn.append("digraph {\n");
+        rtn.append(graphType).append(" {\n");
 
         rtn.append("\n// Graph Attributes\n");
         rtn.append("graph[");
