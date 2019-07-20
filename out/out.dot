@@ -1,7 +1,7 @@
 digraph {
 
 // Graph Attributes
-graph[page="8.5,11" ratio="auto" pagedir="BR" orientation="landscape" margin="0.25" nodesep="0.25" ]
+graph[page="8.5,11" ratio="auto" pagedir="BR" margin="0.25" nodesep="0.25" ]
 
 // Nodes
 0[margin="0.125"fontsize="10"width="2"shape="oval"label="START"]
