@@ -17,7 +17,7 @@ public class FlowGraph {
         //this.addAttribute("page",        "8.5,11");
         //this.addAttribute("ratio",       "auto");
         //this.addAttribute("pagedir",     "BR");
-        this.addAttribute("lwidth", "11");
+        this.addAttribute("lwidth", "8.5");
         this.addAttribute("margin",      "0.25");
         this.addAttribute("nodesep",     "0.25");
         this.addAttribute("ranksep",     "0.25");
