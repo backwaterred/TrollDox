@@ -14,14 +14,15 @@ public class FlowGraph {
         nodes = new HashMap<>();
         edges = new HashSet<>();
         atts = new LinkedList<>();
-//        this.addAttribute("size",        "10.5,16.5");
-        this.addAttribute("page",        "8.5,11");
-        this.addAttribute("ratio",       "auto");
-        this.addAttribute("pagedir",     "BR");
-        this.addAttribute("orientation", "landscape");
-//        this.addAttribute("fontsize",    "10");
+        //this.addAttribute("page",        "8.5,11");
+        //this.addAttribute("ratio",       "auto");
+        //this.addAttribute("pagedir",     "BR");
+        this.addAttribute("lwidth", "11");
         this.addAttribute("margin",      "0.25");
         this.addAttribute("nodesep",     "0.25");
+        this.addAttribute("ranksep",     "0.25");
+        //this.addAttribute("pack",        "20");
+        this.addAttribute("packmode", "array1");
     }
 
     /**

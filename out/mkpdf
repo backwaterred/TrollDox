@@ -1,6 +1,18 @@
 #!/bin/bash
 
+file="out"
 echo "Making pdf at $(date +%T)"
-test -f out.pdf && rm out.pdf
-dot -T ps2 -o out.ps out.dot
-ps2pdf out.ps
+if [ -a $file.pdf ]
+then
+    echo "Previous $file.pdf removed"
+    rm $file.pdf
+fi
+
+if [ ! -f $file.pdf ]
+then
+   dot -T ps2 -o $file.ps2 out.dot
+   ps2pdf $file.ps2 $file.pdf && rm $file.ps2
+else
+       echo "Error: Couldn't remove existing $file. Pdf unchanged"
+fi
+   
