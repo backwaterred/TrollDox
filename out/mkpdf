@@ -4,7 +4,7 @@ file="out"
 echo "Making pdf at $(date +%T)"
 if [ -a $file.pdf ]
 then
-    echo "Previous $file.pdf removed"
+    echo "Found: $file.pdf"
     rm $file.pdf
 fi
 

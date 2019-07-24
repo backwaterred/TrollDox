@@ -9,20 +9,17 @@ public class FlowGraph {
     private HashMap<Integer, iFlowGraphElement> nodes;
     private HashSet<FlowGraphEdge> edges;
     private LinkedList<String> atts;
+    private static final String DEFAULT_FG_WIDTH = "8.5";
+    private static final double HEIGHT_PER_NODE = 0.5;
 
     public FlowGraph() {
         nodes = new HashMap<>();
         edges = new HashSet<>();
         atts = new LinkedList<>();
-        //this.addAttribute("page",        "8.5,11");
-        //this.addAttribute("ratio",       "auto");
-        //this.addAttribute("pagedir",     "BR");
-        this.addAttribute("lwidth", "8.5");
-        this.addAttribute("margin",      "0.25");
-        this.addAttribute("nodesep",     "0.25");
-        this.addAttribute("ranksep",     "0.25");
-        //this.addAttribute("pack",        "20");
-        this.addAttribute("packmode", "array1");
+        this.addAttribute("margin",   "0.5");
+        this.addAttribute("nodesep",  "0.25");
+        this.addAttribute("ranksep",  "0.25");
+        this.addAttribute("packmode", "array_u1");
     }
 
     /**
@@ -39,6 +36,8 @@ public class FlowGraph {
     }
 
     public String render() {
+        this.setGraphSizeAtt();
+
         StringBuilder rtn = new StringBuilder();
         rtn.append("digraph {\n");
 
@@ -56,6 +55,10 @@ public class FlowGraph {
         rtn.append("}\n");
 
         return rtn.toString();
+    }
+
+    private void setGraphSizeAtt() {
+        this.addAttribute("size", DEFAULT_FG_WIDTH + "," + this.getNodeCount()*HEIGHT_PER_NODE);
     }
 
     /**
