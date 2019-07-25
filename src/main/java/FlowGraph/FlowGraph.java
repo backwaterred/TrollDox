@@ -10,12 +10,13 @@ public class FlowGraph {
     private HashSet<FlowGraphEdge> edges;
     private LinkedList<String> atts;
     private static final String DEFAULT_FG_WIDTH = "8.5";
-    private static final double HEIGHT_PER_NODE = 0.5;
+    private static final double HEIGHT_PER_NODE = 0.75;
 
     public FlowGraph() {
         nodes = new HashMap<>();
         edges = new HashSet<>();
         atts = new LinkedList<>();
+        // size attribute is set by render
         this.addAttribute("margin",   "0.5");
         this.addAttribute("nodesep",  "0.25");
         this.addAttribute("ranksep",  "0.25");

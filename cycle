@@ -1,0 +1,14 @@
+#!/bin/bash
+
+tdbase=$(pwd)
+echo "Using $tdbase"
+
+for f in $(find $tdbase/in/todo -regex .*txt)
+do
+    cp $f $tdbase/in/in.txt
+    read -p "$f loaded as in.txt -- Run TrollDox and press enter to continue"
+    dot -T ps2 -o $f.ps2 $tdbase/out/out.dot
+    ps2pdf $f.ps2 $f.pdf && rm $f.ps2
+done
+
+echo "All streams complete"
