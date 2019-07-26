@@ -10,8 +10,9 @@ public class TrollDoxLauncher {
 
     public static void main(String[] args) {
         System.out.println("Starting New TrollDox Instance");
-        String inFilePath = "in/in.txt";
-        String outFilePath = "out/out.dot";
+        String inFilePath = args[0];
+        String outFilePath = args[0].substring(0,inFilePath.lastIndexOf('.'))+".gv";
+        System.out.println("Processing"+inFilePath+"->"+outFilePath);
 
         try {
             TrollParser tp = new TrollParser (new FileInput(inFilePath), "Test Graph", "Config: Year - Month - Day");

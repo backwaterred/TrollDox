@@ -9,8 +9,9 @@ public class FlowGraph {
     private HashMap<Integer, iFlowGraphElement> nodes;
     private HashSet<FlowGraphEdge> edges;
     private LinkedList<String> atts;
-    private static final String DEFAULT_FG_WIDTH = "8.5";
-    private static final double HEIGHT_PER_NODE = 0.75;
+    private static final int    POINTS_PER_INCH  = 72;
+    private static final double DEFAULT_FG_WIDTH = 8.5;
+    private static final double HEIGHT_PER_NODE  = 0.75;
 
     public FlowGraph() {
         nodes = new HashMap<>();
@@ -20,7 +21,8 @@ public class FlowGraph {
         this.addAttribute("margin",   "0.5");
         this.addAttribute("nodesep",  "0.25");
         this.addAttribute("ranksep",  "0.25");
-        this.addAttribute("packmode", "array_u1");
+        //this.addAttribute("packmode", "array_u1");
+        this.addAttribute("center", "true");
     }
 
     /**
@@ -59,7 +61,7 @@ public class FlowGraph {
     }
 
     private void setGraphSizeAtt() {
-        this.addAttribute("size", DEFAULT_FG_WIDTH + "," + this.getNodeCount()*HEIGHT_PER_NODE);
+        this.addAttribute("size", DEFAULT_FG_WIDTH+","+this.getNodeCount()*HEIGHT_PER_NODE);
     }
 
     /**
@@ -90,11 +92,20 @@ public class FlowGraph {
      * @return
      */
     public boolean hasConnection(int from, int to) {
+        return getEdge(from, to) != null;
+    }
 
+    /**
+     * Get an edge
+     * @param from
+     * @param to
+     * @return
+     */
+    public FlowGraphEdge getEdge(int from, int to) {
         for (FlowGraphEdge e : edges) {
             if (e.getFromId() == from && e.getToId() == to)
-                    return true;
+                return e;
         }
-        return false;
+        return null;
     }
 }

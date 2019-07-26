@@ -16,7 +16,6 @@ public abstract class AbstractFlowGraphElement implements iFlowGraphElement {
 
     private void addDefaultAtts() {
         this.addAttribute("margin", "0.125")
-                //.addAttribute("width", "2")
                 .addAttribute("sortv", Integer.toString(id));
 
     }

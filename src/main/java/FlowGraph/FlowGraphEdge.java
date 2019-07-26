@@ -3,6 +3,7 @@ package FlowGraph;
 public class FlowGraphEdge extends AbstractFlowGraphElement {
 
     int fromId, toId;
+    String labelText;
 
     public FlowGraphEdge(int fromId, int toId) {
         super(Integer.parseInt(Integer.toString(fromId) + Integer.toString(toId)));
@@ -16,7 +17,10 @@ public class FlowGraphEdge extends AbstractFlowGraphElement {
         this.fromId = fromId;
         this.toId = toId;
         this.id = Integer.parseInt(Integer.toString(fromId) + Integer.toString(toId));
-        if (!labelText.isEmpty()) this.addAttribute("xlabel", labelText);
+        if (!labelText.isEmpty()) {
+            this.addAttribute("xlabel", labelText);
+            this.labelText = labelText;
+        }
     }
 
     public int getFromId() {
@@ -25,6 +29,10 @@ public class FlowGraphEdge extends AbstractFlowGraphElement {
 
     public int getToId() {
         return toId;
+    }
+
+    public String getLabelText() {
+        return labelText;
     }
 
     @Override

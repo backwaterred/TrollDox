@@ -86,7 +86,9 @@ import static org.junit.jupiter.api.Assertions.*;
             graph = parser.parse();
 
             assertTrue(graph.hasConnection(2, 4));
+            assertEquals("No", graph.getEdge(2, 4).getLabelText());
             assertTrue(graph.hasConnection(2, 6));
+            assertEquals("Yes", graph.getEdge(2, 6).getLabelText());
         }
 
         @Test

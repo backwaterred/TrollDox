@@ -4,14 +4,14 @@ file="out"
 echo "Making pdf at $(date +%T)"
 if [ -a $file.pdf ]
 then
-    echo "Found: $file.pdf"
-    rm $file.pdf
+    echo "Found existing file: $file.pdf"
+    rm $file.pdf || exit 1
 fi
 
 if [ ! -f $file.pdf ]
 then
-   dot -T ps2 -o $file.ps2 out.dot
-   ps2pdf $file.ps2 $file.pdf && rm $file.ps2
+   dot -T ps2 -o $file.ps2 $file.gv || exit 1
+   ps2pdf $file.ps2 $file.pdf || exit 1
 else
        echo "Error: Couldn't remove existing $file. Pdf unchanged"
 fi
