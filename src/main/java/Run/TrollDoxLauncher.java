@@ -1,3 +1,5 @@
+package Run;
+
 import FlowGraph.FlowGraph;
 import TrollLang.AngryTrollException;
 import TrollLang.TrollParser.FileInput;
@@ -10,17 +12,22 @@ public class TrollDoxLauncher {
 
     public static void main(String[] args) {
         System.out.println("Starting New TrollDox Instance");
-        final String inFilePath = args[0];
-        final String outFilePath = inFilePath.substring(0,inFilePath.lastIndexOf('.'))+".gv";
-        final String dateString = args[1];
-        System.out.println("Processing"+inFilePath+"->"+outFilePath);
+
+        String inFilePath = "", outFilePath = "", dateString = "<config-date>";
 
         try {
+            inFilePath = args[0];
+            outFilePath = inFilePath.substring(0, inFilePath.lastIndexOf('.')) + ".gv";
+            dateString = args[1];
+
             TrollParser tp = new TrollParser (new FileInput(inFilePath), inFilePath.substring(0, inFilePath.lastIndexOf('.')),"Config:"+dateString);
             FlowGraph graph = tp.parse();
             FileOutputStream fileOut = new FileOutputStream(outFilePath);
             fileOut.write(graph.render().getBytes());
 
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Could not find file extension in "+inFilePath);
+            e.printStackTrace();
         } catch (AngryTrollException e) {
             System.out.println("Error parsing " + inFilePath);
             e.printStackTrace();

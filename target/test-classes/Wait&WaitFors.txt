@@ -1,9 +1,0 @@
-WAIT Application:Cust_System.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value
-WAIT "2"
-WAIT 3
-WAITFOR Application:Cust_System.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value 1 TIMEOUT 20 GOTO End
-WAITFORLESS Application:Cust_System.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value 1 TIMEOUT 20 GOTO End
-WAITFORLESSEQUAL Application:Cust_System.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value Application:Cust_System.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value TIMEOUT 60 GOTO End
-WAITFORGREATER Application:Cust_System.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value 1 TIMEOUT 20 GOTO End
-WAITFORGREATEREQUAL Application:Cust_System.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value Application:Cust_System.Console_Parameter:Console_Parameters.AO:_hidden_Digester_Cell_Temperature.Value TIMEOUT 60 GOTO End
-#End

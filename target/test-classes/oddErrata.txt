@@ -1,8 +1,0 @@
-// The following line contains a space, and should be parse-able
- 
-  
-   
-// Let's also try some trailing spaces
-LOGEVENT "Happy days mean more spaces!" 
-ADD Application:Cust_System.CanOpen:CANopen_Transducers.DI:_0100_Air_Pressure_Normally_Open.Value Application:Cust_System.CanOpen:CANopen_Transducers.DI:_0100_Air_Pressure_Normally_Open.Value 
-
