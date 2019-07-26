@@ -10,12 +10,13 @@ public class TrollDoxLauncher {
 
     public static void main(String[] args) {
         System.out.println("Starting New TrollDox Instance");
-        String inFilePath = args[0];
-        String outFilePath = args[0].substring(0,inFilePath.lastIndexOf('.'))+".gv";
+        final String inFilePath = args[0];
+        final String outFilePath = inFilePath.substring(0,inFilePath.lastIndexOf('.'))+".gv";
+        final String dateString = args[1];
         System.out.println("Processing"+inFilePath+"->"+outFilePath);
 
         try {
-            TrollParser tp = new TrollParser (new FileInput(inFilePath), "Test Graph", "Config: Year - Month - Day");
+            TrollParser tp = new TrollParser (new FileInput(inFilePath), inFilePath.substring(0, inFilePath.lastIndexOf('.')),"Config:"+dateString);
             FlowGraph graph = tp.parse();
             FileOutputStream fileOut = new FileOutputStream(outFilePath);
             fileOut.write(graph.render().getBytes());

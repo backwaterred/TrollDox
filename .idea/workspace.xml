@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="TrollDox:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="35555637-3109-42bf-93f7-7b4239bec49c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/TrollDox_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/mkpdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/mkpdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/AbstractFlowGraphElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraphEdge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowGraph/FlowGraphEdge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FlowGraph/AbstractFlowGraphElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FlowGraph/AbstractFlowGraphElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FlowGraph/FlowGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FlowGraph/FlowGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FlowGraph/FlowGraphEdge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FlowGraph/FlowGraphEdge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TrollDoxLauncher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TrollDoxLauncher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Tests/ParserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Tests/ParserTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -53,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
+            <state relative-caret-position="306">
+              <caret line="18" column="148" selection-start-line="18" selection-start-column="148" selection-end-line="18" selection-end-column="148" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -191,10 +188,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1062" />
-    <option name="y" value="-1196" />
-    <option name="width" value="1613" />
-    <option name="height" value="913" />
+    <option name="x" value="592" />
+    <option name="y" value="-1928" />
+    <option name="width" value="1216" />
+    <option name="height" value="1896" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -460,7 +457,7 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546133227849" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/Tests" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.40344828" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -678,9 +675,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tests_in_TrollDox - 2019.07.16 at 15h 24m 04s.xml">
-      <configuration name="Tests in TrollDox" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="Tests_in_TrollDox - 2019.07.16 at 15h 35m 17s.xml">
       <configuration name="Tests in TrollDox" configurationId="JUnit" />
     </history-entry>
@@ -708,6 +702,9 @@
     <history-entry file="ParserTest_simpleDesicionsEdgeTest - 2019.07.25 at 17h 28m 18s.xml">
       <configuration name="ParserTest.simpleDesicionsEdgeTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Tests_in_TrollDox - 2019.07.26 at 13h 30m 20s.xml">
+      <configuration name="Tests in TrollDox" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="592" y="-1208" width="1936" height="1176" extended-state="6" />
@@ -722,7 +719,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32694152" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.17449665" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.17449665" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39980826" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1236,8 +1233,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TrollDoxLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
+        <state relative-caret-position="306">
+          <caret line="18" column="148" selection-start-line="18" selection-start-column="148" selection-end-line="18" selection-end-column="148" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1250,10 +1247,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>TrollDox:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.40344828" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1300,7 +1299,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.40344828" />
               </list>
             </option>
           </splitter-proportions>
@@ -1320,7 +1319,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>com.github.albfernandez:juniversalchardet:2.3.0</last-edited>
+          <last-edited>org.junit.jupiter:junit-jupiter-api:5.3.21</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
