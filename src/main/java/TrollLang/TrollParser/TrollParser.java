@@ -17,7 +17,7 @@ public class TrollParser {
     private static final int DATE_NODE_ID   =  9997;
     private static final int TITLE_NODE_ID  =  9998;
     public static final int  END_NODE_ID    =  9999;
-    public static final int MAX_NODE_ID    = 10000;
+    public static final int MAX_NODE_ID     = 10000;
     private static final int GOTO_MIN_CONNECTION_DISTANCE = 5;
     private ParserInput input;
     private LinkedList<TodoEntry> todo;
@@ -59,13 +59,13 @@ public class TrollParser {
         // Add title, date, start, and end nodes
         iFlowGraphElement headerNode, dateNode, startNode;
 
-        headerNode = new TextBox(TITLE_NODE_ID, graphTitle);
-        headerNode.addAttribute("style", "filled").addAttribute("fillcolor", "grey");
-        graph.addNode(headerNode);
+        //headerNode = new TextBox(TITLE_NODE_ID, graphTitle);
+        //headerNode.addAttribute("style", "filled").addAttribute("fillcolor", "grey");
+        //graph.addNode(headerNode);
 
-        dateNode = new TextBox(  DATE_NODE_ID, graphDate);
-        dateNode.addAttribute("style", "filled").addAttribute("fillcolor", "grey");
-        graph.addNode(dateNode);
+        //dateNode = new TextBox(  DATE_NODE_ID, graphDate);
+        //dateNode.addAttribute("style", "filled").addAttribute("fillcolor", "grey");
+        //graph.addNode(dateNode);
 
         startNode = new TextOval(START_NODE_ID, "START");
         graph.addNode(startNode);
