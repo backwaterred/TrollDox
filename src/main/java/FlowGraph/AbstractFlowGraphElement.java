@@ -1,23 +1,23 @@
 package FlowGraph;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 
 public abstract class AbstractFlowGraphElement implements iFlowGraphElement {
 
     int id;
-    protected LinkedList<String> atts;
+    protected HashSet<String> atts;
     private static int LABEL_TEXT_MAX_WIDTH = 40;
 
     public AbstractFlowGraphElement(int id) {
         this.id = id;
-        atts = new LinkedList<>();
+        atts = new HashSet<>();
         addDefaultAtts();
     }
 
     private void addDefaultAtts() {
-        this.addAttribute("margin", "0.125")
-                //.addAttribute("width", "2")
-                .addAttribute("sortv", Integer.toString(id));
+        // this.addAttribute("margin", "0.125");
+        // this.addAttribute("sortv", Integer.toString(id));
 
     }
 

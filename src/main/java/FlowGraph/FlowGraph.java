@@ -20,7 +20,8 @@ public class FlowGraph {
         this.addAttribute("margin",   "0.5");
         this.addAttribute("nodesep",  "0.25");
         this.addAttribute("ranksep",  "0.25");
-        this.addAttribute("packmode", "array_u1");
+        // this.addAttribute("splines", "ortho");
+        // this.addAttribute("packmode", "array_u1");
     }
 
     /**
@@ -37,7 +38,7 @@ public class FlowGraph {
     }
 
     public String render() {
-        this.setGraphSizeAtt();
+        // this.setGraphSizeAtt();
 
         StringBuilder rtn = new StringBuilder();
         rtn.append("digraph {\n");

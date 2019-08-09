@@ -9,6 +9,7 @@ public class FlowGraphEdge extends AbstractFlowGraphElement {
         this.fromId = fromId;
         this.toId = toId;
         this.id = Integer.parseInt(Integer.toString(fromId) + Integer.toString(toId));
+        this.setDefaults();
     }
 
     public FlowGraphEdge(int fromId, int toId, String labelText) {
@@ -16,6 +17,7 @@ public class FlowGraphEdge extends AbstractFlowGraphElement {
         this.fromId = fromId;
         this.toId = toId;
         this.id = Integer.parseInt(Integer.toString(fromId) + Integer.toString(toId));
+        this.setDefaults();
         if (!labelText.isEmpty()) this.addAttribute("xlabel", labelText);
     }
 
@@ -27,9 +29,13 @@ public class FlowGraphEdge extends AbstractFlowGraphElement {
         return toId;
     }
 
+    private void setDefaults() {
+        this.addAttribute("weight", "10");
+    }
+
     @Override
     public iFlowGraphElement addLabel(String labelText) {
-        return this.addAttribute("xLabel", labelText);
+        return this.addAttribute("xlabel", labelText);
     }
 
     @Override
@@ -38,7 +44,7 @@ public class FlowGraphEdge extends AbstractFlowGraphElement {
         rtn.append(fromId).append(" -> ").append(toId);
         if (!atts.isEmpty()) {
             rtn.append("[");
-            atts.forEach(s -> rtn.append(s));
+            atts.forEach(s -> rtn.append(s).append(" "));
             rtn.append("]");
         }
         return rtn.toString();

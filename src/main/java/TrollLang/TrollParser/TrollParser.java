@@ -35,17 +35,25 @@ public class TrollParser {
         int lineNum;
         int parentId;
         String edgeLabelText;
+        boolean invisible;
 
         TodoEntry(int lineNum, int parentId) {
             this.lineNum = lineNum;
             this.parentId = parentId;
             this.edgeLabelText = "";
+            this.invisible = false;
         }
-
         TodoEntry(int lineNum, int parentId, String edgeLabelText) {
             this.lineNum = lineNum;
             this.parentId = parentId;
             this.edgeLabelText = edgeLabelText;
+            this.invisible = false;
+        }
+        TodoEntry(int lineNum, int parentId, String edgeLabelText, boolean invisible) {
+            this.lineNum = lineNum;
+            this.parentId = parentId;
+            this.edgeLabelText = edgeLabelText;
+            this.invisible = invisible;
         }
 
     }
@@ -162,7 +170,8 @@ public class TrollParser {
                     if (currentNode == null)
                         graph.addNode(new GotoDart(currentEntry.lineNum, getGotoMsgFromLabeName(line)));
                     addEdgeFromParent(currentEntry);
-                    addGotoTodo(ORPHAN_NODE_ID, parts[1]);
+                    // addGotoTodo(ORPHAN_NODE_ID, parts[1]);
+                    addGotoTodo(currentEntry.lineNum, parts[1], true);
                 }
             } catch (AngryTrollException | IOException e) {
                 System.out.println("Error parsing GOTO statement at line " + currentEntry.lineNum + ":\n\t" + line);
@@ -360,10 +369,19 @@ public class TrollParser {
                 graph.addNode(new TextBox(currentEntry.lineNum, "Wait for results"));
             addEdgeFromParent(currentEntry);
             addNextLineTodo(currentEntry);
+        } else if (parts[0].equals(TrollSpeak.FILECOPY.getCommandText())) {
+            try {
+                if (currentNode == null)
+                    graph.addNode(new TextBox(currentEntry.lineNum, getFileCopyMsg(line)));
+                addEdgeFromParent(currentEntry);
+                addNextLineTodo(currentEntry);
+            } catch (AngryTrollException e) {
+                System.out.println("Error parsing FILECOPY instruction at line " + currentEntry.lineNum + "\n\t" + line);
+                e.printStackTrace();
+            }
         } else {
-            // todo: Decide on default behaviour when nothing matches. For now do nothing.
             System.out.println("TrollParser::ProcessTodoEntry unrecognised statement at line: " + currentEntry.lineNum + "\n\t" + line);
-           return;
+            return;
        }
     }
 
@@ -378,12 +396,14 @@ public class TrollParser {
 
         if (nextLineNumber - currentEntry.lineNum < GOTO_MIN_CONNECTION_DISTANCE) {
             // next line is close; proceed as normal
-            addGotoTodo(currentEntry.lineNum, target, edgeLabelText);
+            addGotoTodo(currentEntry.lineNum, target, edgeLabelText, false);
         } else {
             // next line is far. Add extra GotoDart
-           graph.addNode(new GotoDart(MAX_NODE_ID + currentEntry.lineNum,getGotoMsgFromLabeName("GOTO " + target)));
-           addEdgeFromParent(new TodoEntry(MAX_NODE_ID + currentEntry.lineNum, currentEntry.lineNum, edgeLabelText));
-           addGotoTodo(ORPHAN_NODE_ID, target);
+            int new_node_num = MAX_NODE_ID + currentEntry.lineNum;
+           graph.addNode(new GotoDart(new_node_num, getGotoMsgFromLabeName("GOTO " + target)));
+           addEdgeFromParent(new TodoEntry(new_node_num, currentEntry.lineNum, edgeLabelText));
+            // addGotoTodo(ORPHAN_NODE_ID, target);
+            addGotoTodo(new_node_num, target, true);
         }
     }
 
@@ -408,13 +428,16 @@ public class TrollParser {
         }
     }
 
+    private void addGotoTodo(int parentLineNum, String target, boolean invisible) throws IOException {
+        addGotoTodo(parentLineNum, target, "", invisible);
+    }
     /**
      * Adds a TD for a GOTO statement. Called by both the GOTO instruction and any instruction containing a GOTO statement.
      * @param parentLineNum The parent of the new TD
      * @param target The line beginning with the GOTO instruction
      */
     private void addGotoTodo(int parentLineNum, String target) throws IOException {
-        addGotoTodo(parentLineNum, target, "");
+        addGotoTodo(parentLineNum, target, "", false);
     }
     /**
      * Adds a TD for a GOTO statement. Called by both the GOTO instruction and any instruction containing a GOTO statement.
@@ -422,18 +445,25 @@ public class TrollParser {
      * @param target The name of the label to add as a goto
      * @param labelText String to add to edgeLabel
      */
-    private void addGotoTodo(int parentLineNum, String target, String labelText) throws IOException {
+    private void addGotoTodo(int parentLineNum, String target, String labelText, boolean invisible) throws IOException {
         int targetLineNum = input.getLineNumberStartingWith("#" + target.trim());
 
-        todo.push(new TodoEntry(targetLineNum, parentLineNum, labelText));
+        todo.push(new TodoEntry(targetLineNum, parentLineNum, labelText, invisible));
     }
 
     /**
      * Adds edge from parent node to current node if not an orphan.
      */
     private void addEdgeFromParent(TodoEntry currentEntry) {
-        if ((currentEntry.parentId != ORPHAN_NODE_ID))
-            graph.addEdge(new FlowGraphEdge(currentEntry.parentId, currentEntry.lineNum, currentEntry.edgeLabelText));
+        FlowGraphEdge edge = new FlowGraphEdge(currentEntry.parentId, currentEntry.lineNum, currentEntry.edgeLabelText);
+
+        if (!currentEntry.invisible)
+            graph.addEdge(edge);
+        else {
+            edge.addAttribute("style", "invis");
+            edge.addAttribute("weight", "0");
+            graph.addEdge(edge);
+        }
     }
 
     /**
@@ -710,5 +740,12 @@ public class TrollParser {
         if (parts.length != 5) throw new AngryTrollException("Malformed IFGEQ instruction string sent to getIFGEQQuestion" + line);
 
         return getConditionQuestion(parts[1], TrollSpeak.IFGEQ.getMsgText(), parts[2]);
+    }
+
+    private String getFileCopyMsg(String line) throws AngryTrollException {
+        String[] parts = line.split("\\s++");
+        if (parts.length != 3) throw new AngryTrollException("Malformed FILECOPY instruction string sent to getFileCopyMsg");
+
+        return TrollSpeak.FILECOPY.getMsgText() + parts[1] + " to " + parts[2];
     }
 }

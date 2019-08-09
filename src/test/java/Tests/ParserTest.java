@@ -41,7 +41,7 @@ import static org.junit.jupiter.api.Assertions.*;
             parser = new TrollParser(input, "OneHundredLEsProduces100Nodes", "0000-00-00");
             graph = parser.parse();
 
-            assertEquals(100 + 4, graph.getNodeCount()); // START, END, Title, & Date
+            assertEquals(100 + 2, graph.getNodeCount()); // START, END, Title, & Date
         }
 
         @Test
@@ -65,7 +65,7 @@ import static org.junit.jupiter.api.Assertions.*;
             parser = new TrollParser(input, "OneHundredLEsProduces100Nodes", "0000-00-00");
             graph = parser.parse();
 
-            assertEquals( 100 + 4, graph.getNodeCount()); // START, END, Title, & Date
+            assertEquals( 100 + 2, graph.getNodeCount()); // START, END, Title, & Date
         }
 
         @Test
@@ -75,7 +75,7 @@ import static org.junit.jupiter.api.Assertions.*;
             parser = new TrollParser(input, "DecisionsDecisions", "0000-00-00");
             graph = parser.parse();
 
-            assertEquals(6 + 4, graph.getNodeCount());
+            assertEquals(6 + 2, graph.getNodeCount());
         }
 
         @Test
@@ -117,7 +117,7 @@ import static org.junit.jupiter.api.Assertions.*;
             parser = new TrollParser(input, "Test for IF, IFLESS, IFLESSEQUAL, IFGREATER, & IFGREATEREQUAL", "0000-00-00");
             graph = parser.parse();
 
-            assertEquals(5*2 + 2 + 4, graph.getNodeCount());
+            assertEquals(5*2 + 2 + 2, graph.getNodeCount());
             assertFalse(graph.hasConnection(1 + MAX_NODE_ID, input.getLineNumberStartingWith("#Sandbox")));
             assertFalse(graph.hasConnection(2 + MAX_NODE_ID, input.getLineNumberStartingWith("#Sandbox")));
             assertFalse(graph.hasConnection(3 + MAX_NODE_ID, input.getLineNumberStartingWith("#Sandbox")));
@@ -134,7 +134,7 @@ import static org.junit.jupiter.api.Assertions.*;
             parser = new TrollParser(input, "Odds", "0000-00-00");
             graph = parser.parse();
 
-            assertEquals(2 + 4, graph.getNodeCount()); // START, END, Title, & Date
+            assertEquals(2 + 2, graph.getNodeCount()); // START, END, Title, & Date
         }
 
         @Test
@@ -148,7 +148,7 @@ import static org.junit.jupiter.api.Assertions.*;
             // Shouldn't have connection between LE and Long
             assertFalse(graph.hasConnection(2,input.getLineNumberStartingWith("#Long")));
             // A 'bonus' check that doesn't truly belong here. The filler LEs between this jump and the destination shouldn't be parsed.
-            assertEquals(3+4, graph.getNodeCount());
+            assertEquals(3+2, graph.getNodeCount());
         }
 
         @Test

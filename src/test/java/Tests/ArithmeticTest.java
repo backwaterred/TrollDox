@@ -37,7 +37,7 @@ public class ArithmeticTest {
     void testMath() throws AngryTrollException {
         g = parser.parse();
 
-        assertEquals(4+4, g.getNodeCount());
+        assertEquals(4+2, g.getNodeCount());
 
         AbstractFlowGraphElement ag;
         // ADD
