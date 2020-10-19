@@ -1,6 +1,8 @@
 # TrollDox
 TrollDox parses a proprietary scripting language without a name (that I call
-Troll) to create documents for processing by the GraphViz layout engine. GraphViz handles the node placement and edge routing.
+Troll) to create flow-charts for the script which can then be rendered by the
+GraphViz layout engine. While I wouldn't have described it this way at the time,
+this project was actually my first compiler.
 
 ### Examples
 1. The statement : `LOGEVENT "Hello World!"` is rendered as:
